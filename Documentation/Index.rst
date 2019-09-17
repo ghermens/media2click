@@ -6,48 +6,56 @@
 2 Clicks for External Media
 ===========================
 
-.. only:: html
+:Version:
+  |release|
 
-   :Classification:
-      media2click
+:Language:
+  en
 
-   :Version:
-      |release|
+:Author:
+  Gregor Hermens
 
-   :Language:
-      en
+:Email:
+  gregor.hermens@a-mazing.de
 
-   :Description:
-      Manual covering TYPO3 extension media2click
+:License:
+   This extension documentation is published under the
+   `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
+   license
 
-   :Keywords:
-      frontend,media,video,youtube,vimeo,gpdr,dsgvo
+Render external YouTube / Vimeo videos with privacy in mind: User has to click on placeholder to load the actual video iframe.
 
-   :Copyright:
-      2019
+**TYPO3**
 
-   :Author:
-      Gregor Hermens
+The content of this document is related to TYPO3,
+a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
 
-   :Email:
-      gregor.hermens@a-mazing.de
+**Community Documentation:**
 
-   :License:
-      This document is published under the Open Publication License
-      available from http://www.opencontent.org/openpub/
+   This documentation is community documentation for the TYPO3 extension media2click
 
-   :Rendered:
-      |today|
+   It is maintained as part of this third party extension.
 
-   The content of this document is related to TYPO3,
-   a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
+   If you find an error or something is missing, please:
+   `Report a Problem <https://github.com/ghermens/media2click/issues/new>`__
+
+**Extension Manual**
+
+   This documentation is for the TYPO3 extension media2click.
 
 
-   **Table of Contents**
+
+**For Contributors**
+
+   You are welcome to help improve this guide. Just click on "Edit me on GitHub"
+   on the top right to submit your change request.
+
+
+**Sitemap:**
 
 .. toctree::
    :maxdepth: 3
-   :titlesonly:
+   :hidden:
 
    Introduction/Index
    User/Index
