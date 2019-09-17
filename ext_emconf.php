@@ -22,5 +22,5 @@ $EM_CONF['media2click'] = [
         ],
     ],
     'state' => 'beta',
-    'version' => '0.2.1-dev',
+    'version' => '0.2.1',
 ];
