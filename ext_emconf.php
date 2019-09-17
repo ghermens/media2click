@@ -8,7 +8,7 @@ $EM_CONF['media2click'] = [
     'category' => 'fe',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7.0-9.5.99',
+            'typo3' => '8.7.8-9.5.99',
         ],
         'conflicts' => [
         ],
