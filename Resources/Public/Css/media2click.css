@@ -1,0 +1,33 @@
+.media2click-placeholder {
+    display: block;
+    background: #ddd url(../Images/placeholder.svg) no-repeat center center;
+    background-size: contain;
+    box-sizing: border-box;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.media2click-placeholder.media2click-haspreview {
+    color: #000;
+    text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff;
+}
+
+.media2click-placeholder:hover {
+    background-color: #eee;
+}
+
+.media2click-title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.media2click-content {
+    display: block;
+}
+
+.media2click-wrap iframe {
+    display: none;
+}

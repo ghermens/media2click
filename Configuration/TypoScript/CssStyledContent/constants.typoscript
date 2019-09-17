@@ -1,0 +1,20 @@
+plugin {
+    media2click {
+        #cat=content/enable/a; type=boolean; label=Enable 2-click for external media
+        enable = 0
+
+        #cat=content/enable/b; type=boolean; label=Show the video's title as the placeholder's title
+        showTitle = 1
+
+        #cat=content/enable/c; type=boolean; label=Show the video's preview image
+        showPreviewImage = 1
+
+        showPreviewImage {
+            #cat=content/enable/d; type=int+; label=Show the video's preview image
+            maxWidth = 0
+
+            #cat=content/enable/e; type=int+; label=Show the video's preview image
+            maxHeight = 0
+        }
+    }
+}

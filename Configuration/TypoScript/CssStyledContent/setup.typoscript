@@ -1,0 +1,59 @@
+page {
+    includeCSS {
+        media2click = EXT:media2click/Resources/Public/Css/media2click.css
+        media2click.forceOnTop = 1
+    }
+    includeJSFooter {
+        media2click = EXT:media2click/Resources/Public/JavaScript/media2click.js
+    }
+}
+
+tt_content {
+    textmedia {
+        default {
+            20 {
+                templateRootPaths {
+                    25 = EXT:media2click/Resources/Private/CssStyledContent/Templates/
+                }
+                settings {
+                    media {
+                        additionalConfig {
+                            placeholderContent {
+                                wrap = <span class="media2click-content">|</span>
+                                value = Click to load external video!
+                                lang {
+                                    de = Klicken um das externe Video zu laden!
+                                }
+                                showTitle = {$plugin.media2click.showTitle}
+                                titleWrap = <span class="media2click-title">|</span>
+                                showPreviewImage = {$plugin.media2click.showPreviewImage}
+                                previewMaxWidth = {$plugin.media2click.showPreviewImage.maxWidth}
+                                previewMaxHeight = {$plugin.media2click.showPreviewImage.maxHeight}
+                            }
+                            enable2click = {$plugin.media2click.enable}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+plugin {
+    tx_news {
+        view {
+            partialRootPaths {
+                25 = EXT:media2click/Resources/Private/News/Partials/
+            }
+        }
+        settings {
+            detail {
+                media {
+                    video {
+                        additionalConfig < tt_content.textmedia.default.20.settings.media.additionalConfig
+                    }
+                }
+            }
+        }
+    }
+}
