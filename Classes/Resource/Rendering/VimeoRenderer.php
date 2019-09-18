@@ -120,6 +120,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
                 }
 
                 if (is_array($placeholderContentObject['lang'])) {
+                    /* TODO: TYPO3 10: Deprecation: #83736 - Deprecated globals TYPO3_REQUEST */
                     /** @var SiteLanguage $siteLanguage */
                     $siteLanguage = $GLOBALS['TYPO3_REQUEST']->getAttribute('language');
                     if (array_key_exists($siteLanguage->getTypo3Language(), $placeholderContentObject['lang'])) {

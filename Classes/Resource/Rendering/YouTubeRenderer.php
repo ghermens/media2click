@@ -16,7 +16,6 @@ namespace Amazing\Media2click\Resource\Rendering;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
-use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
@@ -125,6 +124,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                 }
 
                 if (is_array($placeholderContentObject['lang'])) {
+                    /* TODO: TYPO3 10: Deprecation: #83736 - Deprecated globals TYPO3_REQUEST */
                     /** @var SiteLanguage $siteLanguage */
                     $siteLanguage = $GLOBALS['TYPO3_REQUEST']->getAttribute('language');
                     if (array_key_exists($siteLanguage->getTypo3Language(), $placeholderContentObject['lang'])) {
