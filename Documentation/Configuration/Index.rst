@@ -33,6 +33,22 @@ enable
 :aspect:`Default:`
    0
 
+.. _constants-allwrap:
+
+allWrap
+"""""""
+
+:aspect:`Property`
+   allWrap
+
+:aspect:`Data type:`
+   wrap
+
+:aspect:`Description`
+   Additional wrap to all placeholder content
+
+:aspect:`Default:`
+   <div class="media2click-placeholder-inner">|</div>
 
 .. _constants-showtitle:
 
@@ -124,6 +140,9 @@ placeholderContent
    parent attribute to all settings regarding the content of the placeholder
 
    Properties:
+
+   :ts:`.allWrap:`
+      This wraps the whole placeholder content.
 
    :ts:`.value:` String
       Default text

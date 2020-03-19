@@ -24,6 +24,22 @@
     margin-bottom: .5em;
 }
 
+.media2click-placeholder-inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.media2click-placeholder.media2click-haspreview .media2click-placeholder-inner {
+    background-image: url(../Images/videobutton.png);
+    background-size: 30% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 .media2click-content {
     display: block;
 }

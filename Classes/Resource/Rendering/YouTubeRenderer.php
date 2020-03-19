@@ -161,6 +161,11 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
             $placeholderContent = $title . $placeholderContent;
         }
 
+        if (!empty($placeholderContentObject['allWrap'])) {
+            $wrapArr = explode('|', $placeholderContentObject['allWrap']);
+            $placeholderContent = trim($wrapArr[0] ?? '') . $placeholderContent . trim($wrapArr[1] ?? '');
+        }
+
         $placeholderContent = '<div class="media2click-placeholder' . ($hasPreview ? ' media2click-haspreview':'') . '" style="' . $style . '">' . $placeholderContent . '</div>';
 
         return $placeholderContent;

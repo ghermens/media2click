@@ -15,6 +15,8 @@ lib {
       media {
         additionalConfig {
           placeholderContent {
+            allWrap = {$plugin.media2click.allWrap}
+
             wrap = <span class="media2click-content">|</span>
             value = Click to load external video!
             lang {
