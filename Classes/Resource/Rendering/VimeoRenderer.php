@@ -12,6 +12,7 @@ namespace Amazing\Media2click\Resource\Rendering;
  *
  ***/
 
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -83,6 +84,13 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
             }
 
             $previewImage = $this->onlineMediaHelper->getPreviewImage($orgFile);
+
+            /* In composer installations $previewImage is outside of publicPath */
+            if (Environment::getVarPath() !== Environment::getPublicPath() . '/typo3temp/var') {
+                $tempFile = str_replace(Environment::getVarPath() . '/transient', Environment::getPublicPath() . '/typo3temp/assets/images', $previewImage);
+                GeneralUtility::writeFileToTypo3tempDir($tempFile, @file_get_contents($previewImage));
+                $previewImage = $tempFile;
+            }
 
             if (file_exists($previewImage)) {
                 $conf = [
