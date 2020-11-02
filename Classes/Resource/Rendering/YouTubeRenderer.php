@@ -124,8 +124,6 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
         $placeholderContent = null;
 
         if (is_array($placeholderContentObject)) {
-            if (version_compare(TYPO3_version, '9.0.0', '>=')) {
-
                 if (isset($placeholderContentObject['value'])) {
                     $placeholderContent = $placeholderContentObject['value'];
                 }
@@ -142,16 +140,6 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                     $wrapArr = explode('|', $placeholderContentObject['wrap']);
                     $placeholderContent = trim($wrapArr[0] ?? '') . $placeholderContent . trim($wrapArr[1] ?? '');
                 }
-
-            } else {
-
-                if (is_array($placeholderContentObject['lang'])) {
-                    $placeholderContentObject['lang.'] = $placeholderContentObject['lang'];
-                    unset($placeholderContentObject['lang']);
-                }
-
-                $placeholderContent = $contentObjectRenderer->cObjGetSingle('TEXT', $placeholderContentObject);
-            }
         }
 
         if ($placeholderContent === null) {
