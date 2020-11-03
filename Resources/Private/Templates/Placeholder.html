@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <div class="media2click-placeholder-inner">
+        <f:if condition="{settings.showTitle}">
+            <span class="media2click-title">{settings.title}</span>
+        </f:if>
+        <span class="media2click-content"><f:translate extensionName="Media2click" key="defaultPlaceHolder" default="Click to load external video!"/></span>
+    </div>
+</f:section>
+
+</html>

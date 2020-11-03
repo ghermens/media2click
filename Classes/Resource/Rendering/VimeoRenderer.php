@@ -15,6 +15,7 @@ namespace Amazing\Media2click\Resource\Rendering;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
+use TYPO3\CMS\Core\TypoScript\TypoScriptService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
@@ -64,7 +65,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
         /** @var ContentObjectRenderer $contentObjectRenderer */
         $contentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class, $GLOBALS['TSFE']);
 
-        $placeholderContentObject = $options['additionalConfig']['placeholderContent'];
+        $placeholderContentSetup = $options['additionalConfig']['placeholderContent'];
 
         $style = '';
         if ((int)$width > 0) {
@@ -76,7 +77,9 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
         }
 
         $hasPreview = false;
-        if (!empty($placeholderContentObject['showPreviewImage'])) {
+        $previewImageWebPath = null;
+
+        if (!empty($placeholderContentSetup['showPreviewImage'])) {
             if ($file instanceof FileReference) {
                 $orgFile = $file->getOriginalFile();
             } else {
@@ -96,12 +99,9 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
                 $conf = [
                     'file' => $previewImage,
                     'file.' => [
-                        'maxW' => ($placeholderContentObject['previewMaxWidth'] ?? ''),
-                        'maxH' => ($placeholderContentObject['previewMaxHeight'] ?? ''),
+                        'maxW' => ($placeholderContentSetup['previewMaxWidth'] ?? ''),
+                        'maxH' => ($placeholderContentSetup['previewMaxHeight'] ?? ''),
                     ],
-                    'stdWrap.' => [
-                        'wrap' => 'background-image: url(/|);'
-                    ]
                 ];
 
                 if ((int)$width > 0) {
@@ -112,53 +112,82 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
                     $conf['file.']['height'] = (int)$height . 'c';
                 }
 
-                $style .= $contentObjectRenderer->cObjGetSingle('IMG_RESOURCE', $conf);
+                $previewImageWebPath = $contentObjectRenderer->cObjGetSingle('IMG_RESOURCE', $conf);
+                $style .= 'background-image:url(/' . $previewImageWebPath . ');';
                 $hasPreview = true;
             }
         }
 
-        $placeholderContent = null;
+        if (!empty($placeholderContentSetup['cObject']['_typoScriptNodeValue'])) {
 
-        if (is_array($placeholderContentObject)) {
-                if (isset($placeholderContentObject['value'])) {
-                    $placeholderContent = $placeholderContentObject['value'];
+            /** @var TypoScriptService $typoScriptService */
+            $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
+
+            $conf = $typoScriptService->convertPlainArrayToTypoScriptArray($placeholderContentSetup);
+
+            if ($conf['cObject'] === 'FLUIDTEMPLATE') {
+                $conf['cObject.'] = array_merge_recursive(
+                    $conf['cObject.'],
+                    [
+                        'settings.' => [
+                            'videoProvider' => 'Vimeo',
+                            'showTitle' => $conf['showTitle'],
+                            'title' => $options['title'],
+                            'width' => (int)$width,
+                            'height' => (int)$height,
+                            'previewImage' => $previewImageWebPath,
+                        ]
+                    ]
+                );
+            }
+
+            $placeholderContent = $contentObjectRenderer->cObjGetSingle($conf['cObject'], $conf['cObject.']);
+
+        } else {
+
+            $placeholderContent = null;
+
+            if (is_array($placeholderContentSetup)) {
+                if (isset($placeholderContentSetup['value'])) {
+                    $placeholderContent = $placeholderContentSetup['value'];
                 }
 
-                if (is_array($placeholderContentObject['lang'])) {
+                if (is_array($placeholderContentSetup['lang'])) {
                     $typo3Language = $contentObjectRenderer->cObjGetSingle('TEXT', ['data' => 'siteLanguage:typo3Language']);
 
-                    if (array_key_exists($typo3Language, $placeholderContentObject['lang'])) {
-                        $placeholderContent = $placeholderContentObject['lang'][$typo3Language];
+                    if (array_key_exists($typo3Language, $placeholderContentSetup['lang'])) {
+                        $placeholderContent = $placeholderContentSetup['lang'][$typo3Language];
                     }
                 }
 
-                if (!empty($placeholderContentObject['wrap'])) {
-                    $wrapArr = explode('|', $placeholderContentObject['wrap']);
+                if (!empty($placeholderContentSetup['wrap'])) {
+                    $wrapArr = explode('|', $placeholderContentSetup['wrap']);
                     $placeholderContent = trim($wrapArr[0] ?? '') . $placeholderContent . trim($wrapArr[1] ?? '');
                 }
-        }
-
-        if ($placeholderContent === null) {
-            $placeholderContent = 'Click to load external video!';
-        }
-
-        if (!empty($options['title']) && !empty($placeholderContentObject['showTitle'])) {
-            $title = $options['title'];
-
-            if (!empty($placeholderContentObject['titleWrap'])) {
-                $wrapArr = explode('|', $placeholderContentObject['titleWrap']);
-                $title = trim($wrapArr[0] ?? '') . $title . trim($wrapArr[1] ?? '');
             }
 
-            $placeholderContent = $title . $placeholderContent;
-        }
+            if ($placeholderContent === null) {
+                $placeholderContent = 'Click to load external video!';
+            }
 
-        if (!empty($placeholderContentObject['allWrap'])) {
-            $wrapArr = explode('|', $placeholderContentObject['allWrap']);
-            $placeholderContent = trim($wrapArr[0] ?? '') . $placeholderContent . trim($wrapArr[1] ?? '');
-        }
+            if (!empty($options['title']) && !empty($placeholderContentSetup['showTitle'])) {
+                $title = $options['title'];
 
-        $placeholderContent = '<div class="media2click-placeholder' . ($hasPreview ? ' media2click-haspreview':'') . '" style="' . $style . '">' . $placeholderContent . '</div>';
+                if (!empty($placeholderContentSetup['titleWrap'])) {
+                    $wrapArr = explode('|', $placeholderContentSetup['titleWrap']);
+                    $title = trim($wrapArr[0] ?? '') . $title . trim($wrapArr[1] ?? '');
+                }
+
+                $placeholderContent = $title . $placeholderContent;
+            }
+
+            if (!empty($placeholderContentSetup['allWrap'])) {
+                $wrapArr = explode('|', $placeholderContentSetup['allWrap']);
+                $placeholderContent = trim($wrapArr[0] ?? '') . $placeholderContent . trim($wrapArr[1] ?? '');
+            }
+
+            $placeholderContent = '<div class="media2click-placeholder' . ($hasPreview ? ' media2click-haspreview' : '') . '" style="' . $style . '">' . $placeholderContent . '</div>';
+        }
 
         return $placeholderContent;
     }

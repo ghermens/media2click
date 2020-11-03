@@ -28,6 +28,24 @@ lib {
             showPreviewImage = {$plugin.media2click.showPreviewImage}
             previewMaxWidth = {$plugin.media2click.showPreviewImage.maxWidth}
             previewMaxHeight = {$plugin.media2click.showPreviewImage.maxHeight}
+
+            cObject = FLUIDTEMPLATE
+            cObject {
+              layoutRootPaths {
+                1 = EXT:media2click/Resources/Private/Layouts/
+                100 = {$plugin.media2click.templateRootPath}
+              }
+              partialRootPaths {
+                1 = EXT:media2click/Resources/Private/Partials/
+                100 = {$plugin.media2click.partialRootPath}
+              }
+              templateRootPaths {
+                1 = EXT:media2click/Resources/Private/Templates/
+                100 = {$plugin.media2click.layoutRootPath}
+              }
+              templateName = Placeholder
+            }
+{$plugin.media2click.disableCObj} cObject >
           }
 
           enable2click = {$plugin.media2click.enable}

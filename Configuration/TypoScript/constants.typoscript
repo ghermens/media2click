@@ -1,9 +1,12 @@
 plugin {
   media2click {
-    #cat=content/enable/a; type=boolean; label=Enable 2-click for external media
+    #cat=content/enable/a1; type=boolean; label=Enable 2-click for external media
     enable = 0
 
-    #cat=content/enable/b; type=wrap; label=Additional warp to all placeholder content
+    #cat=content/enable/a2; type=comment; label=Disable cObject based rendering of placeholder
+    disableCObj = #
+
+    #cat=content/enable/b; type=wrap; label=Additional warp to all placeholder content (only with classic rendering)
     allWrap = <div class="media2click-placeholder-inner">|</div>
 
     #cat=content/enable/c; type=boolean; label=Show the video's title as the placeholder's title
@@ -13,11 +16,21 @@ plugin {
     showPreviewImage = 1
 
     showPreviewImage {
-      #cat=content/enable/e; type=int+; label=Show the video's preview image
+      #cat=content/enable/e; type=int+; label=Max width of the preview image
       maxWidth = 0
 
-      #cat=content/enable/f; type=int+; label=Show the video's preview image
+      #cat=content/enable/f; type=int+; label=Max height of the preview image
       maxHeight = 0
     }
+
+    #cat=plugin.media2click/file/a; type=string; label=Path of Fluid Templates for media2click placeholder
+    templateRootPath =
+
+    #cat=plugin.media2click/file/b; type=string; label=Path of Fluid Partials for media2click placeholder
+    partialRootPath =
+
+    #cat=plugin.media2click/file/c; type=string; label=Path of Fluid Layouts for media2click placeholder
+    layoutRootPath =
+
   }
 }
