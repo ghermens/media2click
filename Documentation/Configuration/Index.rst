@@ -33,6 +33,23 @@ enable
 :aspect:`Default:`
    0
 
+.. _constants-disablecobj:
+
+disableCObj
+"""""""""""
+
+:aspect:`Property:`
+   disableCObj
+
+:aspect:`Datatype:`
+   comment
+
+:aspect:`Description:`
+   Disable the cObject / FLUIDTEMPLATE rendering, switch back to classic rendering instead
+
+:aspect:`Default:`
+   #
+
 .. _constants-allwrap:
 
 allWrap
@@ -45,7 +62,7 @@ allWrap
    wrap
 
 :aspect:`Description`
-   Additional wrap to all placeholder content
+   Additional wrap to all placeholder content (only used with classic rendering)
 
 :aspect:`Default:`
    <div class="media2click-placeholder-inner">|</div>
@@ -91,6 +108,42 @@ showPreviewImage
 
    :ts:`maxHeight:` integer
       Maximum height
+
+templateRootPath
+""""""""""""""""
+
+:aspect:`Property:`
+   templateRootPath
+
+:aspect:`Data type:`
+   String
+
+:aspect:`Description:`
+   Path to your Fluid templates when using the FLUIDTEMPLATE cObject rendering
+
+partialRootPath
+""""""""""""""""
+
+:aspect:`Property:`
+   partialRootPath
+
+:aspect:`Data type:`
+   String
+
+:aspect:`Description:`
+   Path to your Fluid partial when using the FLUIDTEMPLATE cObject rendering
+
+layoutRootPath
+""""""""""""""""
+
+:aspect:`Property:`
+   layoutRootPath
+
+:aspect:`Data type:`
+   String
+
+:aspect:`Description:`
+   Path to your Fluid layouts when using the FLUIDTEMPLATE cObject rendering
 
 
 TypoScript Setup
@@ -142,22 +195,22 @@ placeholderContent
    Properties:
 
    :ts:`.allWrap:`
-      This wraps the whole placeholder content.
+      This wraps the whole placeholder content.  (only used with classic rendering)
 
    :ts:`.value:` String
-      Default text
+      Default text  (only used with classic rendering)
 
    :ts:`.lang:` Array
-      Array of language keys, defining optional language specific values
+      Array of language keys, defining optional language specific values  (only used with classic rendering)
 
    :ts:`.wrap:` wrap
-      This wraps the content.
+      This wraps the content.  (only used with classic rendering)
 
    :ts:`.showTitle:` boolean
       If enabled, the Fluid media tag's title attribute is shown as the palceholder's title. Set via Constant Editor.
 
    :ts:`.titleWrap:` wrap
-      This wraps the title.
+      This wraps the title.  (only used with classic rendering)
 
    :ts:`.showPreviewImage:` boolean
       Show preview image if available. Set via Constant editor.
@@ -167,3 +220,29 @@ placeholderContent
 
    :ts:`.previewMaxHeight:` integer
       Maximum height of preview image. Set via Constant Editor.
+
+   :ts:`.cObject:` cObject
+      If present, this cObject is used for rendering the placeholder. If this cObject is a FLUIDTEMPLATE, some useful values are passed to the fluid template as settings:
+
+      :ts:`.settings:`
+         Settings for the FLUIDTEMPLATE cObject
+
+         Default properties:
+
+         :ts:`.videoProvider:` String
+            Provider of the video, i.e. "YouTube" or "Vimeo". Usefull to adapt the placeholder content, i.e. link to the proper privacy statement.
+
+         :ts:`.showTitle:` boolean
+            see above
+
+         :ts:`.title:` String
+            The title of the video
+
+         :ts:`.width:` integer
+            The calculated width of the video iframe
+
+         :ts:`.height:` integer
+            The calculated height of the video iframe
+
+         :ts:`.previewImage:` String
+            Path to the preview image relative to the web root
