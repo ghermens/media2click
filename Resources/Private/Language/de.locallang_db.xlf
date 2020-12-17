@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2020-12-17T12:53:52Z" product-name="media2click">
+		<header>
+			<generator>XLIFF Editor</generator>
+			<authorName>Gregor Hermens</authorName>
+			<authorEmail>gregor.hermens@a-mazing.de</authorEmail>
+		</header>
+		<body>
+			<trans-unit id="media2click_iframe" approved="yes">
+				<source><![CDATA[iFrame with consent]]></source>
+				<target><![CDATA[iFrame mit Zustimmung]]></target>
+			</trans-unit>
+			<trans-unit id="media2click_iframe.description" approved="yes">
+				<source><![CDATA[Ask user for consent before inluding external resources via iframe.]]></source>
+				<target><![CDATA[Erfragt die Zustimmung des Nutzers, bevor externe Inhalte periFrame eingebunden werden.]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_ratio" approved="yes">
+				<source><![CDATA[Size / Ratio]]></source>
+				<target><![CDATA[Größe / Seitenverhältnis]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_ratio.50vh" approved="yes">
+				<source><![CDATA[50% of viewport height]]></source>
+				<target><![CDATA[50% der Fenster-Höhe]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_ratio.75vh" approved="yes">
+				<source><![CDATA[75% of viewport height]]></source>
+				<target><![CDATA[75% der Fenster-Höhe]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_ratio.90vh" approved="yes">
+				<source><![CDATA[90% of viewport height]]></source>
+				<target><![CDATA[90% der Fenster-Höhe]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_src" approved="yes">
+				<source><![CDATA[iFrame URI]]></source>
+				<target><![CDATA[iFrame URI]]></target>
+			</trans-unit>
+		</body>
+    </file>
+</xliff>

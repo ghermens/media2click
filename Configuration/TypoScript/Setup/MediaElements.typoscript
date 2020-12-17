@@ -1,0 +1,65 @@
+lib {
+  contentElement {
+    settings {
+      media {
+        additionalConfig {
+          placeholderContent {
+            allWrap = {$plugin.media2click.allWrap}
+
+            wrap = <span class="media2click-content">|</span>
+            value = Click to load external video!
+            lang {
+              de = Klicken um das externe Video zu laden!
+            }
+
+            showTitle = {$plugin.media2click.showTitle}
+            titleWrap = <span class="media2click-title">|</span>
+            showPreviewImage = {$plugin.media2click.showPreviewImage}
+            previewMaxWidth = {$plugin.media2click.showPreviewImage.maxWidth}
+            previewMaxHeight = {$plugin.media2click.showPreviewImage.maxHeight}
+
+            cObject = FLUIDTEMPLATE
+            cObject {
+              layoutRootPaths {
+                1 = EXT:media2click/Resources/Private/Layouts/
+                100 = {$plugin.media2click.templateRootPath}
+              }
+              partialRootPaths {
+                1 = EXT:media2click/Resources/Private/Partials/
+                100 = {$plugin.media2click.partialRootPath}
+              }
+              templateRootPaths {
+                1 = EXT:media2click/Resources/Private/Templates/
+                100 = {$plugin.media2click.layoutRootPath}
+              }
+              templateName = Placeholder
+            }
+            {$plugin.media2click.disableCObj} cObject >
+          }
+
+          enable2click = {$plugin.media2click.enable}
+        }
+      }
+    }
+  }
+}
+
+plugin {
+  tx_news {
+    view {
+      partialRootPaths {
+        25 = EXT:media2click/Resources/Private/News/Partials/
+      }
+    }
+
+    settings {
+      detail {
+        media {
+          video {
+            additionalConfig < lib.contentElement.settings.media.additionalConfig
+          }
+        }
+      }
+    }
+  }
+}

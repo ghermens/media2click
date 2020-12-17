@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2020-12-17T12:53:52Z" product-name="media2click">
+		<header>
+			<generator>XLIFF Editor</generator>
+			<authorName>Gregor Hermens</authorName>
+			<authorEmail>gregor.hermens@a-mazing.de</authorEmail>
+		</header>
+		<body>
+			<trans-unit id="media2click_iframe">
+				<source><![CDATA[iFrame with consent]]></source>
+			</trans-unit>
+			<trans-unit id="media2click_iframe.description">
+				<source><![CDATA[Ask user for consent before inluding external resources via iframe.]]></source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_ratio">
+				<source><![CDATA[Size / Ratio]]></source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_ratio.50vh">
+				<source><![CDATA[50% of viewport height]]></source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_ratio.75vh">
+				<source><![CDATA[75% of viewport height]]></source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_ratio.90vh">
+				<source><![CDATA[90% of viewport height]]></source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_src">
+				<source><![CDATA[iFrame URI]]></source>
+			</trans-unit>
+		</body>
+    </file>
+</xliff>

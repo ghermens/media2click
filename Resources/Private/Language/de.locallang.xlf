@@ -6,7 +6,15 @@
 			<authorEmail>gregor.hermens@a-mazing.de</authorEmail>
 		</header>
 		<body>
-			<trans-unit id="defaultPlaceHolder">
+			<trans-unit id="defaultPlaceHolder" approved="yes">
+				<source><![CDATA[Click to load external content!]]></source>
+				<target><![CDATA[Klicken um die externen Inhalte zu laden!]]></target>
+			</trans-unit>
+			<trans-unit id="defaultPlaceHolderIframe" approved="yes">
+				<source><![CDATA[Click to load external content from %s!]]></source>
+				<target><![CDATA[Klicken um externe Inhalte von %s zu laden!]]></target>
+			</trans-unit>
+			<trans-unit id="defaultPlaceHolderVideo" approved="yes">
 				<source><![CDATA[Click to load external video!]]></source>
 				<target><![CDATA[Klicken um das externe Video zu laden!]]></target>
 			</trans-unit>

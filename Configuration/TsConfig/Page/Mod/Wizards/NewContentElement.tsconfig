@@ -1,0 +1,21 @@
+mod {
+  wizards {
+    newContentElement {
+      wizardItems {
+        special {
+          elements {
+            media2click_iframe {
+              iconIdentifier = tx-media2click-ce-iframe
+              title = LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_iframe
+              description = LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_iframe.description
+              tt_content_defValues {
+                CType = media2click_iframe
+              }
+            }
+          }
+          show := addToList(media2click_iframe)
+        }
+      }
+    }
+  }
+}

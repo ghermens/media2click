@@ -7,6 +7,12 @@
 		</header>
 		<body>
 			<trans-unit id="defaultPlaceHolder">
+				<source><![CDATA[Click to load external content!]]></source>
+			</trans-unit>
+			<trans-unit id="defaultPlaceHolderIframe">
+				<source><![CDATA[Click to load external content from %s!]]></source>
+			</trans-unit>
+			<trans-unit id="defaultPlaceHolderVideo">
 				<source><![CDATA[Click to load external video!]]></source>
 			</trans-unit>
 		</body>

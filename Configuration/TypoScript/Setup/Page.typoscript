@@ -1,0 +1,10 @@
+page {
+  includeCSS {
+    media2click = EXT:media2click/Resources/Public/Css/media2click.css
+    media2click.forceOnTop = 1
+  }
+
+  includeJSFooter {
+    media2click = EXT:media2click/Resources/Public/JavaScript/media2click.js
+  }
+}

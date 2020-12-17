@@ -1,0 +1,26 @@
+lib.contentElement {
+  templateRootPaths {
+    2 = EXT:media2click/Resources/Private/Extensions/FluidStyledContent/Templates/
+  }
+  partialRootPaths {
+    2 = EXT:media2click/Resources/Private/Extensions/FluidStyledContent/Partials/
+  }
+  layoutRootPaths {
+    2 = EXT:media2click/Resources/Private/Extensions/FluidStyledContent/Layouts/
+  }
+}
+
+tt_content {
+  media2click_iframe =< lib.contentElement
+  media2click_iframe {
+    templateName = Media2clickIframe
+
+    variables {
+
+    }
+
+    settings {
+
+    }
+  }
+}

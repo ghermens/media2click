@@ -1,12 +1,55 @@
+.media2click-ratio {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.media2click-ratio-169 {
+    padding-bottom: 56.25%;
+}
+
+.media2click-ratio-43 {
+    padding-bottom: 75%;
+}
+
+.media2click-ratio-50vh {
+    padding-bottom: 50vh;
+}
+
+.media2click-ratio-75vh {
+    padding-bottom: 75vh;
+}
+
+.media2click-ratio-90vh {
+    padding-bottom: 90vh;
+}
+
+.media2click-ratio .media2click-placeholder-iframe,
+.media2click-ratio iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
 .media2click-placeholder {
     display: block;
-    background: #ddd url(../Images/placeholder.svg) no-repeat center center;
-    background-size: contain;
+    background-color: #ddd;
     box-sizing: border-box;
     padding: 1em;
     text-align: center;
     cursor: pointer;
     transition: background-color .2s;
+}
+
+.media2click-placeholder-video {
+    background-image: url(../Images/placeholder.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
 }
 
 .media2click-placeholder.media2click-haspreview {
