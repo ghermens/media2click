@@ -5,7 +5,8 @@
 
 <f:section name="Main">
     <div class="media2click-wrap media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}">
-        <div class="media2click-placeholder media2click-placeholder-iframe">
+        <div class="media2click-placeholder media2click-placeholder-iframe{f:if(condition: backgroundImage.0, then: ' media2click-haspreview')}"
+             style="{f:if(condition: backgroundImage.0, then: 'background-image:url({f:uri.image(image: backgroundImage.0)});')}">
             <div class="media2click-placeholder-inner">
                 <f:variable name="iframeHost"><m:uri.part uri="{data.tx_media2click_iframe_src}"/></f:variable>
                 <span class="media2click-content">{f:translate(extensionName: 'Media2click', key: 'defaultPlaceHolderIframe', arguments: {0: '{iframeHost}'})}</span>

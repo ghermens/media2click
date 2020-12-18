@@ -32,6 +32,7 @@ defined('TYPO3_MODE') || die;
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['16:9', '169'],
+                    ['3:2','32'],
                     ['4:3', '43'],
                     ['LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.50vh', '50vh'],
                     ['LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.75vh', '75vh'],
@@ -64,8 +65,10 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
             --palette--;;headers,
+        --div--;iFrame,
             tx_media2click_iframe_src,
             tx_media2click_iframe_ratio,
+            image;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.image,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
             --palette--;;frames,
             --palette--;;appearanceLinks,
@@ -80,4 +83,21 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
             rowDescription,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
     ',
+    'columnsOverrides' => [
+        'image' => [
+            'config' => [
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+                'maxitems' => 1,
+                'overrideChildTca' => [
+                    'types' => [
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            'showitem' => '--palette--;;imageMinimalOverlayPalette,--palette--;;filePalette',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
 ];

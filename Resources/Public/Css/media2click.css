@@ -9,6 +9,10 @@
     padding-bottom: 56.25%;
 }
 
+.media2click-ratio-32 {
+    padding-bottom: 66.67%;
+}
+
 .media2click-ratio-43 {
     padding-bottom: 75%;
 }
@@ -76,11 +80,19 @@
     justify-content: center;
 }
 
-.media2click-placeholder.media2click-haspreview .media2click-placeholder-inner {
+.media2click-placeholder-video.media2click-haspreview .media2click-placeholder-inner {
     background-image: url(../Images/videobutton.png);
     background-size: 30% auto;
     background-position: center center;
     background-repeat: no-repeat;
+}
+
+.media2click-placeholder-iframe.media2click-haspreview .media2click-placeholder-inner {
+    background-color: rgba(255,255,255,.5);
+}
+
+.media2click-placeholder-iframe.media2click-haspreview:hover .media2click-placeholder-inner {
+    background-color: rgba(255,255,255,.75);
 }
 
 .media2click-content {

@@ -15,6 +15,10 @@
 				<source><![CDATA[Ask user for consent before inluding external resources via iframe.]]></source>
 				<target><![CDATA[Erfragt die Zustimmung des Nutzers, bevor externe Inhalte periFrame eingebunden werden.]]></target>
 			</trans-unit>
+			<trans-unit id="tt_content.image" approved="yes">
+				<source><![CDATA[Background Image]]></source>
+				<target><![CDATA[Hintergrundbild]]></target>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_media2click_iframe_ratio" approved="yes">
 				<source><![CDATA[Size / Ratio]]></source>
 				<target><![CDATA[Größe / Seitenverhältnis]]></target>

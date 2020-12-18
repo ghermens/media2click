@@ -13,6 +13,9 @@
 			<trans-unit id="media2click_iframe.description">
 				<source><![CDATA[Ask user for consent before inluding external resources via iframe.]]></source>
 			</trans-unit>
+			<trans-unit id="tt_content.image">
+				<source><![CDATA[Background Image]]></source>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_media2click_iframe_ratio">
 				<source><![CDATA[Size / Ratio]]></source>
 			</trans-unit>

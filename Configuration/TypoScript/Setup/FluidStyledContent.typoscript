@@ -15,12 +15,19 @@ tt_content {
   media2click_iframe {
     templateName = Media2clickIframe
 
-    variables {
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.fieldName = image
+        references.table = tt_content
+        as = backgroundImage
+      }
+    }
 
+    variables {
     }
 
     settings {
-
     }
   }
 }
