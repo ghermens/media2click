@@ -1,27 +1,36 @@
 plugin {
   media2click {
-    #cat=content/enable/a1; type=boolean; label=Enable 2-click for external media
+    #cat=plugin.media2click/enable/a1; type=boolean; label=Enable 2-click for external media
     enable = 0
 
-    #cat=content/enable/a2; type=comment; label=Disable cObject based rendering of placeholder
+    #cat=plugin.media2click/enable/a2; type=comment; label=Disable cObject based rendering of placeholder
     disableCObj = #
 
-    #cat=content/enable/b; type=wrap; label=Additional warp to all placeholder content (only with classic rendering)
+    #cat=plugin.media2click/enable/a3; type=boolean; label=Enable option to permanently activate external media
+    enablePermanently = 0
+
+    #cat=plugin.media2click/enable/b; type=wrap; label=Additional warp to all placeholder content (only with classic rendering)
     allWrap = <div class="media2click-placeholder-inner">|</div>
 
-    #cat=content/enable/c; type=boolean; label=Show the video's title as the placeholder's title
+    #cat=plugin.media2click/enable/c; type=boolean; label=Show the video's title as the placeholder's title
     showTitle = 1
 
-    #cat=content/enable/d; type=boolean; label=Show the video's preview image
+    #cat=plugin.media2click/enable/d; type=boolean; label=Show the video's preview image
     showPreviewImage = 1
 
     showPreviewImage {
-      #cat=content/enable/e; type=int+; label=Max width of the preview image
+      #cat=plugin.media2click/enable/e; type=int+; label=Max width of the preview image
       maxWidth = 0
 
-      #cat=content/enable/f; type=int+; label=Max height of the preview image
+      #cat=plugin.media2click/enable/f; type=int+; label=Max height of the preview image
       maxHeight = 0
     }
+
+    #cat=plugin.media2click/links/a; type=int+; label=UID of Privacy Statement page
+    privacyPid = 0
+
+    #cat=plugin.media2click/links/b; type=int+; label=UID of storage page for activatable hosts
+    storagePid = 0
 
     #cat=plugin.media2click/file/a; type=string; label=Path of Fluid Templates for media2click placeholder
     templateRootPath =

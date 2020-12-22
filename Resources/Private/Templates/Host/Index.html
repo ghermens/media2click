@@ -1,0 +1,11 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<ul class="media2click-hosts">
+    <f:for each="{hosts}" as="host" iteration="iterator">
+        <li>
+            <span class="media2click-toggle-wrap"><span class="media2click-toggle" data-host="{host.host}"></span></span>
+            <span class="media2click-host"><f:translate key="toggleLabel" extensionName="Media2click" arguments="{0: host.title}"/></span>
+            <span class="media2click-privacylink"><f:link.external uri="{host.privacyStatementLink}" target="_blank"><f:translate key="privacyLink" extensionName="Media2click" arguments="{0: host.title}"/></f:link.external></span>
+        </li>
+    </f:for>
+</ul>
+</html>

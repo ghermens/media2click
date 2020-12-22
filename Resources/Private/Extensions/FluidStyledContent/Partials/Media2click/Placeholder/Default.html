@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="media2click-placeholder-inner">
+    <f:if condition="{hostData.placeholder}">
+        <f:then>
+            <span class="media2click-content">{hostData.placeholder -> f:format.html()}</span>
+        </f:then>
+        <f:else>
+            <span class="media2click-content">{f:translate(extensionName: 'Media2click', key: 'defaultPlaceHolderIframe', arguments: {0: '{iframeHost}'})}</span>
+        </f:else>
+    </f:if>
+    <f:if condition="{settings.enablePermanently}">
+        <f:if condition="{hostData}">
+            <a class="media2click-button" data-host="{iframeHost}" href="#"><f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/></a>
+        </f:if>
+    </f:if>
+</div>
+</html>

@@ -1,104 +1,120 @@
 .media2click-ratio {
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    position: relative;
-}
-
-.media2click-ratio-169 {
-    padding-bottom: 56.25%;
-}
-
-.media2click-ratio-32 {
-    padding-bottom: 66.67%;
-}
-
-.media2click-ratio-43 {
-    padding-bottom: 75%;
-}
-
-.media2click-ratio-50vh {
-    padding-bottom: 50vh;
-}
-
-.media2click-ratio-75vh {
-    padding-bottom: 75vh;
-}
-
-.media2click-ratio-90vh {
-    padding-bottom: 90vh;
-}
-
-.media2click-ratio .media2click-placeholder-iframe,
-.media2click-ratio iframe {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  position: relative; }
+  .media2click-ratio .media2click-placeholder-iframe,
+  .media2click-ratio iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-
-}
+    height: 100%; }
+  .media2click-ratio.media2click-ratio-169 {
+    padding-bottom: 56.25%; }
+  .media2click-ratio.media2click-ratio-32 {
+    padding-bottom: 66.67%; }
+  .media2click-ratio.media2click-ratio-43 {
+    padding-bottom: 75%; }
+  .media2click-ratio.media2click-ratio-50vh {
+    padding-bottom: 50vh; }
+  .media2click-ratio.media2click-ratio-75vh {
+    padding-bottom: 75vh; }
+  .media2click-ratio.media2click-ratio-90vh {
+    padding-bottom: 90vh; }
 
 .media2click-placeholder {
-    display: block;
-    background-color: #ddd;
-    box-sizing: border-box;
-    padding: 1em;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color .2s;
-}
+  display: block;
+  background-color: #ddd;
+  box-sizing: border-box;
+  padding: 1em;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color .2s; }
+  .media2click-placeholder:hover {
+    background-color: #eee; }
+  .media2click-placeholder.media2click-haspreview {
+    color: #000;
+    text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff; }
 
 .media2click-placeholder-video {
-    background-image: url(../Images/placeholder.svg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-}
-
-.media2click-placeholder.media2click-haspreview {
-    color: #000;
-    text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff;
-}
-
-.media2click-placeholder:hover {
-    background-color: #eee;
-}
-
-.media2click-title {
-    display: block;
-    font-weight: bold;
-    margin-bottom: .5em;
-}
+  background-image: url(../Images/placeholder.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain; }
 
 .media2click-placeholder-inner {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.media2click-placeholder-video.media2click-haspreview .media2click-placeholder-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; }
+  .media2click-placeholder-video.media2click-haspreview .media2click-placeholder-inner {
     background-image: url(../Images/videobutton.png);
     background-size: 30% auto;
     background-position: center center;
-    background-repeat: no-repeat;
-}
+    background-repeat: no-repeat; }
 
-.media2click-placeholder-iframe.media2click-haspreview .media2click-placeholder-inner {
-    background-color: rgba(255,255,255,.5);
-}
+.media2click-placeholder-iframe.media2click-haspreview {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .media2click-placeholder-iframe.media2click-haspreview .media2click-placeholder-inner {
+    background-color: rgba(255, 255, 255, 0.5); }
+  .media2click-placeholder-iframe.media2click-haspreview:hover .media2click-placeholder-inner {
+    background-color: rgba(255, 255, 255, 0.75); }
 
-.media2click-placeholder-iframe.media2click-haspreview:hover .media2click-placeholder-inner {
-    background-color: rgba(255,255,255,.75);
-}
+.media2click-title {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .5em; }
 
 .media2click-content {
-    display: block;
-}
+  display: block; }
 
 .media2click-wrap iframe {
-    display: none;
-}
+  display: none; }
+
+.media2click-button {
+  display: block;
+  position: absolute;
+  bottom: .25em;
+  right: .25em;
+  background-color: #999;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+  padding: .25em .5em;
+  border-radius: .25em; }
+  .media2click-button:hover {
+    background-color: #666; }
+
+.media2click-hosts {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0; }
+  .media2click-hosts li {
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: .5em;
+    display: grid;
+    grid-template-columns: 2em 1fr;
+    grid-column-gap: .5em; }
+    .media2click-hosts li:last-child {
+      margin-bottom: 0; }
+    .media2click-hosts li .media2click-toggle-wrap {
+      grid-row: 1 / 3; }
+      .media2click-hosts li .media2click-toggle-wrap .media2click-toggle {
+        display: inline-block;
+        width: 2em;
+        height: 1.25em;
+        cursor: pointer;
+        background-image: url("../Images/toggle-off.svg");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 2em auto; }
+        .media2click-hosts li .media2click-toggle-wrap .media2click-toggle.activated {
+          background-image: url("../Images/toggle-on.svg"); }
+
+/*# sourceMappingURL=media2click.css.map */

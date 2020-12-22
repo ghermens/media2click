@@ -18,9 +18,18 @@ tt_content {
     dataProcessing {
       10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
       10 {
-        references.fieldName = image
-        references.table = tt_content
+        references {
+          table = tt_content
+          fieldName = image
+        }
         as = backgroundImage
+      }
+
+      20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      20 {
+        table = tx_media2click_domain_model_host
+        pidInList = {$plugin.media2click.storagePid}
+        as = hostsData
       }
     }
 
@@ -28,6 +37,8 @@ tt_content {
     }
 
     settings {
+      enable2click = {$plugin.media2click.enable}
+      enablePermanently = {$plugin.media2click.enablePermanently}
     }
   }
 }

@@ -20,4 +20,11 @@ defined('TYPO3_MODE') || die();
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
         '@import "EXT:media2click/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement.tsconfig"'
     );
+
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'Amazing.media2click',
+        'List',
+        ['Host' => 'index'],
+        []
+    );
 }) ();

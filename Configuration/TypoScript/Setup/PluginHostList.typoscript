@@ -1,0 +1,5 @@
+plugin.tx_media2click {
+  persistence {
+    storagePid = {$plugin.media2click.storagePid}
+  }
+}
