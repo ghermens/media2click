@@ -16,6 +16,9 @@
 			<trans-unit id="plugin.list">
 				<source><![CDATA[Toggle permanent activation of external content]]></source>
 			</trans-unit>
+			<trans-unit id="tab.placeholder">
+				<source><![CDATA[Placeholder]]></source>
+			</trans-unit>
 			<trans-unit id="tt_content.image">
 				<source><![CDATA[Background Image]]></source>
 			</trans-unit>
@@ -37,8 +40,14 @@
 			<trans-unit id="tx_media2click_domain_model_host">
 				<source><![CDATA[Host to enable permanently]]></source>
 			</trans-unit>
+			<trans-unit id="tx_media2click_domain_model_host.allow_permanent">
+				<source><![CDATA[Allow permanent activation]]></source>
+			</trans-unit>
 			<trans-unit id="tx_media2click_domain_model_host.host">
 				<source><![CDATA[Hostname]]></source>
+			</trans-unit>
+			<trans-unit id="tx_media2click_domain_model_host.logo">
+				<source><![CDATA[Logo]]></source>
 			</trans-unit>
 			<trans-unit id="tx_media2click_domain_model_host.placeholder">
 				<source><![CDATA[Placeholder Text]]></source>

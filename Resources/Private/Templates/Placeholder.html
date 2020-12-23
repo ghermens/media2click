@@ -6,6 +6,9 @@
 <f:section name="Main">
     <m:hostdata hostsData="{hostsData}" host="{settings.videoProvider}"/>
     <div class="media2click-placeholder-inner">
+        <f:if condition="{hostData.logoImage.0}">
+            <f:image image="{hostData.logoImage.0}" alt="{hostData.title}" class="media2click-placeholder-logo"/>
+        </f:if>
         <f:if condition="{settings.showTitle}">
             <span class="media2click-title">{settings.title}</span>
         </f:if>
@@ -18,7 +21,7 @@
             </f:else>
         </f:if>
         <f:if condition="{settings.enablePermanently}">
-            <f:if condition="{hostData}">
+            <f:if condition="{hostData.allow_permanent}">
                 <a class="media2click-button" data-host="{settings.videoProvider}" href="#"><f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/></a>
             </f:if>
         </f:if>

@@ -41,6 +41,16 @@ lib {
                   table = tx_media2click_domain_model_host
                   pidInList = {$plugin.media2click.storagePid}
                   as = hostsData
+
+                  dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    10 {
+                      references {
+                        fieldName = logo
+                      }
+                      as = logoImage
+                    }
+                  }
                 }
               }
 

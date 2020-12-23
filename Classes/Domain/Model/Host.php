@@ -1,14 +1,26 @@
 <?php
 namespace Amazing\Media2click\Domain\Model;
 
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Host extends AbstractEntity
 {
     /**
+     * @var int
+     */
+    protected $allowPermanent = 0;
+
+    /**
      * @var string
      */
     protected $host = '';
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     */
+    protected $logo = null;
 
     /**
      * @var string
@@ -26,6 +38,30 @@ class Host extends AbstractEntity
     protected $title = '';
 
     /**
+     * Host constructor.
+     */
+    public function __construct()
+    {
+        $this->logo = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+
+    /**
+     * @return int
+     */
+    public function getAllowPermanent(): int
+    {
+        return $this->allowPermanent;
+    }
+
+    /**
+     * @param int $allowPermanent
+     */
+    public function setAllowPermanent(int $allowPermanent): void
+    {
+        $this->allowPermanent = $allowPermanent;
+    }
+
+    /**
      * @return string
      */
     public function getHost(): string
@@ -39,6 +75,29 @@ class Host extends AbstractEntity
     public function setHost(string $host): void
     {
         $this->host = $host;
+    }
+
+    /**
+     * @return ObjectStorage
+     */
+    public function getLogo(): ObjectStorage
+    {
+        return $this->logo;
+    }
+
+    /**
+     * @param ObjectStorage $logo
+     */
+    public function setLogo(ObjectStorage $logo): void
+    {
+        $this->logo = $logo;
+    }
+
+    /**
+     * @param FileReference $file
+     */
+    public function addLogo(FileReference $file) {
+        $this->logo->attach($file);
     }
 
     /**

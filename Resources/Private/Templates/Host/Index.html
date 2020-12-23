@@ -2,9 +2,19 @@
 <ul class="media2click-hosts">
     <f:for each="{hosts}" as="host" iteration="iterator">
         <li>
-            <span class="media2click-toggle-wrap"><span class="media2click-toggle" data-host="{host.host}"></span></span>
-            <span class="media2click-host"><f:translate key="toggleLabel" extensionName="Media2click" arguments="{0: host.title}"/></span>
-            <span class="media2click-privacylink"><f:link.external uri="{host.privacyStatementLink}" target="_blank"><f:translate key="privacyLink" extensionName="Media2click" arguments="{0: host.title}"/></f:link.external></span>
+            <div class="media2click-toggle-wrap"><div class="media2click-toggle" data-host="{host.host}"></div></div>
+            <div class="media2click-toggle-label">
+                <f:if condition="{host.logo.0}">
+                    <div class="media2click-toggle-logo">
+                        <f:image image="{host.logo.0}" alt="{host.title}"/>
+                    </div>
+                </f:if>
+                <div class="media2click-toggle-text">
+                    <f:translate key="toggleLabel" extensionName="Media2click" arguments="{0: host.title}"/>
+                    <div class="media2click-privacylink"><f:link.external uri="{host.privacyStatementLink}" target="_blank"><f:translate key="privacyLink" extensionName="Media2click" arguments="{0: host.title}"/></f:link.external></div>
+                </div>
+            </div>
+
         </li>
     </f:for>
 </ul>

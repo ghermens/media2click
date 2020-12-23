@@ -19,6 +19,10 @@
 				<source><![CDATA[Toggle permanent activation of external content]]></source>
 				<target><![CDATA[Dauerhafte Aktivierung externer Inhalte umschalten]]></target>
 			</trans-unit>
+			<trans-unit id="tab.placeholder" approved="yes">
+				<source><![CDATA[Placeholder]]></source>
+				<target><![CDATA[Platzhalter]]></target>
+			</trans-unit>
 			<trans-unit id="tt_content.image" approved="yes">
 				<source><![CDATA[Background Image]]></source>
 				<target><![CDATA[Hintergrundbild]]></target>
@@ -47,9 +51,17 @@
 				<source><![CDATA[Host to enable permanently]]></source>
 				<target><![CDATA[Host für dauerhafte Aktivierung]]></target>
 			</trans-unit>
+			<trans-unit id="tx_media2click_domain_model_host.allow_permanent" approved="yes">
+				<source><![CDATA[Allow permanent activation]]></source>
+				<target><![CDATA[Dauerhafte Aktivierung erlauben]]></target>
+			</trans-unit>
 			<trans-unit id="tx_media2click_domain_model_host.host" approved="yes">
 				<source><![CDATA[Hostname]]></source>
 				<target><![CDATA[Hostname]]></target>
+			</trans-unit>
+			<trans-unit id="tx_media2click_domain_model_host.logo" approved="yes">
+				<source><![CDATA[Logo]]></source>
+				<target><![CDATA[Logo]]></target>
 			</trans-unit>
 			<trans-unit id="tx_media2click_domain_model_host.placeholder" approved="yes">
 				<source><![CDATA[Placeholder Text]]></source>

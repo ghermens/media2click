@@ -9,5 +9,7 @@ CREATE TABLE tx_media2click_domain_model_host
     title VARCHAR(128) DEFAULT '' NOT NULL,
     host VARCHAR(128) DEFAULT '' NOT NULL,
     privacy_statement_link VARCHAR(1024) DEFAULT '' NOT NULL,
-    placeholder tinytext DEFAULT '' NOT NULL
+    placeholder tinytext DEFAULT '' NOT NULL,
+    allow_permanent int(3) DEFAULT '0' NOT NULL,
+    logo int(3) DEFAULT '0' NOT NULL
 );

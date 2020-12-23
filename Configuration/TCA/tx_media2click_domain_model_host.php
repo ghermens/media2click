@@ -23,12 +23,14 @@ return [
         'tstamp' => 'tstamp',
     ],
     'interface' => [
-        'showRecordFieldList' => 'title,host,placeholder,privacy_statement_link,hidden,starttime,endtime',
+        'showRecordFieldList' => 'title,host,placeholder,privacy_statement_link,allow_permanent,logo,hidden,starttime,endtime',
     ],
     'types' => [
         0 => [
             'showitem' => '
-                title,host,privacy_statement_link,placeholder,
+                title,host,privacy_statement_link,allow_permanent,
+                --div--;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tab.placeholder,
+                    placeholder,logo,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
                     --palette--;;hidden,
                     --palette--;;access
@@ -120,6 +122,46 @@ return [
                     ],
                 ],
             ],
+        ],
+        'allow_permanent' => [
+            'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tx_media2click_domain_model_host.allow_permanent',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    [
+                        0 => '',
+                        1 => '',
+                    ],
+                ],
+                'default' => '1',
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+            ],
+        ],
+        'logo' => [
+            'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tx_media2click_domain_model_host.logo',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'logo',
+                [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                    ],
+                    'behaviour' => [
+                        'allowLanguageSynchronization' => true,
+                    ],
+                    'maxitems' => 1,
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '--palette--;;imageMinimalOverlayPalette,--palette--;;filePalette',
+                            ],
+                        ],
+                    ],
+                ],
+                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+            ),
         ],
     ],
 ];

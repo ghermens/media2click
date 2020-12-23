@@ -22,6 +22,6 @@ class HostController extends ActionController
 
     public function indexAction()
     {
-        $this->view->assign('hosts', $this->hostRepository->findAll());
+        $this->view->assign('hosts', $this->hostRepository->findByAllowPermanent('1'));
     }
 }
