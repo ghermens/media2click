@@ -27,6 +27,6 @@ $EM_CONF[$_EXTKEY] = [
                     'Amazing\\Media2click\\' => 'Classes',
                 ],
         ],
-    'state' => 'beta',
-    'version' => '0.3.0',
+    'state' => 'stable',
+    'version' => '1.0.0',
 ];
