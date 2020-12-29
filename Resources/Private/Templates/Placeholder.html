@@ -17,7 +17,12 @@
                 <span class="media2click-content">{hostData.placeholder -> f:format.html()}</span>
             </f:then>
             <f:else>
-                <span class="media2click-content"><f:translate extensionName="Media2click" key="defaultPlaceHolderVideo" default="Click to load external video!"/></span>
+                <span class="media2click-content">
+                    {f:translate(extensionName: 'Media2click', key: 'defaultPlaceHolderVideo', default: 'Click to load external video!')}
+                    <f:if condition="{settings.privacyPid}">
+                        <br><f:link.page pageUid="{settings.privacyPid}">{f:translate(extensionName: 'Media2click', key: 'moreInfo', default: 'More Info')}</f:link.page>
+                    </f:if>
+                </span>
             </f:else>
         </f:if>
         <f:if condition="{settings.enablePermanently}">

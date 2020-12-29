@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
 	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
-		<header>
-			<authorName>Gregor Hermens</authorName>
-			<authorEmail>gregor.hermens@a-mazing.de</authorEmail>
-		</header>
-		<body>
-			<trans-unit id="activatePermanently" approved="yes">
-				<source><![CDATA[Activate permanently]]></source>
-				<target><![CDATA[Dauerhaft aktivieren]]></target>
-			</trans-unit>
-			<trans-unit id="defaultPlaceHolder" approved="yes">
-				<source><![CDATA[Click to load external content!]]></source>
-				<target><![CDATA[Klicken um die externen Inhalte zu laden!]]></target>
-			</trans-unit>
-			<trans-unit id="defaultPlaceHolderIframe" approved="yes">
-				<source><![CDATA[Click to load external content from %s!]]></source>
-				<target><![CDATA[Klicken um externe Inhalte von %s zu laden!]]></target>
-			</trans-unit>
-			<trans-unit id="defaultPlaceHolderVideo" approved="yes">
-				<source><![CDATA[Click to load external video!]]></source>
-				<target><![CDATA[Klicken um das externe Video zu laden!]]></target>
-			</trans-unit>
-			<trans-unit id="privacyLink" approved="yes">
-				<source><![CDATA[Privacy Statement at %s]]></source>
-				<target><![CDATA[Datenschutzerklärung bei %s]]></target>
-			</trans-unit>
-			<trans-unit id="toggleLabel" approved="yes">
-				<source><![CDATA[With this switch you can toggle the permanent activation of external %1$s content. If activated, data will be transmitted to %1$s as soon as the content is loaded.]]></source>
-				<target><![CDATA[Mit diesem Schalter können Sie die Einbindung von externen Inhalten von %1$s dauerhaft aktivieren oder wieder abschalten. Durch die Aktivierung werden bereits beim Laden der eingebundenen Inhalte Daten an %1$s übermittelt.]]></target>
-			</trans-unit>
-		</body>
+        <header>
+            <authorName>Gregor Hermens</authorName>
+            <authorEmail>gregor.hermens@a-mazing.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="activatePermanently" approved="yes">
+                <source><![CDATA[Activate permanently]]></source>
+                <target><![CDATA[Dauerhaft aktivieren]]></target>
+            </trans-unit>
+            <trans-unit id="defaultPlaceHolder" approved="yes">
+                <source><![CDATA[Click to load external content!]]></source>
+                <target><![CDATA[Klicken um die externen Inhalte zu laden!]]></target>
+            </trans-unit>
+            <trans-unit id="defaultPlaceHolderIframe" approved="yes">
+                <source><![CDATA[Click to load external content from %s!]]></source>
+                <target><![CDATA[Klicken um externe Inhalte von %s zu laden!]]></target>
+            </trans-unit>
+            <trans-unit id="defaultPlaceHolderVideo" approved="yes">
+                <source><![CDATA[Click to load external video!]]></source>
+                <target><![CDATA[Klicken um das externe Video zu laden!]]></target>
+            </trans-unit>
+            <trans-unit id="moreInfo" approved="yes">
+                <source><![CDATA[More Info]]></source>
+                <target><![CDATA[Mehr Informationen]]></target>
+            </trans-unit>
+            <trans-unit id="privacyLink" approved="yes">
+                <source><![CDATA[Privacy Statement at %s]]></source>
+                <target><![CDATA[Datenschutzerklärung bei %s]]></target>
+            </trans-unit>
+            <trans-unit id="toggleLabel" approved="yes">
+                <source><![CDATA[With this switch you can toggle the permanent activation of external %1$s content. If activated, data will be transmitted to %1$s as soon as the content is loaded.]]></source>
+                <target><![CDATA[Mit diesem Schalter können Sie die Einbindung von externen Inhalten von %1$s dauerhaft aktivieren oder wieder abschalten. Durch die Aktivierung werden bereits beim Laden der eingebundenen Inhalte Daten an %1$s übermittelt.]]></target>
+            </trans-unit>
+        </body>
 	</file>
 </xliff>

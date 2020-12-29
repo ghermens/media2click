@@ -1,6 +1,11 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <div class="media2click-placeholder-inner media2click-host-example">
-    <span class="media2click-content">Individual placeholder template for www.example.com...</span>
+    <span class="media2click-content">
+        Individual placeholder template for www.example.com...
+        <f:if condition="{settings.privacyPid}">
+            <br><f:link.page pageUid="{settings.privacyPid}">{f:translate(extensionName: 'Media2click', key: 'moreInfo', default: 'More Info')}</f:link.page>
+        </f:if>
+    </span>
     <f:if condition="{settings.enablePermanently}">
         <a class="media2click-button" data-host="{iframeHost}" href="#"><f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/></a>
     </f:if>
