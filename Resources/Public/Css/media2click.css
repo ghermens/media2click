@@ -46,9 +46,10 @@
 .media2click-placeholder-inner {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
   padding: .5em;
-  position: relative; }
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5); }
   .media2click-placeholder.media2click-haspreview:hover .media2click-placeholder-inner {
     background-color: rgba(255, 255, 255, 0.75); }
   .media2click-placeholder-video.media2click-haspreview .media2click-placeholder-inner {
