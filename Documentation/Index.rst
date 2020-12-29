@@ -23,7 +23,9 @@
    `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
    license
 
-Render external YouTube / Vimeo videos with privacy in mind: User has to click on placeholder to load the actual video iframe.
+
+Render external video and iframe content with privacy in mind: User has to click on placeholder to load the actual content.
+You can configure individual placeholder content and the option for permanent activation on a per target host basis.
 
 **TYPO3**
 

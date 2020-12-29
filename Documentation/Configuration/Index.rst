@@ -50,6 +50,23 @@ disableCObj
 :aspect:`Default:`
    #
 
+.. _constants-enablepermanently:
+
+enablePermanently
+"""""""""""""""""
+
+:aspect:`Property:`
+   enablePermanently
+
+:aspect:`Datatype:`
+   boolean
+
+:aspect:`Description:`
+   Generally allow or disallow the permanent activation of accordingly configured target hosts.
+
+:aspect:`Default:`
+   0
+
 .. _constants-allwrap:
 
 allWrap
@@ -109,6 +126,8 @@ showPreviewImage
    :ts:`maxHeight:` integer
       Maximum height
 
+.. _constants-templaterootpath:
+
 templateRootPath
 """"""""""""""""
 
@@ -119,7 +138,9 @@ templateRootPath
    String
 
 :aspect:`Description:`
-   Path to your Fluid templates when using the FLUIDTEMPLATE cObject rendering
+   Path to your Fluid templates when using the FLUIDTEMPLATE cObject rendering for videos
+
+.. _constants-partialrootpath:
 
 partialRootPath
 """"""""""""""""
@@ -131,7 +152,9 @@ partialRootPath
    String
 
 :aspect:`Description:`
-   Path to your Fluid partial when using the FLUIDTEMPLATE cObject rendering
+   Path to your Fluid partial when using the FLUIDTEMPLATE cObject rendering for videos
+
+.. _constants-layoutrootpath:
 
 layoutRootPath
 """"""""""""""""
@@ -143,8 +166,44 @@ layoutRootPath
    String
 
 :aspect:`Description:`
-   Path to your Fluid layouts when using the FLUIDTEMPLATE cObject rendering
+   Path to your Fluid layouts when using the FLUIDTEMPLATE cObject rendering for videos
 
+.. _constants-privacypid:
+
+privacyPid
+""""""""""
+
+:aspect:`Property:`
+   privacyPid
+
+:aspect:`Data type:`
+   integer
+
+:aspect:`Description:`
+   Page id of your privacy statement page
+
+:aspect:`Default:`
+   0
+
+.. _constants-storagepid:
+
+storagePid
+""""""""""
+
+:aspect:`Property:`
+   storagePid
+
+:aspect:`Data type:`
+   integer
+
+:aspect:`Description:`
+   Page id of your storage page with the individual target host configuration
+
+:aspect:`Default:`
+   0
+
+
+.. _typoscriptsetup:
 
 TypoScript Setup
 ~~~~~~~~~~~~~~~~
@@ -246,3 +305,10 @@ placeholderContent
 
          :ts:`.previewImage:` String
             Path to the preview image relative to the web root
+
+         :ts:`.enablePermanently:` boolean
+            Show the button for permanent activation if configured for this host.
+
+         :ts:`.privacyPid:` integer
+            Target page for the "More Info" link. Set via Constant Editor.
+
