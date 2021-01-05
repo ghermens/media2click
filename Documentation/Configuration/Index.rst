@@ -4,14 +4,15 @@
 
 .. _configuration:
 
+=============
 Configuration
 =============
 
 Reference
----------
+=========
 
 Constants
-~~~~~~~~~
+---------
 
 Properties of plugin.media2click. Use the Constant Editor to change these settings:
 
@@ -19,7 +20,7 @@ Properties of plugin.media2click. Use the Constant Editor to change these settin
 .. _constants-enable:
 
 enable
-""""""
+~~~~~~
 
 :aspect:`Property:`
    enable
@@ -36,7 +37,7 @@ enable
 .. _constants-disablecobj:
 
 disableCObj
-"""""""""""
+~~~~~~~~~~~
 
 :aspect:`Property:`
    disableCObj
@@ -53,7 +54,7 @@ disableCObj
 .. _constants-enablepermanently:
 
 enablePermanently
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 
 :aspect:`Property:`
    enablePermanently
@@ -70,7 +71,7 @@ enablePermanently
 .. _constants-allwrap:
 
 allWrap
-"""""""
+~~~~~~~
 
 :aspect:`Property`
    allWrap
@@ -87,7 +88,7 @@ allWrap
 .. _constants-showtitle:
 
 showTitle
-"""""""""
+~~~~~~~~~
 
 :aspect:`Property:`
    showTitle
@@ -104,7 +105,7 @@ showTitle
 .. _constants-showpreviewimage:
 
 showPreviewImage
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 
 :aspect:`Property:`
    showPreviewImage
@@ -129,7 +130,7 @@ showPreviewImage
 .. _constants-templaterootpath:
 
 templateRootPath
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 
 :aspect:`Property:`
    templateRootPath
@@ -143,7 +144,7 @@ templateRootPath
 .. _constants-partialrootpath:
 
 partialRootPath
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 
 :aspect:`Property:`
    partialRootPath
@@ -157,7 +158,7 @@ partialRootPath
 .. _constants-layoutrootpath:
 
 layoutRootPath
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 
 :aspect:`Property:`
    layoutRootPath
@@ -171,7 +172,7 @@ layoutRootPath
 .. _constants-privacypid:
 
 privacyPid
-""""""""""
+~~~~~~~~~~
 
 :aspect:`Property:`
    privacyPid
@@ -188,7 +189,7 @@ privacyPid
 .. _constants-storagepid:
 
 storagePid
-""""""""""
+~~~~~~~~~~
 
 :aspect:`Property:`
    storagePid
@@ -206,15 +207,18 @@ storagePid
 .. _typoscriptsetup:
 
 TypoScript Setup
-~~~~~~~~~~~~~~~~
+----------------
 
-All configuration is forwarded to the renderer classes via the settings of the corresponding FLUIDTEMPLATE and the additionalConfig attribute of the Fluid media viewhelper. Therefore all settings are not interpreted as TypoScript, but just used as is. It's not possible to use additional TypoScript to dynamically change these attributes.
+All configuration is forwarded to the renderer classes via the settings of the corresponding FLUIDTEMPLATE and the
+additionalConfig attribute of the Fluid media viewhelper. Therefore all settings are not interpreted as TypoScript, but
+just used as is. It's not possible to use additional TypoScript to dynamically change these attributes.
 
 For FluidStyledContent content elements, everything has to be set up in lib.contentElement.settings.media.additionalConfig.
 
 For the News extension, use plugin.tx_news.settings.detail.media.video.additionalConfig.
 
-As stated above, there is no interpreting of TypoScript inside a FLUIDTEMPLATE's settings. So you can not use the reference operator '=<' to reuse the settings of lib.contentElement in another FLUIDTEMPLATE, but have to use the copy operator '<'.
+As stated above, there is no interpreting of TypoScript inside a FLUIDTEMPLATE's settings. So you can not use the
+reference operator '=<' to reuse the settings of lib.contentElement in another FLUIDTEMPLATE, but have to use the copy operator '<'.
 
 These parameters are available:
 
@@ -222,7 +226,7 @@ These parameters are available:
 .. _enable2click:
 
 enable2click
-""""""""""""
+~~~~~~~~~~~~
 
 :aspect:`Property:`
    enable2click
@@ -240,7 +244,7 @@ enable2click
 .. _placeholdercontent:
 
 placeholderContent
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 
 :aspect:`Property:`
    placeholderContent
@@ -281,7 +285,8 @@ placeholderContent
       Maximum height of preview image. Set via Constant Editor.
 
    :ts:`.cObject:` cObject
-      If present, this cObject is used for rendering the placeholder. If this cObject is a FLUIDTEMPLATE, some useful values are passed to the fluid template as settings:
+      If present, this cObject is used for rendering the placeholder. If this cObject is a FLUIDTEMPLATE, some useful
+      values are passed to the fluid template as settings:
 
       :ts:`.settings:`
          Settings for the FLUIDTEMPLATE cObject
@@ -289,7 +294,8 @@ placeholderContent
          Default properties:
 
          :ts:`.videoProvider:` String
-            Provider of the video, i.e. "YouTube" or "Vimeo". Usefull to adapt the placeholder content, i.e. link to the proper privacy statement.
+            Provider of the video, i.e. "YouTube" or "Vimeo". Usefull to adapt the placeholder content, i.e. link to the
+            proper privacy statement.
 
          :ts:`.showTitle:` boolean
             see above

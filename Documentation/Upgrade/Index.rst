@@ -3,11 +3,12 @@
 
 .. _upgrade:
 
+=======
 Upgrade
 =======
 
 Version 0.3
------------
+===========
 
 Version 0.3 introduces the cObject rendering method for the placeholder.
 This method is enabled by default and uses a FLUIDTEMPLATE cObject for

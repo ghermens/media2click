@@ -3,16 +3,17 @@
 
 .. _administrator:
 
+==============
 Administration
 ==============
 
 .. _installation:
 
 Installation
-------------
+============
 
 Basic Setup
-~~~~~~~~~~~
+-----------
 
 #.  Install media2click via the extension manager.
 #.  Include the extension's static template into your TS template.
@@ -20,7 +21,7 @@ Basic Setup
 #.  Activate the extension's functionality via the Constant Editor: :ref:`constants-enable`
 
 If individual placeholder content or permanent activation is required:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------
 
 5.  Set up a page of type sysfolder to hold the host data.
 #.  Set storagePid to this sysfolder's uid via the Constant Edtior: :ref:`constants-storagepid`
@@ -34,7 +35,7 @@ If individual placeholder content or permanent activation is required:
 .. _hostconfiguration:
 
 Individual Host Configuration
------------------------------
+=============================
 
 .. figure:: ../Images/HostConfiguration.png
    :alt: Host Configuration Form
@@ -47,7 +48,7 @@ For videos, you have to use "YouTube" and "Vimeo" as the hostname.
 .. _hosttemplate:
 
 Individual Host Templates
--------------------------
+=========================
 
 If individual text and logo is not enough, you can configure individual fluid templates for your hosts' placeholders:
 Just add a file named after the host in Fluid Styled Contents' partial root paths. For example for the host www.example.com

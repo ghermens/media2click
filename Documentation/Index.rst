@@ -7,16 +7,16 @@
 ===========================
 
 :Version:
-  |release|
+   |release|
 
 :Language:
-  en
+   en
 
 :Author:
-  Gregor Hermens
+   Gregor Hermens
 
 :Email:
-  gregor.hermens@a-mazing.de
+   gregor.hermens@a-mazing.de
 
 :License:
    This extension documentation is published under the
@@ -34,33 +34,28 @@ a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
 
 **Community Documentation:**
 
-   This documentation is community documentation for the TYPO3 extension media2click
+This documentation is community documentation for the TYPO3 extension media2click
 
-   It is maintained as part of this third party extension.
+It is maintained as part of this third party extension.
 
-   If you find an error or something is missing, please:
-   `Report a Problem <https://github.com/ghermens/media2click/issues/new>`__
+If you find an error or something is missing, please:
+`Report a Problem <https://github.com/ghermens/media2click/issues/new>`__
 
 **Extension Manual**
 
-   This documentation is for the TYPO3 extension media2click.
-
-
+This documentation is for the TYPO3 extension media2click.
 
 **For Contributors**
 
-   You are welcome to help improve this guide. Just click on "Edit me on GitHub"
-   on the top right to submit your change request.
-
-
-**Sitemap:**
+You are welcome to help improve this guide. Just click on "Edit me on GitHub"
+on the top right to submit your change request.
 
 .. toctree::
    :maxdepth: 3
-   :hidden:
 
    Introduction/Index
    User/Index
    Administrator/Index
    Configuration/Index
    Upgrade/Index
+   Sitemap
