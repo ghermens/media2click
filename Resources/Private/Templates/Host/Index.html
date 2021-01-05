@@ -2,7 +2,7 @@
 <ul class="media2click-hosts">
     <f:for each="{hosts}" as="host" iteration="iterator">
         <li>
-            <div class="media2click-toggle-wrap"><div class="media2click-toggle" data-host="{host.host}"></div></div>
+            <div class="media2click-toggle-wrap"><div class="media2click-toggle" data-host="{host.host}" data-cookielifetime="{settings.cookieLifetime}"></div></div>
             <div class="media2click-toggle-label">
                 <f:if condition="{host.logo.0}">
                     <div class="media2click-toggle-logo">

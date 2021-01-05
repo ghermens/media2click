@@ -50,6 +50,7 @@ tt_content {
     settings {
       enable2click = {$plugin.media2click.enable}
       enablePermanently = {$plugin.media2click.enablePermanently}
+      cookieLifetime = {$plugin.media2click.cookieLifetime}
       privacyPid = {$plugin.media2click.privacyPid}
     }
   }

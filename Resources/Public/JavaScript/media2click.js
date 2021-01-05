@@ -11,10 +11,10 @@ document.onreadystatechange = function () {
     placeholderAnchorList.forEach(function (anchor) {
       anchor.addEventListener('click', function (event) {
         let host = this.getAttribute('data-host');
-        console.log(host);
+        let lifetime = this.getAttribute('data-cookielifetime');
         if (host !== null && host !== '') {
           m2cCookieHosts.push(host);
-          m2cSetCookieHosts(m2cCookieHosts);
+          m2cSetCookieHosts(m2cCookieHosts, lifetime);
         } else {
           event.stopPropagation();
         }
@@ -41,6 +41,7 @@ document.onreadystatechange = function () {
     let toggleList = document.querySelectorAll('.media2click-toggle');
     toggleList.forEach( function (toggle) {
       let host = toggle.getAttribute('data-host');
+      let lifetime = toggle.getAttribute('data-cookielifetime');
       if(m2cCookieHosts.find(element => element === host)) {
         toggle.classList.add('activated');
       }
@@ -48,12 +49,12 @@ document.onreadystatechange = function () {
         toggle.classList.toggle('activated');
         if (toggle.className === 'media2click-toggle activated') {
           m2cCookieHosts.push(host);
-          m2cSetCookieHosts(m2cCookieHosts);
+          m2cSetCookieHosts(m2cCookieHosts, lifetime);
         } else {
           let index = m2cCookieHosts.indexOf(host);
           if (index > -1) {
             m2cCookieHosts.splice(index,1);
-            m2cSetCookieHosts(m2cCookieHosts);
+            m2cSetCookieHosts(m2cCookieHosts, lifetime);
           }
         }
       });
@@ -64,12 +65,20 @@ document.onreadystatechange = function () {
 /**
  * Set the media2click accepted hosts cookie
  * @param hosts
+ * @param lifetime days
  */
-function m2cSetCookieHosts(hosts) {
-  let d = new Date();
-  d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = "m2c_accepted_hosts=" + hosts.join() + ";" + expires + ";path=/";
+function m2cSetCookieHosts(hosts, lifetime = -1) {
+  lifetime = Number.parseInt(lifetime, 10);
+  if (Number.isNaN(lifetime) || lifetime < 0) {
+    lifetime = 7;
+  }
+  let expires = '';
+  if (lifetime > 0) {
+    let d = new Date();
+    d.setTime(d.getTime() + (lifetime * 24 * 60 * 60 * 1000));
+    expires = "expires=" + d.toUTCString() + ";";
+  }
+  document.cookie = "m2c_accepted_hosts=" + hosts.join() + ";" + expires + "path=/;SameSite=Strict";
 }
 
 /**

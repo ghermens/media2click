@@ -127,6 +127,23 @@ showPreviewImage
    :ts:`maxHeight:` integer
       Maximum height
 
+.. _constants-cookielifetime:
+
+cookieLifetime
+~~~~~~~~~~~~~~
+
+:aspect:`Property:`
+   cookieLifetime
+
+:aspect:`Data type:`
+   int+
+
+:aspect:`Description:`
+   Cookie lifetime in days. Set to 0 to limit the cookie to the session.
+
+:aspect:`Default:`
+   7
+
 .. _constants-templaterootpath:
 
 templateRootPath

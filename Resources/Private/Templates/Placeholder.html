@@ -27,7 +27,7 @@
         </f:if>
         <f:if condition="{settings.enablePermanently}">
             <f:if condition="{hostData.allow_permanent}">
-                <a class="media2click-button" data-host="{settings.videoProvider}" href="#"><f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/></a>
+                <a class="media2click-button" data-host="{settings.videoProvider}" data-cookielifetime="{settings.cookieLifetime}" href="#"><f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/></a>
             </f:if>
         </f:if>
     </div>

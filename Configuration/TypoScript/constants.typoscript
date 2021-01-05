@@ -26,6 +26,9 @@ plugin {
       maxHeight = 0
     }
 
+    #cat=plugin.media2click/enable/g; type=int+; label=Lifetime of the cookie
+    cookieLifetime = 7
+
     #cat=plugin.media2click/links/a; type=int+; label=UID of Privacy Statement page
     privacyPid = 0
 
