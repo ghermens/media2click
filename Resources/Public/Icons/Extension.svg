@@ -6,11 +6,11 @@
         y="10"
         stroke="#888" stroke-width="10"
         fill="#fff"/>
-    <rect x="25" y="40" width="110" height="62" rx="10" ry="10" fill="#d00"/>
-    <polygon points="70 53, 70 89, 101 71" fill="white" />
+    <rect x="25" y="25" width="110" height="62" rx="10" ry="10" fill="#d00"/>
+    <polygon points="70 38, 70 74, 101 56" fill="white" />
     <path
-        stroke="#0d0" stroke-width="10"
+        stroke="#0d0" stroke-width="20"
         stroke-linecap="round" stroke-linejoin="round"
         fill="none"
-        d="M70 110 l 20 20 l 40 -40"/>
+        d="M70 105 l 20 20 l 40 -40"/>
 </svg>

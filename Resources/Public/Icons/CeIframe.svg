@@ -7,8 +7,8 @@
        stroke="#888" stroke-width="10"
        fill="#fff"/>
     <path
-       stroke="#0d0" stroke-width="10"
+       stroke="#0d0" stroke-width="20"
        stroke-linecap="round" stroke-linejoin="round"
        fill="none"
-       d="M70 110 l 20 20 l 40 -40"/>
+       d="M70 105 l 20 20 l 40 -40"/>
 </svg>
