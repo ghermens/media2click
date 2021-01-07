@@ -7,6 +7,14 @@
 			<authorEmail>gregor.hermens@a-mazing.de</authorEmail>
 		</header>
 		<body>
+			<trans-unit id="flexform.plugin.includeHosts" approved="yes">
+				<source><![CDATA[Hosts to show]]></source>
+				<target><![CDATA[Nur diese Hosts anzeigen]]></target>
+			</trans-unit>
+			<trans-unit id="flexform.plugin.title" approved="yes">
+				<source><![CDATA[Options]]></source>
+				<target><![CDATA[Einstellungen]]></target>
+			</trans-unit>
 			<trans-unit id="media2click_iframe" approved="yes">
 				<source><![CDATA[iFrame with consent]]></source>
 				<target><![CDATA[iFrame mit Zustimmung]]></target>

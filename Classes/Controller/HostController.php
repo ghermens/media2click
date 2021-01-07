@@ -4,6 +4,7 @@ namespace Amazing\Media2click\Controller;
 
 use Amazing\Media2click\Domain\Repository\HostRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class HostController extends ActionController
 {
@@ -22,6 +23,6 @@ class HostController extends ActionController
 
     public function indexAction()
     {
-        $this->view->assign('hosts', $this->hostRepository->findByAllowPermanent('1'));
+        $this->view->assign('hosts', $this->hostRepository->findHostsForToggle($this->settings['includeHosts']));
     }
 }

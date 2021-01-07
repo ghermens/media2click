@@ -23,14 +23,14 @@ Basic Setup
 If individual placeholder content or permanent activation is required:
 ----------------------------------------------------------------------
 
-5.  Set up a page of type sysfolder to hold the host data.
+5.  Globally allow permanent activation via the Constant Editor: :ref:`constants-enablepermanently`
+#.  Set up a page of type sysfolder to hold the host data.
 #.  Set storagePid to this sysfolder's uid via the Constant Edtior: :ref:`constants-storagepid`
-#.  Insert a content element of type "Insert Plugin" -> "Toggle permanent activation of external content" on your privacy
-    statement page.
-#.  Set privacyPid to the uid of your privacy statement page via the Constant Edtior: :ref:`constants-privacypid`
-#.  Globally allow permanent activation via the Constant Editor: :ref:`constants-enablepermanently`
 #.  Using the list module, add a host configuration to your storage page for every target host that needs individual
     placeholder content or permanent activation: :ref:`hostconfiguration`
+#.  Insert content elements of type "Insert Plugin" -> "Toggle permanent activation of external content" on your privacy
+    statement page. You can filter the list of shown host in the plugin options.
+#.  Set privacyPid to the uid of your privacy statement page via the Constant Edtior: :ref:`constants-privacypid`
 
 .. _hostconfiguration:
 
