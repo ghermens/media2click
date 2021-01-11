@@ -107,3 +107,9 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['media2click_
     'media2click_list',
     'FILE:EXT:media2click/Configuration/FlexForms/PluginList.xml'
 );
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+    'media2click',
+    'List',
+    'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:plugin.list'
+);
