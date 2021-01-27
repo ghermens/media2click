@@ -26,12 +26,14 @@
 .media2click-placeholder {
   display: block;
   background-color: #ddd;
+  border: 0;
   box-sizing: border-box;
   padding: 1em;
+  font-size: 1em;
   text-align: center;
   cursor: pointer;
   transition: background-color .2s; }
-  .media2click-placeholder:hover {
+  .media2click-placeholder:hover, .media2click-placeholder:focus {
     background-color: #eee; }
   .media2click-placeholder.media2click-haspreview {
     color: #000;
@@ -50,7 +52,7 @@
   padding: .5em;
   position: relative;
   background-color: rgba(255, 255, 255, 0.5); }
-  .media2click-placeholder.media2click-haspreview:hover .media2click-placeholder-inner {
+  .media2click-placeholder.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder.media2click-haspreview:focus .media2click-placeholder-inner {
     background-color: rgba(255, 255, 255, 0.75); }
   .media2click-placeholder-video.media2click-haspreview .media2click-placeholder-inner {
     background-image: url(../Images/videobutton.png);
@@ -92,7 +94,7 @@
   text-shadow: none;
   padding: .25em .5em;
   border-radius: .25em; }
-  .media2click-button:hover {
+  .media2click-button:hover, .media2click-button:focus {
     background-color: #666; }
 
 .media2click-hosts {
