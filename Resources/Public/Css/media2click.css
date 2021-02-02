@@ -110,17 +110,6 @@
     grid-column-gap: .5em; }
     .media2click-hosts li:last-child {
       margin-bottom: 0; }
-    .media2click-hosts li .media2click-toggle-wrap .media2click-toggle {
-      display: inline-block;
-      width: 2em;
-      height: 1.25em;
-      cursor: pointer;
-      background-image: url("../Images/toggle-off.svg");
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-size: 2em auto; }
-      .media2click-hosts li .media2click-toggle-wrap .media2click-toggle.activated {
-        background-image: url("../Images/toggle-on.svg"); }
     .media2click-hosts li .media2click-toggle-label {
       display: grid;
       grid-template-columns: 10em 1fr;

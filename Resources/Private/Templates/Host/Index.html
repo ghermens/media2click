@@ -2,8 +2,8 @@
 <ul class="media2click-hosts">
     <f:for each="{hosts}" as="host" iteration="iterator">
         <li>
-            <div class="media2click-toggle-wrap"><div class="media2click-toggle" data-host="{host.host}" data-cookielifetime="{settings.cookieLifetime}"></div></div>
-            <div class="media2click-toggle-label">
+            <div class="media2click-toggle-wrap"><input type="checkbox" id="m2c-host-{host.uid}" class="media2click-toggle" data-cookielifetime="{settings.cookieLifetime}" data-host="{host.host}"></div>
+            <label for="m2c-host-{host.uid}" class="media2click-toggle-label">
                 <f:if condition="{host.logo.0}">
                     <div class="media2click-toggle-logo">
                         <f:image image="{host.logo.0}" alt="{host.title}"/>
@@ -13,7 +13,7 @@
                     <f:translate key="toggleLabel" extensionName="Media2click" arguments="{0: host.title}"/>
                     <div class="media2click-privacylink"><f:link.external uri="{host.privacyStatementLink}" target="_blank"><f:translate key="privacyLink" extensionName="Media2click" arguments="{0: host.title}"/></f:link.external></div>
                 </div>
-            </div>
+            </label>
 
         </li>
     </f:for>

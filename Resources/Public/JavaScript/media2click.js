@@ -19,6 +19,12 @@ document.onreadystatechange = function () {
           event.stopPropagation();
         }
       }, false);
+      anchor.addEventListener('keydown', function(event) {
+        if (event.keyCode === 32) {
+          event.stopPropagation();
+          anchor.click();
+        }
+      }, false);
     });
 
     let placeholderList = document.querySelectorAll('.media2click-placeholder');
@@ -44,6 +50,7 @@ document.onreadystatechange = function () {
       let lifetime = toggle.getAttribute('data-cookielifetime');
       if(m2cCookieHosts.find(element => element === host)) {
         toggle.classList.add('activated');
+        toggle.setAttribute('checked', 'checked');
       }
       toggle.addEventListener('click', function (event) {
         toggle.classList.toggle('activated');
@@ -54,7 +61,11 @@ document.onreadystatechange = function () {
           let index = m2cCookieHosts.indexOf(host);
           if (index > -1) {
             m2cCookieHosts.splice(index,1);
-            m2cSetCookieHosts(m2cCookieHosts, lifetime);
+            if (m2cCookieHosts.length > 0) {
+              m2cSetCookieHosts(m2cCookieHosts, lifetime);
+            } else {
+              m2cDeleteCookie();
+            }
           }
         }
       });
