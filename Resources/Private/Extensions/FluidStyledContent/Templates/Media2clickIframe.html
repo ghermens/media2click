@@ -4,9 +4,9 @@
 <f:layout name="Default"/>
 
 <f:section name="Main">
+    <f:variable name="iframeHost"><m:uri.part uri="{data.tx_media2click_iframe_src}"/></f:variable>
     <f:if condition="{settings.enable2click}">
         <f:then>
-            <f:variable name="iframeHost"><m:uri.part uri="{data.tx_media2click_iframe_src}"/></f:variable>
             <m:hostdata hostsData="{hostsData}" host="{iframeHost}"/>
             <f:variable name="bgStyle"><f:if condition="{backgroundImage.0}">background-image:url(<f:uri.image image="{backgroundImage.0}"/>)</f:if></f:variable>
             <div class="media2click-wrap media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}">
@@ -18,12 +18,12 @@
                         </div>
                     </f:render>
                 </button>
-                <iframe class="media2click-iframe" src="" data-src="{data.tx_media2click_iframe_src}"></iframe>
+                <iframe class="media2click-iframe" src="" data-src="{data.tx_media2click_iframe_src}" title="{f:if(condition: '{hostData.title}', then: '{f:translate(key: \'externalContent\', extensionName: \'Media2click\')}: {hostData.title}', else: '{f:translate(key: \'externalContentFrom\', extensionName: \'Media2click\')} {iframeHost}')}"></iframe>
             </div>
         </f:then>
         <f:else>
             <div class="media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}">
-                <iframe src="{data.tx_media2click_iframe_src}"></iframe>
+                <iframe src="{data.tx_media2click_iframe_src}" title="{f:translate(key: 'externalContentFrom', extensionName: 'Media2click')} {iframeHost}"></iframe>
             </div>
         </f:else>
     </f:if>

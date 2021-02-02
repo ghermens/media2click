@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
 	<file source-language="en" datatype="plaintext" original="messages">
-        <header>
-            <authorName>Gregor Hermens</authorName>
-            <authorEmail>gregor.hermens@a-mazing.de</authorEmail>
-        </header>
-        <body>
-            <trans-unit id="activatePermanently">
-                <source><![CDATA[Activate permanently]]></source>
-            </trans-unit>
-            <trans-unit id="defaultPlaceHolder">
-                <source><![CDATA[Click to load external content!]]></source>
-            </trans-unit>
-            <trans-unit id="defaultPlaceHolderIframe">
-                <source><![CDATA[Click to load external content from %s!]]></source>
-            </trans-unit>
-            <trans-unit id="defaultPlaceHolderVideo">
-                <source><![CDATA[Click to load external video!]]></source>
-            </trans-unit>
-            <trans-unit id="moreInfo">
-                <source><![CDATA[More Info]]></source>
-            </trans-unit>
-            <trans-unit id="privacyLink">
-                <source><![CDATA[Privacy Statement at %s]]></source>
-            </trans-unit>
-            <trans-unit id="toggleLabel">
-                <source><![CDATA[With this switch you can toggle the permanent activation of external %1$s content. If activated, data will be transmitted to %1$s as soon as the content is loaded.]]></source>
-            </trans-unit>
-        </body>
+		<header>
+			<authorName>Gregor Hermens</authorName>
+			<authorEmail>gregor.hermens@a-mazing.de</authorEmail>
+		</header>
+		<body>
+			<trans-unit id="activatePermanently">
+				<source><![CDATA[Activate permanently]]></source>
+			</trans-unit>
+			<trans-unit id="defaultPlaceHolder">
+				<source><![CDATA[Click to load external content!]]></source>
+			</trans-unit>
+			<trans-unit id="defaultPlaceHolderIframe">
+				<source><![CDATA[Click to load external content from %s!]]></source>
+			</trans-unit>
+			<trans-unit id="defaultPlaceHolderVideo">
+				<source><![CDATA[Click to load external video!]]></source>
+			</trans-unit>
+			<trans-unit id="externalContent">
+				<source><![CDATA[External Content]]></source>
+			</trans-unit>
+			<trans-unit id="externalContentFrom">
+				<source><![CDATA[External content from]]></source>
+			</trans-unit>
+			<trans-unit id="moreInfo">
+				<source><![CDATA[More Info]]></source>
+			</trans-unit>
+			<trans-unit id="privacyLink">
+				<source><![CDATA[Privacy Statement at %s]]></source>
+			</trans-unit>
+			<trans-unit id="toggleLabel">
+				<source><![CDATA[With this switch you can toggle the permanent activation of external %1$s content. If activated, data will be transmitted to %1$s as soon as the content is loaded.]]></source>
+			</trans-unit>
+		</body>
 	</file>
 </xliff>
