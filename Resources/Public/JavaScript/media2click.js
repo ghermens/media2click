@@ -93,13 +93,13 @@ function m2cSetCookieHosts(hosts, lifetime = -1) {
 }
 
 /**
- *
+ * Get the media2click accepted hosts from cookie
  * @returns {string[]|*[]}
  */
 function m2cGetCookieHosts() {
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
+  for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) === ' ') {
       c = c.substring(1);
