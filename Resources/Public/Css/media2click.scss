@@ -11,7 +11,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-            }
+        border: 0;
+    }
 
 
     &.media2click-ratio-169 {
@@ -47,12 +48,15 @@
     padding: 1em;
     font-size: 1em;
     text-align: center;
-    cursor: pointer;
     transition: background-color .2s;
 
     &:hover,
     &:focus {
         background-color: #eee;
+
+        .media2click-button {
+            background-color: #666;
+        }
     }
 
     &.media2click-haspreview {
@@ -113,26 +117,30 @@
     display: block;
 }
 
-.media2click-wrap iframe {
+div.media2click-iframe {
     display: none;
 }
 
-.media2click-button {
+.media2click-controls {
     display: block;
     position: absolute;
     bottom: .25em;
     right: .25em;
 
-    background-color: #999;
-    color: #fff;
-    text-decoration: none;
-    text-shadow: none;
-    padding: .25em .5em;
-    border-radius: .25em;
+    .media2click-button {
+        display: inline-block;
+        background-color: #999;
+        color: #fff;
+        text-decoration: none;
+        text-shadow: none;
+        padding: .25em .5em;
+        border-radius: .25em;
+        margin: .25em;
 
-    &:hover,
-    &:focus {
-        background-color: #666;
+        &:hover,
+        &:focus {
+            background-color: #333;
+        }
     }
 }
 
@@ -167,6 +175,8 @@
             column-gap: 1em;
 
             .media2click-toggle-logo {
+                display: block;
+
                 img {
                     display: block;
                     width: 100%;
@@ -175,6 +185,8 @@
             }
 
             .media2click-toggle-text {
+                display: block;
+
                 &:first-child {
                     grid-column: 1/3;
                 }
@@ -182,6 +194,7 @@
         }
 
         .media2click-privacylink {
+            display: block;
         }
     }
 }

@@ -25,11 +25,14 @@
                 </span>
             </f:else>
         </f:if>
-        <f:if condition="{settings.enablePermanently}">
-            <f:if condition="{hostData.allow_permanent}">
-                <a class="media2click-button" data-host="{settings.videoProvider}" data-cookielifetime="{settings.cookieLifetime}" href="#"><f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/></a>
+        <div class="media2click-controls">
+            <a class="media2click-button media2click-once" data-host="{settings.videoProvider}" data-cookielifetime="{settings.cookieLifetime}" href="#"><f:translate key="activateOnce" extensionName="Media2click" default="Activate once"/></a>
+            <f:if condition="{settings.enablePermanently}">
+                <f:if condition="{hostData.allow_permanent}">
+                    <a class="media2click-button media2click-permanent" data-host="{settings.videoProvider}" data-cookielifetime="{settings.cookieLifetime}" href="#"><f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/></a>
+                </f:if>
             </f:if>
-        </f:if>
+        </div>
     </div>
 </f:section>
 

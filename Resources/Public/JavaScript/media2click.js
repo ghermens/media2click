@@ -1,51 +1,41 @@
 document.onreadystatechange = function () {
   if (document.readyState === 'complete') {
     let m2cCookieHosts = m2cGetCookieHosts();
-    const clickEvent = new MouseEvent('click', {
-      view: window,
-      bubbles: true,
-      cancelable: true
-    });
 
-    let placeholderAnchorList = document.querySelectorAll('.media2click-placeholder a');
-    placeholderAnchorList.forEach(function (anchor) {
-      anchor.addEventListener('click', function (event) {
-        let host = this.getAttribute('data-host');
-        let lifetime = this.getAttribute('data-cookielifetime');
-        if (host !== null && host !== '') {
-          m2cCookieHosts.push(host);
-          m2cSetCookieHosts(m2cCookieHosts, lifetime);
-        } else {
-          event.stopPropagation();
-        }
-      }, false);
-      anchor.addEventListener('keydown', function(event) {
-        if (event.keyCode === 32) {
-          event.stopPropagation();
-          anchor.click();
-        }
-      }, false);
-    });
-
-    let placeholderList = document.querySelectorAll('.media2click-placeholder');
-    placeholderList.forEach(function (placeholder) {
-      let mediaFrame = placeholder.nextElementSibling;
-      if (mediaFrame.nodeName === 'IFRAME') {
-        placeholder.addEventListener('click', function (event) {
-          mediaFrame.setAttribute('src', mediaFrame.getAttribute('data-src'));
-          mediaFrame.setAttribute('style', 'display: block;');
-          placeholder.setAttribute('style', 'display: none;');
+    let m2cElementList = document.querySelectorAll('.media2click-wrap');
+    m2cElementList.forEach(function(m2cElement) {
+      let placeholder = m2cElement.querySelector('.media2click-placeholder');
+      let mediaFrame = m2cElement.querySelector('.media2click-iframe');
+      let activateOnce = m2cElement.querySelector('.media2click-once');
+      let activatePermanent = m2cElement.querySelector('.media2click-permanent');
+      /* Activate once and load iframe */
+      if (activateOnce !== null) {
+        activateOnce.addEventListener('click', function (event) {
           event.preventDefault();
+          m2cActivateFrame(mediaFrame, placeholder);
         }, false);
-        /* Host already permanently enabled? */
-        if(m2cCookieHosts.find(element => element === placeholder.getAttribute('data-host'))) {
-          placeholder.dispatchEvent(clickEvent);
-        }
       }
-    });
+      /* Activate permanently and load iframe */
+      if (activatePermanent !== null) {
+        activatePermanent.addEventListener('click', function (event) {
+          event.preventDefault();
+          let host = this.getAttribute('data-host');
+          let lifetime = this.getAttribute('data-cookielifetime');
+          if (host !== null && host !== '') {
+            m2cCookieHosts.push(host);
+            m2cSetCookieHosts(m2cCookieHosts, lifetime);
+          }
+          m2cActivateFrame(mediaFrame, placeholder);
+        }, false);
+      }
+      /* If already activated permanently, load iframe */
+      if(m2cCookieHosts.find(element => element === placeholder.getAttribute('data-host'))) {
+        m2cActivateFrame(mediaFrame, placeholder);
+      }
+    })
 
-    let toggleList = document.querySelectorAll('.media2click-toggle');
-    toggleList.forEach( function (toggle) {
+    let m2cToggleList = document.querySelectorAll('.media2click-toggle');
+    m2cToggleList.forEach( function (toggle) {
       let host = toggle.getAttribute('data-host');
       let lifetime = toggle.getAttribute('data-cookielifetime');
       if(m2cCookieHosts.find(element => element === host)) {
@@ -72,6 +62,21 @@ document.onreadystatechange = function () {
     });
   }
 };
+
+/**
+ * Replace media2click dummy element with actual iframe
+ * @param sourceNode
+ * @param placeholderNode
+ */
+function m2cActivateFrame(sourceNode, placeholderNode) {
+  let newNode = document.createElement('iframe');
+  Array.from(sourceNode.attributes).forEach(attr => newNode.setAttribute(attr.localName, attr.value));
+  newNode.setAttribute('src', sourceNode.getAttribute('data-src'));
+
+  sourceNode.parentElement.insertBefore(newNode, sourceNode);
+  sourceNode.parentElement.removeChild(sourceNode);
+  placeholderNode.parentElement.removeChild(placeholderNode);
+}
 
 /**
  * Set the media2click accepted hosts cookie

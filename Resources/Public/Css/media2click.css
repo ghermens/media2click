@@ -9,7 +9,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    border: 0; }
   .media2click-ratio.media2click-ratio-169 {
     padding-bottom: 56.25%; }
   .media2click-ratio.media2click-ratio-32 {
@@ -31,10 +32,11 @@
   padding: 1em;
   font-size: 1em;
   text-align: center;
-  cursor: pointer;
   transition: background-color .2s; }
   .media2click-placeholder:hover, .media2click-placeholder:focus {
     background-color: #eee; }
+    .media2click-placeholder:hover .media2click-button, .media2click-placeholder:focus .media2click-button {
+      background-color: #666; }
   .media2click-placeholder.media2click-haspreview {
     color: #000;
     text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff; }
@@ -80,22 +82,25 @@
 .media2click-content {
   display: block; }
 
-.media2click-wrap iframe {
+div.media2click-iframe {
   display: none; }
 
-.media2click-button {
+.media2click-controls {
   display: block;
   position: absolute;
   bottom: .25em;
-  right: .25em;
-  background-color: #999;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: none;
-  padding: .25em .5em;
-  border-radius: .25em; }
-  .media2click-button:hover, .media2click-button:focus {
-    background-color: #666; }
+  right: .25em; }
+  .media2click-controls .media2click-button {
+    display: inline-block;
+    background-color: #999;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    padding: .25em .5em;
+    border-radius: .25em;
+    margin: .25em; }
+    .media2click-controls .media2click-button:hover, .media2click-controls .media2click-button:focus {
+      background-color: #333; }
 
 .media2click-hosts {
   list-style: none;
@@ -114,11 +119,17 @@
       display: grid;
       grid-template-columns: 10em 1fr;
       column-gap: 1em; }
-      .media2click-hosts li .media2click-toggle-label .media2click-toggle-logo img {
-        display: block;
-        width: 100%;
-        height: auto; }
-      .media2click-hosts li .media2click-toggle-label .media2click-toggle-text:first-child {
-        grid-column: 1/3; }
+      .media2click-hosts li .media2click-toggle-label .media2click-toggle-logo {
+        display: block; }
+        .media2click-hosts li .media2click-toggle-label .media2click-toggle-logo img {
+          display: block;
+          width: 100%;
+          height: auto; }
+      .media2click-hosts li .media2click-toggle-label .media2click-toggle-text {
+        display: block; }
+        .media2click-hosts li .media2click-toggle-label .media2click-toggle-text:first-child {
+          grid-column: 1/3; }
+    .media2click-hosts li .media2click-privacylink {
+      display: block; }
 
 /*# sourceMappingURL=media2click.css.map */

@@ -6,6 +6,10 @@
 			<authorEmail>gregor.hermens@a-mazing.de</authorEmail>
 		</header>
 		<body>
+			<trans-unit id="activateOnce" approved="yes">
+				<source><![CDATA[Activate once]]></source>
+				<target><![CDATA[Einmalig aktivieren]]></target>
+			</trans-unit>
 			<trans-unit id="activatePermanently" approved="yes">
 				<source><![CDATA[Activate permanently]]></source>
 				<target><![CDATA[Dauerhaft aktivieren]]></target>

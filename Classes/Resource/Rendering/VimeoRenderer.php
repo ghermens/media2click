@@ -45,7 +45,11 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
             return parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript);
         }
 
-        $iframe = str_replace(' src="', ' src="" data-src="', parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript));
+        $iframe = str_replace(
+            [' src="', ' class="', '<iframe ', '</iframe>'],
+            ['  data-src="', ' class="media2click-iframe ', '<div ', '</div>'],
+            parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript)
+        );
 
         $placeholder = $this->renderPlaceholder($file, $width, $height, $options);
 
