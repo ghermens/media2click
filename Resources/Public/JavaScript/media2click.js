@@ -5,14 +5,14 @@ document.onreadystatechange = function () {
     let m2cElementList = document.querySelectorAll('.media2click-wrap');
     m2cElementList.forEach(function(m2cElement) {
       let placeholder = m2cElement.querySelector('.media2click-placeholder');
-      let mediaFrame = m2cElement.querySelector('.media2click-iframe');
+      let frameData = m2cElement.querySelector('.media2click-iframedata');
       let activateOnce = m2cElement.querySelector('.media2click-once');
       let activatePermanent = m2cElement.querySelector('.media2click-permanent');
       /* Activate once and load iframe */
       if (activateOnce !== null) {
         activateOnce.addEventListener('click', function (event) {
           event.preventDefault();
-          m2cActivateFrame(mediaFrame, placeholder);
+          m2cActivateFrame(frameData, placeholder);
         }, false);
       }
       /* Activate permanently and load iframe */
@@ -25,12 +25,12 @@ document.onreadystatechange = function () {
             m2cCookieHosts.push(host);
             m2cSetCookieHosts(m2cCookieHosts, lifetime);
           }
-          m2cActivateFrame(mediaFrame, placeholder);
+          m2cActivateFrame(frameData, placeholder);
         }, false);
       }
       /* If already activated permanently, load iframe */
       if(m2cCookieHosts.find(element => element === placeholder.getAttribute('data-host'))) {
-        m2cActivateFrame(mediaFrame, placeholder);
+        m2cActivateFrame(frameData, placeholder);
       }
     })
 
@@ -65,16 +65,16 @@ document.onreadystatechange = function () {
 
 /**
  * Replace media2click dummy element with actual iframe
- * @param sourceNode
+ * @param dataNode
  * @param placeholderNode
  */
-function m2cActivateFrame(sourceNode, placeholderNode) {
+function m2cActivateFrame(dataNode, placeholderNode) {
   let newNode = document.createElement('iframe');
-  Array.from(sourceNode.attributes).forEach(attr => newNode.setAttribute(attr.localName, attr.value));
-  newNode.setAttribute('src', sourceNode.getAttribute('data-src'));
+  let frameData = JSON.parse(dataNode.getAttribute('data-attributes'));
+  Object.entries(frameData).forEach(([key, value]) => newNode.setAttribute(key, value));
 
-  sourceNode.parentElement.insertBefore(newNode, sourceNode);
-  sourceNode.parentElement.removeChild(sourceNode);
+  dataNode.parentElement.insertBefore(newNode, dataNode);
+  dataNode.parentElement.removeChild(dataNode);
   placeholderNode.parentElement.removeChild(placeholderNode);
 }
 

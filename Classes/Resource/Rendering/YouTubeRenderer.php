@@ -45,9 +45,21 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
             return parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript);
         }
 
-        $iframe = str_replace(
-            [' src="', ' class="', '<iframe ', '</iframe>'],
-            ['  data-src="', ' class="media2click-iframe ', '<div ', '</div>'],
+        $iframe = preg_replace(
+            [
+                '| class="|',
+                '|<iframe |',
+                '| allowfullscreen |',
+                '| ([a-z-]+)="([^"]*)"|',
+                '|,></iframe>|'
+            ],
+            [
+                ' class="media2click-iframe ',
+                '<div data-attributes=\'{ ',
+                ' allowfullscreen="" ',
+                '"$1": "$2",',
+                '}\' class="media2click-iframedata"></div>'
+            ],
             parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript)
         );
 
