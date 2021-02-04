@@ -81,8 +81,8 @@
 
     background-color: rgba(255, 255, 255, .5);
     .media2click-placeholder.media2click-haspreview:hover &,
-    .media2click-placeholder.media2click-haspreview:focus &, {
-        background-color: rgba(255, 255, 255, .75);
+    .media2click-placeholder.media2click-haspreview:focus-within & {
+        background-color: rgba(255, 255, 255, .85);
     }
 
     .media2click-placeholder-video.media2click-haspreview & {
@@ -90,6 +90,10 @@
         background-size: 30% auto;
         background-position: center center;
         background-repeat: no-repeat;
+    }
+    .media2click-placeholder-video.media2click-haspreview:hover &,
+    .media2click-placeholder-video.media2click-haspreview:focus-within & {
+        background-image: none;
     }
 }
 

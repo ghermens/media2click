@@ -54,13 +54,15 @@
   padding: .5em;
   position: relative;
   background-color: rgba(255, 255, 255, 0.5); }
-  .media2click-placeholder.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder.media2click-haspreview:focus .media2click-placeholder-inner {
-    background-color: rgba(255, 255, 255, 0.75); }
+  .media2click-placeholder.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder.media2click-haspreview:focus-within .media2click-placeholder-inner {
+    background-color: rgba(255, 255, 255, 0.85); }
   .media2click-placeholder-video.media2click-haspreview .media2click-placeholder-inner {
     background-image: url(../Images/videobutton.png);
     background-size: 30% auto;
     background-position: center center;
     background-repeat: no-repeat; }
+  .media2click-placeholder-video.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder-video.media2click-haspreview:focus-within .media2click-placeholder-inner {
+    background-image: none; }
 
 .media2click-placeholder-iframe.media2click-haspreview {
   background-position: center center;
