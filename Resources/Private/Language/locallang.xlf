@@ -16,10 +16,10 @@
 				<source><![CDATA[Click to load external content!]]></source>
 			</trans-unit>
 			<trans-unit id="defaultPlaceHolderIframe">
-				<source><![CDATA[Click to load external content from %s!]]></source>
+				<source><![CDATA[By activating external content from %s, you consent to transmitting data to this third party.]]></source>
 			</trans-unit>
 			<trans-unit id="defaultPlaceHolderVideo">
-				<source><![CDATA[Click to load external video!]]></source>
+				<source><![CDATA[By activating external video from %s, you consent to transmitting data to this third party.]]></source>
 			</trans-unit>
 			<trans-unit id="externalContent">
 				<source><![CDATA[External Content]]></source>

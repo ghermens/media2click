@@ -19,12 +19,12 @@
 				<target><![CDATA[Klicken um die externen Inhalte zu laden!]]></target>
 			</trans-unit>
 			<trans-unit id="defaultPlaceHolderIframe" approved="yes">
-				<source><![CDATA[Click to load external content from %s!]]></source>
-				<target><![CDATA[Klicken um externe Inhalte von %s zu laden!]]></target>
+				<source><![CDATA[By activating external content from %s, you consent to transmitting data to this third party.]]></source>
+				<target><![CDATA[Wenn Sie externe Inhalte von %s aktivieren, werden Daten automatisiert an diesen Anbieter übertragen.]]></target>
 			</trans-unit>
 			<trans-unit id="defaultPlaceHolderVideo" approved="yes">
-				<source><![CDATA[Click to load external video!]]></source>
-				<target><![CDATA[Klicken um das externe Video zu laden!]]></target>
+				<source><![CDATA[By activating external video from %s, you consent to transmitting data to this third party.]]></source>
+				<target><![CDATA[Wenn Sie externe Videos von %s aktivieren, werden Daten automatisiert an diesen Anbieter übertragen.]]></target>
 			</trans-unit>
 			<trans-unit id="externalContent" approved="yes">
 				<source><![CDATA[External Content]]></source>

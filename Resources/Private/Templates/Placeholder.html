@@ -18,7 +18,7 @@
             </f:then>
             <f:else>
                 <div class="media2click-content">
-                    {f:translate(extensionName: 'Media2click', key: 'defaultPlaceHolderVideo', default: 'Click to load external video!')}
+                    {f:translate(extensionName: 'Media2click', key: 'defaultPlaceHolderVideo', arguments: {0: '{settings.videoProvider}'})}
                     <f:if condition="{settings.privacyPid}">
                         <br><f:link.page pageUid="{settings.privacyPid}">{f:translate(extensionName: 'Media2click', key: 'moreInfo', default: 'More Info')}</f:link.page>
                     </f:if>
