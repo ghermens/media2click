@@ -15,16 +15,4 @@
         </div>
     </f:else>
 </f:if>
-<div class="media2click-controls">
-    <a class="media2click-button media2click-once" href="#">
-        <f:translate key="activateOnce" extensionName="Media2click" default="Activate once"/>
-    </a>
-    <f:if condition="{settings.enablePermanently}">
-        <f:if condition="{hostData.allow_permanent}">
-            <a class="media2click-button media2click-permanent" data-host="{iframeHost}" data-cookielifetime="{settings.cookieLifetime}" href="#">
-                <f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/>
-            </a>
-        </f:if>
-    </f:if>
-</div>
 </html>

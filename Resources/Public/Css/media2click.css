@@ -25,11 +25,11 @@
     padding-bottom: 90vh; }
 
 .media2click-placeholder {
-  display: block;
+  position: relative;
   background-color: #ddd;
   border: 0;
   box-sizing: border-box;
-  padding: 1em;
+  padding: .5em;
   font-size: 1em;
   text-align: center;
   transition: background-color .2s; }
@@ -48,11 +48,12 @@
   background-size: contain; }
 
 .media2click-placeholder-inner {
+  position: relative;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   padding: .5em;
-  position: relative;
+  overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.5); }
   .media2click-placeholder.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder.media2click-haspreview:focus-within .media2click-placeholder-inner {
     background-color: rgba(255, 255, 255, 0.85); }
@@ -77,12 +78,11 @@
   margin: 0 0 .25em .5em; }
 
 .media2click-title {
-  display: block;
   font-weight: bold;
   margin-bottom: .5em; }
 
-.media2click-content {
-  display: block; }
+.media2click-content > *:last-child {
+  margin-bottom: 2.57em; }
 
 .media2click-iframedata {
   display: none; }
@@ -90,8 +90,8 @@
 .media2click-controls {
   display: block;
   position: absolute;
-  bottom: .25em;
-  right: .25em; }
+  bottom: .75em;
+  right: .75em; }
   .media2click-controls .media2click-button {
     display: inline-block;
     background-color: #999;

@@ -17,6 +17,7 @@
                             <f:render partial="Media2click/Placeholder/Default" arguments="{_all}"/>
                         </div>
                     </f:render>
+                    <f:render partial="Media2click/Controls/Default" arguments="{_all}"/>
                 </div>
                 <div class="media2click-iframedata" data-attributes='{f:format.json(value: { src: '{data.tx_media2click_iframe_src}', title: '{f:if(condition: \'{hostData.title}\', then: \'{f:translate(key: \\\'externalContent\\\', extensionName: \\\'Media2click\\\')}: {hostData.title}\', else: \'{f:translate(key: \\\'externalContentFrom\\\', extensionName: \\\'Media2click\\\')} {iframeHost}\' )}'})}'></div>
             </div>
