@@ -7,6 +7,13 @@
 Upgrade
 =======
 
+Version 1.3.2
+=============
+
+As of version 1.3.2, the classic rendering method is deprecated. It will be
+removed in version 2.0.0.
+
+
 Version 0.3
 ===========
 

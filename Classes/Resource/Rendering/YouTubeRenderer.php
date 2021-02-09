@@ -162,6 +162,11 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
 
         } else {
 
+            trigger_error(
+                'Classic rendering method is deprecated since version 1.3.2, will be removed in version 2.0.0',
+                E_USER_DEPRECATED
+            );
+
             $placeholderContent = null;
 
             if (is_array($placeholderContentSetup)) {
