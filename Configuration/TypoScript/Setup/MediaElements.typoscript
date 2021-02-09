@@ -74,7 +74,7 @@ plugin {
   tx_news {
     view {
       partialRootPaths {
-        25 = EXT:media2click/Resources/Private/News/Partials/
+        25 = EXT:media2click/Resources/Private/Extensions/News/Partials/
       }
     }
 
@@ -82,7 +82,7 @@ plugin {
       detail {
         media {
           video {
-            additionalConfig =< lib.contentElement.settings.media.additionalConfig
+            additionalConfig < lib.contentElement.settings.media.additionalConfig
           }
         }
       }
