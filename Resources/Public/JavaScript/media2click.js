@@ -6,8 +6,15 @@ document.onreadystatechange = function () {
     m2cElementList.forEach(function(m2cElement) {
       let placeholder = m2cElement.querySelector('.media2click-placeholder');
       let frameData = m2cElement.querySelector('.media2click-iframedata');
-      let activateOnce = m2cElement.querySelector('.media2click-once');
-      let activatePermanent = m2cElement.querySelector('.media2click-permanent');
+      let oldPlaceholder = m2cElement.querySelector('.media2click-old');
+      let activateOnce = null;
+      let activatePermanent = null;
+      if (oldPlaceholder !== null) {
+        activateOnce = oldPlaceholder;
+      } else {
+        activateOnce = m2cElement.querySelector('.media2click-once');
+        activatePermanent = m2cElement.querySelector('.media2click-permanent');
+      }
       /* Activate once and load iframe */
       if (activateOnce !== null) {
         activateOnce.addEventListener('click', function (event) {
