@@ -22,7 +22,7 @@ lib {
             cObject {
               layoutRootPaths {
                 1 = EXT:media2click/Resources/Private/Layouts/
-                100 = {$plugin.media2click.templateRootPath}
+                100 = {$plugin.media2click.layoutRootPath}
               }
               partialRootPaths {
                 1 = EXT:media2click/Resources/Private/Partials/
@@ -30,7 +30,7 @@ lib {
               }
               templateRootPaths {
                 1 = EXT:media2click/Resources/Private/Templates/
-                100 = {$plugin.media2click.layoutRootPath}
+                100 = {$plugin.media2click.templateRootPath}
               }
 
               templateName = Placeholder
