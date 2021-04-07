@@ -27,4 +27,6 @@ defined('TYPO3_MODE') || die();
         ['Host' => 'index'],
         []
     );
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['Amazing\\Media2click\\Evaluation\\UrlSchemeEvaluation'] = '';
 }) ();

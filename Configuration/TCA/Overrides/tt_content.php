@@ -13,7 +13,7 @@ defined('TYPO3_MODE') || die;
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-                'eval' => 'trim,required',
+                'eval' => 'trim,Amazing\\Media2click\\Evaluation\\UrlSchemeEvaluation,required',
                 'fieldControl' => [
                     'linkPopup' => [
                         'options' => [
