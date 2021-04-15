@@ -16,6 +16,7 @@ use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
+use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
@@ -51,6 +52,8 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                 '|<iframe |',
                 '| allowfullscreen |',
                 '| ([a-z-]+)="([^"]*)"|',
+                '|&quot;|',
+                '|&|',
                 '|,></iframe>|'
             ],
             [
@@ -58,6 +61,8 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                 '<div data-attributes=\'{ ',
                 ' allowfullscreen="" ',
                 '"$1": "$2",',
+                '\\u0022',
+                '\\u0026',
                 '}\' class="media2click-iframedata"></div>'
             ],
             parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript)

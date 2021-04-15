@@ -51,6 +51,8 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
                 '|<iframe |',
                 '| allowfullscreen |',
                 '| ([a-z-]+)="([^"]*)"|',
+                '|&quot;|',
+                '|&|',
                 '|,></iframe>|'
             ],
             [
@@ -58,6 +60,8 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
                 '<div data-attributes=\'{ ',
                 ' allowfullscreen="" ',
                 '"$1": "$2",',
+                '\\u0022',
+                '\\u0026',
                 '}\' class="media2click-iframedata"></div>'
             ],
             parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript)
