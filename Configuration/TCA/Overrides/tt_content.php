@@ -14,6 +14,7 @@ defined('TYPO3_MODE') || die;
                     'allowLanguageSynchronization' => true,
                 ],
                 'eval' => 'trim,Amazing\\Media2click\\Evaluation\\UrlSchemeEvaluation,required',
+                'softref' => 'typolink',
                 'fieldControl' => [
                     'linkPopup' => [
                         'options' => [
