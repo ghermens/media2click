@@ -110,16 +110,20 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
 
             $previewImage = $this->onlineMediaHelper->getPreviewImage($orgFile);
 
-            /* In composer installations $previewImage is outside of publicPath */
-            if (Environment::getVarPath() !== Environment::getPublicPath() . '/typo3temp/var') {
-                $tempFile = str_replace(Environment::getVarPath() . '/transient', Environment::getPublicPath() . '/typo3temp/assets/images', $previewImage);
-                GeneralUtility::writeFileToTypo3tempDir($tempFile, @file_get_contents($previewImage));
-                $previewImage = $tempFile;
+            /* Make sure the preview image is always publicly available */
+            $publicPreviewImage = Environment::getPublicPath() . '/typo3temp/assets/images/' . basename($previewImage);
+            if (
+                file_exists($previewImage) && (
+                    !file_exists($publicPreviewImage) ||
+                    filemtime($previewImage) > filemtime($publicPreviewImage)
+                )
+            ) {
+                GeneralUtility::writeFileToTypo3tempDir($publicPreviewImage, @file_get_contents($previewImage));
             }
 
-            if (file_exists($previewImage)) {
+            if (file_exists($publicPreviewImage)) {
                 $conf = [
-                    'file' => $previewImage,
+                    'file' => $publicPreviewImage,
                     'file.' => [
                         'maxW' => ($placeholderContentSetup['previewMaxWidth'] ?? ''),
                         'maxH' => ($placeholderContentSetup['previewMaxHeight'] ?? ''),
