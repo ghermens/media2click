@@ -22,9 +22,9 @@ defined('TYPO3_MODE') || die();
     );
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'Amazing.media2click',
+        'Media2click',
         'List',
-        ['Host' => 'index'],
+        [\Amazing\Media2click\Controller\HostController::class => 'index'],
         []
     );
 
