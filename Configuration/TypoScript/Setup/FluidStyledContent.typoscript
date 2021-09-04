@@ -22,7 +22,7 @@ tt_content {
           table = tt_content
           fieldName = image
         }
-        as = backgroundImage
+        as = backgroundImage2ClickMedia
       }
 
       20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
