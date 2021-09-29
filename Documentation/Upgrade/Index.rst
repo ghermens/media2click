@@ -7,6 +7,14 @@
 Upgrade
 =======
 
+Version 2.0.0
+=============
+
+Some FLUID template variables have been renamed to be less generic. If you
+use your own templates, you have to adapt them accordingly.
+
+The classic rendering method has been removed.
+
 Version 1.3.2
 =============
 

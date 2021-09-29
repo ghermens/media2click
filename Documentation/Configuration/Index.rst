@@ -36,23 +36,6 @@ enable
 
 .. _constants-disablecobj:
 
-disableCObj
-~~~~~~~~~~~
-
-:aspect:`Property:`
-   disableCObj
-
-:aspect:`Datatype:`
-   comment
-
-:aspect:`Description:`
-   Disable the cObject / FLUIDTEMPLATE rendering, switch back to classic rendering instead
-
-:aspect:`Default:`
-   #
-
-.. _constants-enablepermanently:
-
 enablePermanently
 ~~~~~~~~~~~~~~~~~
 
@@ -69,23 +52,6 @@ enablePermanently
    0
 
 .. _constants-allwrap:
-
-allWrap
-~~~~~~~
-
-:aspect:`Property`
-   allWrap
-
-:aspect:`Data type:`
-   wrap
-
-:aspect:`Description`
-   Additional wrap to all placeholder content (only used with classic rendering)
-
-:aspect:`Default:`
-   <div class="media2click-placeholder-inner">|</div>
-
-.. _constants-showtitle:
 
 showTitle
 ~~~~~~~~~
@@ -274,23 +240,8 @@ placeholderContent
 
    Properties:
 
-   :ts:`.allWrap:`
-      This wraps the whole placeholder content.  (only used with classic rendering)
-
-   :ts:`.value:` String
-      Default text  (only used with classic rendering)
-
-   :ts:`.lang:` Array
-      Array of language keys, defining optional language specific values  (only used with classic rendering)
-
-   :ts:`.wrap:` wrap
-      This wraps the content.  (only used with classic rendering)
-
    :ts:`.showTitle:` boolean
       If enabled, the Fluid media tag's title attribute is shown as the palceholder's title. Set via Constant Editor.
-
-   :ts:`.titleWrap:` wrap
-      This wraps the title.  (only used with classic rendering)
 
    :ts:`.showPreviewImage:` boolean
       Show preview image if available. Set via Constant editor.
@@ -302,7 +253,7 @@ placeholderContent
       Maximum height of preview image. Set via Constant Editor.
 
    :ts:`.cObject:` cObject
-      If present, this cObject is used for rendering the placeholder. If this cObject is a FLUIDTEMPLATE, some useful
+      This cObject is used for rendering the placeholder. If this cObject is a FLUIDTEMPLATE, some useful
       values are passed to the fluid template as settings:
 
       :ts:`.settings:`
@@ -334,4 +285,3 @@ placeholderContent
 
          :ts:`.privacyPid:` integer
             Target page for the "More Info" link. Set via Constant Editor.
-
