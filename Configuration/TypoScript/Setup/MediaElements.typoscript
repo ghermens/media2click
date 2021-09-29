@@ -4,16 +4,8 @@ lib {
       media {
         additionalConfig {
           placeholderContent {
-            allWrap = {$plugin.media2click.allWrap}
-
-            wrap = <span class="media2click-content">|</span>
-            value = Click to load external video!
-            lang {
-              de = Klicken um das externe Video zu laden!
-            }
 
             showTitle = {$plugin.media2click.showTitle}
-            titleWrap = <span class="media2click-title">|</span>
             showPreviewImage = {$plugin.media2click.showPreviewImage}
             previewMaxWidth = {$plugin.media2click.showPreviewImage.maxWidth}
             previewMaxHeight = {$plugin.media2click.showPreviewImage.maxHeight}
@@ -60,7 +52,6 @@ lib {
                 m2cPrivacyPid = {$plugin.media2click.privacyPid}
               }
             }
-            {$plugin.media2click.disableCObj} cObject >
           }
 
           enable2click = {$plugin.media2click.enable}

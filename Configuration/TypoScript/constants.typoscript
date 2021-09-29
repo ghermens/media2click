@@ -3,14 +3,8 @@ plugin {
     #cat=plugin.media2click/enable/a1; type=boolean; label=Enable 2-click for external media
     enable = 0
 
-    #cat=plugin.media2click/enable/a2; type=comment; label=Disable cObject based rendering of placeholder
-    disableCObj = #
-
     #cat=plugin.media2click/enable/a3; type=boolean; label=Enable option to permanently activate external media
     enablePermanently = 0
-
-    #cat=plugin.media2click/enable/b; type=wrap; label=Additional warp to all placeholder content (only with classic rendering)
-    allWrap = <div class="media2click-placeholder-inner">|</div>
 
     #cat=plugin.media2click/enable/c; type=boolean; label=Show the video's title as the placeholder's title
     showTitle = 1

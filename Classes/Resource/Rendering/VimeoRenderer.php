@@ -170,52 +170,11 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
         } else {
 
             trigger_error(
-                'Classic rendering method is deprecated since version 1.3.2, will be removed in version 2.0.0',
-                E_USER_DEPRECATED
+                'Classic rendering method is deprecated since version 1.3.2 and has been removed in version 2.0.0',
+                E_USER_WARNING
             );
 
-            $placeholderContent = null;
-
-            if (is_array($placeholderContentSetup)) {
-                if (isset($placeholderContentSetup['value'])) {
-                    $placeholderContent = $placeholderContentSetup['value'];
-                }
-
-                if (is_array($placeholderContentSetup['lang'])) {
-                    $typo3Language = $contentObjectRenderer->cObjGetSingle('TEXT', ['data' => 'siteLanguage:typo3Language']);
-
-                    if (array_key_exists($typo3Language, $placeholderContentSetup['lang'])) {
-                        $placeholderContent = $placeholderContentSetup['lang'][$typo3Language];
-                    }
-                }
-
-                if (!empty($placeholderContentSetup['wrap'])) {
-                    $wrapArr = explode('|', $placeholderContentSetup['wrap']);
-                    $placeholderContent = trim($wrapArr[0] ?? '') . $placeholderContent . trim($wrapArr[1] ?? '');
-                }
-            }
-
-            if ($placeholderContent === null) {
-                $placeholderContent = 'Click to load external video!';
-            }
-
-            if (!empty($options['title']) && !empty($placeholderContentSetup['showTitle'])) {
-                $title = $options['title'];
-
-                if (!empty($placeholderContentSetup['titleWrap'])) {
-                    $wrapArr = explode('|', $placeholderContentSetup['titleWrap']);
-                    $title = trim($wrapArr[0] ?? '') . $title . trim($wrapArr[1] ?? '');
-                }
-
-                $placeholderContent = $title . $placeholderContent;
-            }
-
-            if (!empty($placeholderContentSetup['allWrap'])) {
-                $wrapArr = explode('|', $placeholderContentSetup['allWrap']);
-                $placeholderContent = trim($wrapArr[0] ?? '') . $placeholderContent . trim($wrapArr[1] ?? '');
-            }
-
-            $placeholderContent = '<div class="media2click-placeholder' . ($hasPreview ? ' media2click-haspreview' : '') . '" style="' . $style . '">' . $placeholderContent . '</div>';
+            $placeholderContent = '';
         }
 
         return $placeholderContent;
