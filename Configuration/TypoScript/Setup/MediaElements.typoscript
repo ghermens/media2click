@@ -40,7 +40,7 @@ lib {
                 10 {
                   table = tx_media2click_domain_model_host
                   pidInList = {$plugin.media2click.storagePid}
-                  as = hostsData
+                  as = m2cHostsData
 
                   dataProcessing {
                     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
@@ -48,16 +48,16 @@ lib {
                       references {
                         fieldName = logo
                       }
-                      as = logoImage
+                      as = m2cLogoImage
                     }
                   }
                 }
               }
 
               settings {
-                enablePermanently = {$plugin.media2click.enablePermanently}
-                cookieLifetime = {$plugin.media2click.cookieLifetime}
-                privacyPid = {$plugin.media2click.privacyPid}
+                m2cEnablePermanently = {$plugin.media2click.enablePermanently}
+                m2cCookieLifetime = {$plugin.media2click.cookieLifetime}
+                m2cPrivacyPid = {$plugin.media2click.privacyPid}
               }
             }
             {$plugin.media2click.disableCObj} cObject >

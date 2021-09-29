@@ -34,7 +34,7 @@ class HostdataViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewH
             foreach ($arguments['hostsData'] as $hostData) {
                 if ($hostData['data']['host'] === $host) {
                     $value = $hostData['data'];
-                    $value['logoImage'] = $hostData['logoImage'];
+                    $value['m2cLogoImage'] = $hostData['m2cLogoImage'];
                     $renderingContext->getVariableProvider()->add($arguments['name'], $value);
                     break;
                 }

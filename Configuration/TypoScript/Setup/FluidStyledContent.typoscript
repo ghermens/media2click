@@ -22,14 +22,14 @@ tt_content {
           table = tt_content
           fieldName = image
         }
-        as = backgroundImage
+        as = m2cBackgroundImage
       }
 
       20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
       20 {
         table = tx_media2click_domain_model_host
         pidInList = {$plugin.media2click.storagePid}
-        as = hostsData
+        as = m2cHostsData
 
         dataProcessing {
           10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
@@ -38,7 +38,7 @@ tt_content {
               table = tx_media2click_domain_model_host
               fieldName = logo
             }
-            as = logoImage
+            as = m2cLogoImage
           }
         }
       }
@@ -48,10 +48,10 @@ tt_content {
     }
 
     settings {
-      enable2click = {$plugin.media2click.enable}
-      enablePermanently = {$plugin.media2click.enablePermanently}
-      cookieLifetime = {$plugin.media2click.cookieLifetime}
-      privacyPid = {$plugin.media2click.privacyPid}
+      m2cEnable2click = {$plugin.media2click.enable}
+      m2cEnablePermanently = {$plugin.media2click.enablePermanently}
+      m2cCookieLifetime = {$plugin.media2click.cookieLifetime}
+      m2cPrivacyPid = {$plugin.media2click.privacyPid}
     }
   }
 }

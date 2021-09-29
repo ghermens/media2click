@@ -4,10 +4,10 @@
 <f:layout name="Default"/>
 
 <f:section name="Main">
-    <m:hostdata hostsData="{hostsData}" host="{settings.videoProvider}"/>
+    <m:hostdata hostsData="{m2cHostsData}" host="{settings.videoProvider}"/>
     <div class="media2click-placeholder-inner">
-        <f:if condition="{hostData.logoImage.0}">
-            <f:image image="{hostData.logoImage.0}" alt="{hostData.title}" class="media2click-placeholder-logo"/>
+        <f:if condition="{hostData.m2cLogoImage.0}">
+            <f:image image="{hostData.m2cLogoImage.0}" alt="{hostData.title}" class="media2click-placeholder-logo"/>
         </f:if>
         <f:if condition="{settings.showTitle}">
             <div class="media2click-title">{settings.title}</div>
@@ -19,18 +19,18 @@
             <f:else>
                 <div class="media2click-content">
                     {f:translate(extensionName: 'Media2click', key: 'defaultPlaceHolderVideo', arguments: {0: '{settings.videoProvider}'})}
-                    <f:if condition="{settings.privacyPid}">
-                        <br><f:link.page pageUid="{settings.privacyPid}">{f:translate(extensionName: 'Media2click', key: 'moreInfo', default: 'More Info')}</f:link.page>
+                    <f:if condition="{settings.m2cPrivacyPid}">
+                        <br><f:link.page pageUid="{settings.m2cPrivacyPid}">{f:translate(extensionName: 'Media2click', key: 'moreInfo', default: 'More Info')}</f:link.page>
                     </f:if>
                 </div>
             </f:else>
         </f:if>
     </div>
     <div class="media2click-controls">
-        <a class="media2click-button media2click-once" data-host="{settings.videoProvider}" data-cookielifetime="{settings.cookieLifetime}" href="#"><f:translate key="activateOnce" extensionName="Media2click" default="Activate once"/></a>
-        <f:if condition="{settings.enablePermanently}">
+        <a class="media2click-button media2click-once" data-host="{settings.videoProvider}" data-cookielifetime="{settings.m2cCookieLifetime}" href="#"><f:translate key="activateOnce" extensionName="Media2click" default="Activate once"/></a>
+        <f:if condition="{settings.m2cEnablePermanently}">
             <f:if condition="{hostData.allow_permanent}">
-                <a class="media2click-button media2click-permanent" data-host="{settings.videoProvider}" data-cookielifetime="{settings.cookieLifetime}" href="#"><f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/></a>
+                <a class="media2click-button media2click-permanent" data-host="{settings.videoProvider}" data-cookielifetime="{settings.m2cCookieLifetime}" href="#"><f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/></a>
             </f:if>
         </f:if>
     </div>

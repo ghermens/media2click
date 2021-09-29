@@ -5,12 +5,12 @@
 
 <f:section name="Main">
     <f:variable name="iframeHost"><m:uri.part uri="{data.tx_media2click_iframe_src}"/></f:variable>
-    <f:if condition="{settings.enable2click}">
+    <f:if condition="{settings.m2cEnable2click}">
         <f:then>
-            <m:hostdata hostsData="{hostsData}" host="{iframeHost}"/>
-            <f:variable name="bgStyle"><f:if condition="{backgroundImage.0}">background-image:url(<f:uri.image image="{backgroundImage.0}"/>)</f:if></f:variable>
+            <m:hostdata hostsData="{m2cHostsData}" host="{iframeHost}"/>
+            <f:variable name="bgStyle"><f:if condition="{m2cBackgroundImage.0}">background-image:url(<f:uri.image image="{m2cBackgroundImage.0}"/>)</f:if></f:variable>
             <div class="media2click-wrap media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}">
-                <div class="media2click-placeholder media2click-placeholder-iframe{f:if(condition: backgroundImage.0, then: ' media2click-haspreview')}"
+                <div class="media2click-placeholder media2click-placeholder-iframe{f:if(condition: m2cBackgroundImage.0, then: ' media2click-haspreview')}"
                     style="{bgStyle}" data-host="{iframeHost}">
                     <f:render partial="Media2click/Placeholder/{iframeHost}" optional="true" arguments="{_all}">
                         <div class="media2click-placeholder-inner">

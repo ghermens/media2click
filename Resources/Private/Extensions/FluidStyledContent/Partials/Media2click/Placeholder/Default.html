@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:if condition="{hostData.logoImage.0}">
-    <f:image image="{hostData.logoImage.0}" alt="{hostData.title}" class="media2click-placeholder-logo"/>
+<f:if condition="{hostData.m2cLogoImage.0}">
+    <f:image image="{hostData.m2cLogoImage.0}" alt="{hostData.title}" class="media2click-placeholder-logo"/>
 </f:if>
 <f:if condition="{hostData.placeholder}">
     <f:then>
@@ -9,8 +9,8 @@
     <f:else>
         <div class="media2click-content">
             {f:translate(extensionName: 'Media2click', key: 'defaultPlaceHolderIframe', arguments: {0: '{iframeHost}'})}
-            <f:if condition="{settings.privacyPid}">
-                <br><f:link.page pageUid="{settings.privacyPid}">{f:translate(extensionName: 'Media2click', key: 'moreInfo', default: 'More Info')}</f:link.page>
+            <f:if condition="{settings.m2cPrivacyPid}">
+                <br><f:link.page pageUid="{settings.m2cPrivacyPid}">{f:translate(extensionName: 'Media2click', key: 'moreInfo', default: 'More Info')}</f:link.page>
             </f:if>
         </div>
     </f:else>
