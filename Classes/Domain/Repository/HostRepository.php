@@ -2,10 +2,19 @@
 namespace Amazing\Media2click\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 class HostRepository extends Repository
 {
+    /**
+     * @var array
+     *
+     * sort FE host list by BE sorting
+     */
+    protected $defaultOrderings = [
+        'sorting' => QueryInterface::ORDER_ASCENDING,
+    ];
 
     /**
      * @param string $includedHosts list of host uids
