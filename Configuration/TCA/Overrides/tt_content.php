@@ -104,6 +104,7 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['media2click_list'] = 'pi_flexform';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['media2click_list'] = 'pages,recursive';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     'media2click_list',
     'FILE:EXT:media2click/Configuration/FlexForms/PluginList.xml'
