@@ -136,9 +136,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
                     $conf['file.']['height'] = (int)$height . 'c';
                 }
 
-                $previewImageWebPath = $contentObjectRenderer->cObjGetSingle('IMG_RESOURCE', $conf);
-                $style .= 'background-image:url(/' . $previewImageWebPath . ');';
-                $hasPreview = true;
+                $previewImageWebPath = '/' . ltrim($contentObjectRenderer->cObjGetSingle('IMG_RESOURCE', $conf), '/');
             }
         }
 
