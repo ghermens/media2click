@@ -18,3 +18,9 @@ source before this click. This helps to fully comply with GDPR requirements.
 
 If configured accordingly, this activation can be made permanent and switched off again. The placeholder can be configured
 to show individual text, logo and background image or even use it's own FLUID template on a per host basis.
+
+.. figure:: ../Images/ExampleFrontend.png
+   :alt: Frontend Example
+   :class: with-shadow
+
+   Frontend example of YouTube video

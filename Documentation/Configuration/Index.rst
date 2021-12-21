@@ -8,11 +8,10 @@
 Configuration
 =============
 
-Reference
-=========
+.. _typoscriptconstants:
 
-Constants
----------
+TypoScript Constants
+====================
 
 Properties of plugin.media2click. Use the Constant Editor to change these settings:
 
@@ -34,7 +33,7 @@ enable
 :aspect:`Default:`
    0
 
-.. _constants-disablecobj:
+.. _constants-enablepermanently:
 
 enablePermanently
 ~~~~~~~~~~~~~~~~~
@@ -190,7 +189,7 @@ storagePid
 .. _typoscriptsetup:
 
 TypoScript Setup
-----------------
+================
 
 All configuration is forwarded to the renderer classes via the settings of the corresponding FLUIDTEMPLATE and the
 additionalConfig attribute of the Fluid media viewhelper. Therefore all settings are not interpreted as TypoScript, but

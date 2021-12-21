@@ -51,11 +51,12 @@ You are welcome to help improve this guide. Just click on "Edit me on GitHub"
 on the top right to submit your change request.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    Introduction/Index
+   Installation/Index
    User/Index
    Administrator/Index
    Configuration/Index
-   Upgrade/Index
+   ChangeLog/Index
    Sitemap

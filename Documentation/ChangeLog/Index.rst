@@ -1,11 +1,11 @@
 .. include:: ../Includes.txt
 
 
-.. _upgrade:
+.. _changelog:
 
-=======
-Upgrade
-=======
+==========
+Change Log
+==========
 
 Version 2.0.0
 =============
