@@ -10,8 +10,8 @@ Administration
 Basic Setup
 ===========
 
-- Include the extension’s static template into your TS template.
-- If your main PAGE object is not named ‘page’, adapt the TypoScript Setup accordingly.
+- Include the extension’s static template into your TypoScript template.
+- If your main :ref:`PAGE <t3tsref:page>` object is not named ‘page’, adapt the TypoScript Setup accordingly.
 - Activate the extension's functionality via the Constant Editor: :ref:`constants-enable`
 
 Advanced Setup

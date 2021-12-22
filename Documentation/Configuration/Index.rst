@@ -25,7 +25,7 @@ enable
    enable
 
 :aspect:`Data type:`
-   boolean
+   :ref:`boolean <t3tsref:data-type-boolean>`
 
 :aspect:`Description:`
    Enable the extension's functionality
@@ -42,7 +42,7 @@ enablePermanently
    enablePermanently
 
 :aspect:`Datatype:`
-   boolean
+   :ref:`boolean <t3tsref:data-type-boolean>`
 
 :aspect:`Description:`
    Generally allow or disallow the permanent activation of accordingly configured target hosts.
@@ -59,7 +59,7 @@ showTitle
    showTitle
 
 :aspect:`Data type:`
-   boolean
+   :ref:`boolean <t3tsref:data-type-boolean>`
 
 :aspect:`Description:`
    Enable display of the video's title as the palceholder's title
@@ -76,7 +76,7 @@ showPreviewImage
    showPreviewImage
 
 :aspect:`Data type:`
-   boolean
+   :ref:`boolean <t3tsref:data-type-boolean>`
 
 :aspect:`Description:`
    Enable display of the video's preview image
@@ -86,10 +86,10 @@ showPreviewImage
 
    Properties:
 
-   :ts:`maxWidth:` integer
+   :ts:`maxWidth:` :ref:`integer <t3tsref:data-type-integer>`
       Maximum width
 
-   :ts:`maxHeight:` integer
+   :ts:`maxHeight:` :ref:`integer <t3tsref:data-type-integer>`
       Maximum height
 
 .. _constants-cookielifetime:
@@ -101,7 +101,7 @@ cookieLifetime
    cookieLifetime
 
 :aspect:`Data type:`
-   int+
+   :ref:`int+ <t3tsref:data-type-intplus>`
 
 :aspect:`Description:`
    Cookie lifetime in days. Set to 0 to limit the cookie to the session.
@@ -118,10 +118,10 @@ templateRootPath
    templateRootPath
 
 :aspect:`Data type:`
-   String
+   :ref:`string <t3tsref:data-type-string>`
 
 :aspect:`Description:`
-   Path to your Fluid templates when using the FLUIDTEMPLATE cObject rendering for videos
+   Path to your Fluid templates
 
 .. _constants-partialrootpath:
 
@@ -132,10 +132,10 @@ partialRootPath
    partialRootPath
 
 :aspect:`Data type:`
-   String
+   :ref:`string <t3tsref:data-type-string>`
 
 :aspect:`Description:`
-   Path to your Fluid partial when using the FLUIDTEMPLATE cObject rendering for videos
+   Path to your Fluid partials
 
 .. _constants-layoutrootpath:
 
@@ -146,10 +146,10 @@ layoutRootPath
    layoutRootPath
 
 :aspect:`Data type:`
-   String
+   :ref:`string <t3tsref:data-type-string>`
 
 :aspect:`Description:`
-   Path to your Fluid layouts when using the FLUIDTEMPLATE cObject rendering for videos
+   Path to your Fluid layouts
 
 .. _constants-privacypid:
 
@@ -160,7 +160,7 @@ privacyPid
    privacyPid
 
 :aspect:`Data type:`
-   integer
+   :ref:`integer <t3tsref:data-type-integer>`
 
 :aspect:`Description:`
    Page id of your privacy statement page
@@ -177,7 +177,7 @@ storagePid
    storagePid
 
 :aspect:`Data type:`
-   integer
+   :ref:`integer <t3tsref:data-type-integer>`
 
 :aspect:`Description:`
    Page id of your storage page with the individual target host configuration
@@ -214,7 +214,7 @@ enable2click
    enable2click
 
 :aspect:`Data type:`
-   boolean
+   :ref:`boolean <t3tsref:data-type-boolean>`
 
 :aspect:`Description:`
    Enable the extension's functionality. Set via Constant Editor.
@@ -232,55 +232,54 @@ placeholderContent
    placeholderContent
 
 :aspect:`Data type:`
-   Array
+   array of keys
 
 :aspect:`Description:`
-   parent attribute to all settings regarding the content of the placeholder
+   Parent property to all settings regarding the content of the placeholder
 
-   Properties:
-
-   :ts:`.showTitle:` boolean
+:aspect:`Properties:`
+   :ts:`.showTitle:` :ref:`boolean <t3tsref:data-type-boolean>`
       If enabled, the Fluid media tag's title attribute is shown as the palceholder's title. Set via Constant Editor.
 
-   :ts:`.showPreviewImage:` boolean
+   :ts:`.showPreviewImage:` :ref:`boolean <t3tsref:data-type-boolean>`
       Show preview image if available. Set via Constant editor.
 
-   :ts:`.previewMaxWidth:` integer
+   :ts:`.previewMaxWidth:` :ref:`integer <t3tsref:data-type-integer>`
       Maximum width of preview image. Set via Constant Editor.
 
-   :ts:`.previewMaxHeight:` integer
+   :ts:`.previewMaxHeight:` :ref:`integer <t3tsref:data-type-integer>`
       Maximum height of preview image. Set via Constant Editor.
 
-   :ts:`.cObject:` cObject
-      This cObject is used for rendering the placeholder. If this cObject is a FLUIDTEMPLATE, some useful
-      values are passed to the fluid template as settings:
+   :ts:`.cObject:` :ref:`cObject <t3tsref:data-type-cobject>`
+      This cObject is used for rendering the placeholder. If this cObject is a :ref:`FLUIDTEMPLATE <t3tsref:cobj-fluidtemplate>`,
+      some useful values are passed to the fluid template as settings:
 
-      :ts:`.settings:`
-         Settings for the FLUIDTEMPLATE cObject
+      :ts:`.settings:` :ref:`array of keys <t3tsref:cobj-fluidtemplate-properties-settings>`
+         Settings for the FLUIDTEMPLATE cObject.
+         You can add your own properties according to the needs of your custom templates.
 
-         Default properties:
+         :aspect:`Default Properties:`
+            :ts:`.videoProvider:` :ref:`string <t3tsref:data-type-string>`
+               Provider of the video, i.e. "YouTube" or "Vimeo". Usefull to adapt the placeholder content, i.e. link to the
+               proper privacy statement.
 
-         :ts:`.videoProvider:` String
-            Provider of the video, i.e. "YouTube" or "Vimeo". Usefull to adapt the placeholder content, i.e. link to the
-            proper privacy statement.
+            :ts:`.showTitle:` :ref:`boolean <t3tsref:data-type-boolean>`
+               see above
 
-         :ts:`.showTitle:` boolean
-            see above
+            :ts:`.title:` :ref:`string <t3tsref:data-type-string>`
+               The title of the video
 
-         :ts:`.title:` String
-            The title of the video
+            :ts:`.width:` :ref:`integer <t3tsref:data-type-integer>`
+               The calculated width of the video iframe
 
-         :ts:`.width:` integer
-            The calculated width of the video iframe
+            :ts:`.height:` :ref:`integer <t3tsref:data-type-integer>`
+               The calculated height of the video iframe
 
-         :ts:`.height:` integer
-            The calculated height of the video iframe
+            :ts:`.previewImage:` :ref:`string <t3tsref:data-type-string>`
+               Path to the preview image relative to the web root
 
-         :ts:`.previewImage:` String
-            Path to the preview image relative to the web root
+            :ts:`.enablePermanently:` :ref:`boolean <t3tsref:data-type-boolean>`
+               Show the button for permanent activation if configured for this host.
 
-         :ts:`.enablePermanently:` boolean
-            Show the button for permanent activation if configured for this host.
-
-         :ts:`.privacyPid:` integer
-            Target page for the "More Info" link. Set via Constant Editor.
+            :ts:`.privacyPid:` :ref:`integer <t3tsref:data-type-integer>`
+               Target page for the "More Info" link. Set via Constant Editor.
