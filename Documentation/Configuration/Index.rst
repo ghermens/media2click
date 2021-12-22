@@ -254,8 +254,8 @@ placeholderContent
       This cObject is used for rendering the placeholder. If this cObject is a :ref:`FLUIDTEMPLATE <t3tsref:cobj-fluidtemplate>`,
       some useful values are passed to the fluid template as settings:
 
-      :ts:`.settings:` :ref:`array of keys <t3tsref:cobj-fluidtemplate-properties-settings>`
-         Settings for the FLUIDTEMPLATE cObject.
+      :ts:`.settings:` array of keys
+         :ref:`Settings for the FLUIDTEMPLATE cObject <t3tsref:cobj-fluidtemplate-properties-settings>`.
          You can add your own properties according to the needs of your custom templates.
 
          :aspect:`Default Properties:`
