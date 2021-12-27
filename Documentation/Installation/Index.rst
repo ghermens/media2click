@@ -6,7 +6,7 @@
 Installation
 ============
 
-Admin rights are required to install and activate the an extension.
+Admin rights are required to install and activate an extension.
 
 .. contents::
    :backlinks: top
