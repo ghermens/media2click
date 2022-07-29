@@ -169,7 +169,7 @@ class Media2Click {
   }
 
   /**
-   * Check is a host is active
+   * Check if a host is active
    * @param host
    * @returns {boolean}
    */
