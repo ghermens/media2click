@@ -61,9 +61,10 @@ media2click.addHost(host)
    string
 
 :aspect:`Return data type:`
-   void
+   boolean
 
-Activate the host and update the cookie.
+Activate the host and update the cookie. Returns true if the host identifier is
+valid and the host is active.
 
 .. _jsapi-removehost:
 
@@ -74,9 +75,10 @@ media2click.removeHost(host)
    string
 
 :aspect:`Return data type:`
-   void
+   boolean
 
-Deactivate the host and update the cookie.
+Deactivate the host and update the cookie. Returns true if the host identifier
+is valid and the host is inactive.
 
 .. _jsapi-updatecookie:
 
@@ -97,9 +99,10 @@ media2click.activateAllForHost(host)
    string
 
 :aspect:`Return data type:`
-   void
+   boolean
 
-Immediately activate the content of all content elements atached to the given host.
+Immediately activate the content of all content elements attached to the given
+host. Returns false if the host identifier is invalid.
 
 .. _jsapi-bestpractice:
 

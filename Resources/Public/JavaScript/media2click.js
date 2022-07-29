@@ -209,6 +209,7 @@ class Media2Click {
       this.#cookieHosts.splice(this.#cookieHosts.indexOf(host), 1);
       this.updateCookie();
     }
+    return true;
   }
 
   /**
