@@ -25,30 +25,33 @@ class Media2Click {
   #initElement(element) {
     let thisObject = this;
     let placeholder = element.querySelector('.media2click-placeholder');
-    let host = placeholder.getAttribute('data-host');
-    let frameData = element.querySelector('.media2click-iframedata');
-    let activateOnce = element.querySelector('.media2click-once');
-    let activatePermanent = element.querySelector('.media2click-permanent');
+    let host = '';
+    if (placeholder !== null) {
+      host = placeholder.getAttribute('data-host');
+      let frameData = element.querySelector('.media2click-iframedata');
+      let activateOnce = element.querySelector('.media2click-once');
+      let activatePermanent = element.querySelector('.media2click-permanent');
 
-    /* Activate once and load iframe */
-    if (activateOnce !== null) {
-      activateOnce.addEventListener('click', function (event) {
-        event.preventDefault();
-        thisObject.#activateFrame(frameData, placeholder);
-      }, false);
-    }
+      /* Activate once and load iframe */
+      if (activateOnce !== null) {
+        activateOnce.addEventListener('click', function(event) {
+          event.preventDefault();
+          thisObject.#activateFrame(frameData, placeholder);
+        }, false);
+      }
 
-    /* Activate permanently and load iframe */
-    if (activatePermanent !== null) {
-      activatePermanent.addEventListener('click', function (event) {
-        event.preventDefault();
-        thisObject.addHost(host);
+      /* Activate permanently and load iframe */
+      if (activatePermanent !== null) {
+        activatePermanent.addEventListener('click', function(event) {
+          event.preventDefault();
+          thisObject.addHost(host);
+          thisObject.#activateFrame(frameData, placeholder);
+        }, false);
+      }
+      /* If already activated permanently, load iframe */
+      if (thisObject.isActiveHost(host)) {
         thisObject.#activateFrame(frameData, placeholder);
-      }, false);
-    }
-    /* If already activated permanently, load iframe */
-    if(thisObject.isActiveHost(host)) {
-      thisObject.#activateFrame(frameData, placeholder);
+      }
     }
   }
 
@@ -233,13 +236,16 @@ class Media2Click {
 
     let elementList = document.querySelectorAll('.media2click-wrap');
     elementList.forEach(function(element) {
-      let thisObject = this;
       let placeholder = element.querySelector('.media2click-placeholder');
-      let elementHost = placeholder.getAttribute('data-host');
-      let frameData = element.querySelector('.media2click-iframedata');
+      let elementHost = '';
+      if (placeholder !== null) {
+        elementHost = placeholder.getAttribute('data-host');
 
-      if (elementHost === host) {
-        thisObject.#activateFrame(frameData, placeholder);
+        let frameData = element.querySelector('.media2click-iframedata');
+
+        if (elementHost === host) {
+          thisObject.#activateFrame(frameData, placeholder);
+        }
       }
     });
     return true;
@@ -248,6 +254,8 @@ class Media2Click {
 
 document.onreadystatechange = function () {
   if (document.readyState === 'complete') {
-    var media2click = new Media2Click(TYPO3.settings.TS.m2cCookieLifetime);
+    if (typeof media2click === 'undefined') {
+      var media2click = new Media2Click(TYPO3.settings.TS.m2cCookieLifetime);
+    }
   }
 };
