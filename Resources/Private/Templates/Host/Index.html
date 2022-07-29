@@ -2,7 +2,7 @@
 <ul class="media2click-hosts">
     <f:for each="{hosts}" as="host" iteration="iterator">
         <li>
-            <div class="media2click-toggle-wrap"><input type="checkbox" id="m2c-host-{host.uid}" class="media2click-toggle" data-cookielifetime="{settings.m2cCookieLifetime}" data-host="{host.host}"></div>
+            <div class="media2click-toggle-wrap"><input type="checkbox" id="m2c-host-{host.uid}" class="media2click-toggle" data-host="{host.host}"></div>
             <label for="m2c-host-{host.uid}" class="media2click-toggle-label">
                 <f:if condition="{host.logo.0}">
                     <span class="media2click-toggle-logo">

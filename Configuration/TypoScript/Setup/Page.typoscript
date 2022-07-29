@@ -7,4 +7,8 @@ page {
   includeJSFooter {
     media2click = EXT:media2click/Resources/Public/JavaScript/media2click.js
   }
+
+  inlineSettings {
+    m2cCookieLifetime = {$plugin.media2click.cookieLifetime}
+  }
 }
