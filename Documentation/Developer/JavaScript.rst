@@ -6,7 +6,8 @@
 JavaScript
 ==========
 
-
+media2click provides a JavaScript API for easy integration with other privacy
+tools, i.e. the cookie banner of your choice.
 
 .. _javascript-api:
 
@@ -102,11 +103,12 @@ Immediately activate the content of all content elements atached to the given ho
 
 .. _jsapi-bestpractice:
 
-=============
 Best Practice
 =============
 
-The initialization of the media2click object ist delayed until the document is in a complete ready state. If this leads to undefined variable errors, use something like this:
+The initialization of the media2click object ist delayed until the document is
+in a complete ready state. If this leads to undefined variable errors, use
+something like this:
 
 .. code-block:: js
 
