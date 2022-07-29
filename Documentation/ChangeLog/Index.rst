@@ -7,8 +7,17 @@
 Change Log
 ==========
 
+Breaking Changes
+================
+
+Version 3.0.0
+-------------
+
+The JavaScript has been rewritten to provide a clean API.
+If you relied on the variables and functions previously in the global scope, you have to adapt your code to the new API.
+
 Version 2.0.0
-=============
+-------------
 
 Some FLUID template variables have been renamed to be less generic. If you
 use your own templates, you have to adapt them accordingly.
@@ -16,14 +25,14 @@ use your own templates, you have to adapt them accordingly.
 The classic rendering method has been removed.
 
 Version 1.3.2
-=============
+-------------
 
 As of version 1.3.2, the classic rendering method is deprecated. It will be
 removed in version 2.0.0.
 
 
 Version 0.3
-===========
+-----------
 
 Version 0.3 introduces the cObject rendering method for the placeholder.
 This method is enabled by default and uses a FLUIDTEMPLATE cObject for

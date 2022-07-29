@@ -50,13 +50,38 @@ This documentation is for the TYPO3 extension media2click.
 You are welcome to help improve this guide. Just click on "Edit me on GitHub"
 on the top right to submit your change request.
 
-.. toctree::
-   :maxdepth: 1
+**Sitemap**
 
-   Introduction/Index
-   Installation/Index
-   User/Index
-   Administrator/Index
-   Configuration/Index
-   ChangeLog/Index
+.. toctree::
+   :glob:
+   :titlesonly:
+
+   Introduction/*
+
+.. toctree::
+   :caption: For Editors
+   :glob:
+   :titlesonly:
+
+   User/*
+
+.. toctree::
+   :caption: For Integrators
+   :glob:
+   :titlesonly:
+
+   Installation/*
+   Administrator/*
+   Configuration/*
+
+.. toctree::
+   :caption: For Developers
+
+   Developer/JavaScript
+
+.. toctree::
+   :glob:
+   :titlesonly:
+
+   ChangeLog/*
    Sitemap
