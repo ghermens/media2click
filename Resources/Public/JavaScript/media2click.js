@@ -271,11 +271,20 @@ class Media2Click {
       let elementHost = '';
       if (placeholder !== null) {
         elementHost = placeholder.getAttribute('data-host');
+        let type = 'iframe';
+        if (placeholder.classList.contains('media2click-placeholder-content')) {
+          type = 'content';
+        }
 
+        let contentData = element.querySelector('.media2click-contentdata');
         let frameData = element.querySelector('.media2click-iframedata');
 
         if (elementHost === host) {
-          thisObject.#activateFrame(frameData, placeholder);
+          if (type === 'content') {
+            thisObject.#activateContent(contentData, placeholder);
+          } else {
+            thisObject.#activateFrame(frameData, placeholder);
+          }
         }
       }
     });
