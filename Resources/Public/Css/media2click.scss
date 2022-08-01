@@ -5,6 +5,7 @@
     position: relative;
 
     .media2click-placeholder-iframe,
+    .media2click-placeholder-content,
     iframe {
         position: absolute;
         top: 0;
@@ -14,6 +15,9 @@
         border: 0;
     }
 
+    &.media2click-ratio-219 {
+        padding-bottom: 42.86%
+    }
 
     &.media2click-ratio-169 {
         padding-bottom: 56.25%;
@@ -100,10 +104,13 @@
     }
 }
 
-.media2click-placeholder-iframe.media2click-haspreview {
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.media2click-placeholder-iframe,
+.media2click-placeholder-content {
+    &.media2click-haspreview {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
 
 .media2click-placeholder-logo {
@@ -180,7 +187,7 @@
         a {
             display: inline;
             float: none;
-            background:none;
+            background: none;
             border: none;
             padding: 0;
         }

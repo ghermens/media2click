@@ -28,6 +28,11 @@ class Media2Click {
     let host = '';
     if (placeholder !== null) {
       host = placeholder.getAttribute('data-host');
+      let type = 'iframe';
+      if (placeholder.classList.contains('media2click-placeholder-content')) {
+        type = 'content';
+      }
+      let contentData = element.querySelector('.media2click-contentdata');
       let frameData = element.querySelector('.media2click-iframedata');
       let activateOnce = element.querySelector('.media2click-once');
       let activatePermanent = element.querySelector('.media2click-permanent');
@@ -36,7 +41,11 @@ class Media2Click {
       if (activateOnce !== null) {
         activateOnce.addEventListener('click', function(event) {
           event.preventDefault();
-          thisObject.#activateFrame(frameData, placeholder);
+          if (type === 'content') {
+            thisObject.#activateContent(contentData, placeholder);
+          } else {
+            thisObject.#activateFrame(frameData, placeholder);
+          }
         }, false);
       }
 
@@ -45,12 +54,20 @@ class Media2Click {
         activatePermanent.addEventListener('click', function(event) {
           event.preventDefault();
           thisObject.addHost(host);
-          thisObject.#activateFrame(frameData, placeholder);
+          if (type === 'content') {
+            thisObject.#activateContent(contentData, placeholder);
+          } else {
+            thisObject.#activateFrame(frameData, placeholder);
+          }
         }, false);
       }
       /* If already activated permanently, load iframe */
       if (thisObject.isActiveHost(host)) {
-        thisObject.#activateFrame(frameData, placeholder);
+        if (type === 'content') {
+          thisObject.#activateContent(contentData, placeholder);
+        } else {
+          thisObject.#activateFrame(frameData, placeholder);
+        }
       }
     }
   }
@@ -88,6 +105,19 @@ class Media2Click {
 
     dataNode.parentElement.insertBefore(newNode, dataNode);
     dataNode.parentElement.removeChild(dataNode);
+    placeholderNode.parentElement.removeChild(placeholderNode);
+  }
+
+  #activateContent(contentNode, placeholderNode) {
+    let newNode = document.createElement('iframe');
+    let contentData = JSON.parse(contentNode.text);
+    Object.entries(contentData.attributes).forEach(([key, value]) => newNode.setAttribute(key, value));
+
+    contentNode.parentElement.insertBefore(newNode, contentNode);
+    newNode.contentWindow.document.open();
+    newNode.contentWindow.document.write('<body>' + contentData.content + '</body>');
+    newNode.contentWindow.document.close();
+    contentNode.parentElement.removeChild(contentNode);
     placeholderNode.parentElement.removeChild(placeholderNode);
   }
 

@@ -17,6 +17,14 @@ defined('TYPO3_MODE') || die();
         ]
     );
 
+    $iconRegistry->registerIcon(
+        'tx-media2click-ce-content',
+        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        [
+            'source' => 'EXT:media2click/Resources/Public/Icons/CeContent.svg'
+        ]
+    );
+
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
         '@import "EXT:media2click/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement.tsconfig"'
     );
@@ -29,4 +37,6 @@ defined('TYPO3_MODE') || die();
     );
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['Amazing\\Media2click\\Evaluation\\UrlSchemeEvaluation'] = '';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['record_is_used']['tx_media2click']
+        = 'Amazing\\Media2click\\Hooks\\UsedRecords->addMedia2ClickContent';
 }) ();

@@ -4,6 +4,7 @@
   overflow: hidden;
   position: relative; }
   .media2click-ratio .media2click-placeholder-iframe,
+  .media2click-ratio .media2click-placeholder-content,
   .media2click-ratio iframe {
     position: absolute;
     top: 0;
@@ -11,6 +12,8 @@
     width: 100%;
     height: 100%;
     border: 0; }
+  .media2click-ratio.media2click-ratio-219 {
+    padding-bottom: 42.86%; }
   .media2click-ratio.media2click-ratio-169 {
     padding-bottom: 56.25%; }
   .media2click-ratio.media2click-ratio-32 {
@@ -65,7 +68,8 @@
   .media2click-placeholder-video.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder-video.media2click-haspreview:focus-within .media2click-placeholder-inner {
     background-image: none; }
 
-.media2click-placeholder-iframe.media2click-haspreview {
+.media2click-placeholder-iframe.media2click-haspreview,
+.media2click-placeholder-content.media2click-haspreview {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat; }

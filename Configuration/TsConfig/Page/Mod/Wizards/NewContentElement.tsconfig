@@ -12,8 +12,16 @@ mod {
                 CType = media2click_iframe
               }
             }
+            media2click_content {
+              iconIdentifier = tx-media2click-ce-content
+              title = LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_content
+              description = LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_content.description
+              tt_content_defValues {
+                CType = media2click_content
+              }
+            }
           }
-          show := addToList(media2click_iframe)
+          show := addToList(media2click_iframe,media2click_content)
         }
       }
     }

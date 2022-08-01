@@ -15,17 +15,29 @@
 				<source><![CDATA[Options]]></source>
 				<target><![CDATA[Einstellungen]]></target>
 			</trans-unit>
+			<trans-unit id="media2click_content">
+				<source><![CDATA[Content with consent]]></source>
+				<target><![CDATA[Inhalt mit Zustimmung]]></target>
+			</trans-unit>
+			<trans-unit id="media2click_content.description">
+				<source><![CDATA[Ask user for consent before including content using external resources.]]></source>
+				<target><![CDATA[Erfragt die Zustimmung des Nutzers, bevor Inhalte eingebunden werden, die auf externe Resourcen zugreifen.]]></target>
+			</trans-unit>
 			<trans-unit id="media2click_iframe" approved="yes">
 				<source><![CDATA[iFrame with consent]]></source>
 				<target><![CDATA[iFrame mit Zustimmung]]></target>
 			</trans-unit>
 			<trans-unit id="media2click_iframe.description" approved="yes">
 				<source><![CDATA[Ask user for consent before inluding external resources via iframe.]]></source>
-				<target><![CDATA[Erfragt die Zustimmung des Nutzers, bevor externe Inhalte periFrame eingebunden werden.]]></target>
+				<target><![CDATA[Erfragt die Zustimmung des Nutzers, bevor externe Inhalte per iFrame eingebunden werden.]]></target>
 			</trans-unit>
 			<trans-unit id="plugin.list" approved="yes">
 				<source><![CDATA[Toggle permanent activation of external content]]></source>
 				<target><![CDATA[Dauerhafte Aktivierung externer Inhalte umschalten]]></target>
+			</trans-unit>
+			<trans-unit id="tab.content">
+				<source><![CDATA[Content]]></source>
+				<target><![CDATA[Inhalt]]></target>
 			</trans-unit>
 			<trans-unit id="tab.placeholder" approved="yes">
 				<source><![CDATA[Placeholder]]></source>
@@ -34,6 +46,14 @@
 			<trans-unit id="tt_content.image" approved="yes">
 				<source><![CDATA[Background Image]]></source>
 				<target><![CDATA[Hintergrundbild]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_content">
+				<source><![CDATA[Content]]></source>
+				<target><![CDATA[Inhalt]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_host">
+				<source><![CDATA[Host]]></source>
+				<target><![CDATA[Host]]></target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_media2click_iframe_ratio" approved="yes">
 				<source><![CDATA[Size / Ratio]]></source>

@@ -13,6 +13,12 @@
 			<trans-unit id="flexform.plugin.title">
 				<source><![CDATA[Options]]></source>
 			</trans-unit>
+			<trans-unit id="media2click_content">
+				<source><![CDATA[Content with consent]]></source>
+			</trans-unit>
+			<trans-unit id="media2click_content.description">
+				<source><![CDATA[Ask user for consent before including content using external resources.]]></source>
+			</trans-unit>
 			<trans-unit id="media2click_iframe">
 				<source><![CDATA[iFrame with consent]]></source>
 			</trans-unit>
@@ -22,11 +28,20 @@
 			<trans-unit id="plugin.list">
 				<source><![CDATA[Toggle permanent activation of external content]]></source>
 			</trans-unit>
+			<trans-unit id="tab.content">
+				<source><![CDATA[Content]]></source>
+			</trans-unit>
 			<trans-unit id="tab.placeholder">
 				<source><![CDATA[Placeholder]]></source>
 			</trans-unit>
 			<trans-unit id="tt_content.image">
 				<source><![CDATA[Background Image]]></source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_content">
+				<source><![CDATA[Content]]></source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_host">
+				<source><![CDATA[Host]]></source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_media2click_iframe_ratio">
 				<source><![CDATA[Size / Ratio]]></source>
