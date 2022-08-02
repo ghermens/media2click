@@ -76,6 +76,8 @@ on the top right to submit your change request.
 
 .. toctree::
    :caption: For Developers
+   :glob:
+   :titlesonly:
 
    Developer/JavaScript
 

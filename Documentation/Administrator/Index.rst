@@ -13,9 +13,12 @@ Basic Setup
 - Include the extension’s static template into your TypoScript template.
 - If your main :ref:`PAGE <t3tsref:page>` object is not named ‘page’, adapt the TypoScript Setup accordingly.
 - Activate the extension's functionality via the Constant Editor: :ref:`constants-enable`
+- If the "Content with consent" content element is to be used, all required hosts have to be configured explicitly: :ref:`host-configuration`
 
 Advanced Setup
 ==============
+
+.. _host-configuration:
 
 If individual placeholder content or permanent activation is required
 ---------------------------------------------------------------------
