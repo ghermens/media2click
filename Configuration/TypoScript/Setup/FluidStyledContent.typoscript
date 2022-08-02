@@ -51,7 +51,7 @@ tt_content {
       content {
         table = tt_content
         select {
-          pidInList = this
+          pidInList.field = pid
           where = {#colPos} = 1962587 AND {#tx_media2click_parentid} = ###parent###
           markers {
             parent.field = uid
