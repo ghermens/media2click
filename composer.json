@@ -1,7 +1,7 @@
 {
   "name": "amazing/media2click",
   "type": "typo3-cms-extension",
-  "description": "TYPO3 CMS extension media2click: Render external YouTube / Vimeo videos with privacy in mind: User has to click on placeholder to load the actual video iframe.",
+  "description": "TYPO3 CMS extension media2click: Render external content like videos an iframes with privacy in mind: User has to click on placeholder to load the actual content.",
   "keywords": [
     "TYPO3",
     "extension",
