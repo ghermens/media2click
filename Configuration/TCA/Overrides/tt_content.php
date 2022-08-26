@@ -104,6 +104,7 @@ defined('TYPO3_MODE') || die;
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
+                'default' => 0,
             ],
         ],
     ]
