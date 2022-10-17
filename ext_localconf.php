@@ -1,5 +1,5 @@
 <?php
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 (function() {
     /** @var \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry $rendererRegistry */
