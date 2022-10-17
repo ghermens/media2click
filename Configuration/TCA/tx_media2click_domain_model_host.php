@@ -6,7 +6,6 @@ return [
         'label_alt_force' => true,
         'title' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tx_media2click_domain_model_host',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'delete' => 'deleted',
         'enablecolumns' => [
             'disabled' => 'hidden',
@@ -22,9 +21,7 @@ return [
         'transOrigPointerField' => 'l10n_parent',
         'tstamp' => 'tstamp',
     ],
-    'interface' => [
-        'showRecordFieldList' => 'title,host,placeholder,privacy_statement_link,allow_permanent,logo,hidden,starttime,endtime',
-    ],
+    'interface' => [],
     'types' => [
         0 => [
             'showitem' => '

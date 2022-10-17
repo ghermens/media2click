@@ -65,7 +65,6 @@ defined('TYPO3') || die;
                     'levelLinksPosition' => 'both',
                     'useSortable' => true,
                     'showPossibleLocalizationRecords' => true,
-                    'showRemovedLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
                     'showSynchronizationLink' => true,
                     'enabledControls' => [
