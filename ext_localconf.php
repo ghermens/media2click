@@ -3,7 +3,7 @@ defined('TYPO3') || die();
 
 (function() {
     /** @var \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry $rendererRegistry */
-    $rendererRegistry = \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry::getInstance();
+    $rendererRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\Rendering\RendererRegistry::class);
     $rendererRegistry->registerRendererClass(\Amazing\Media2click\Resource\Rendering\YouTubeRenderer::class);
     $rendererRegistry->registerRendererClass(\Amazing\Media2click\Resource\Rendering\VimeoRenderer::class);
 
