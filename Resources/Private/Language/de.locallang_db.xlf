@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.0">
-    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2020-12-17T12:53:52Z" product-name="media2click">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2022-10-18T13:36:00Z" product-name="media2click">
 		<header>
 			<generator>XLIFF Editor</generator>
 			<authorName>Gregor Hermens</authorName>
@@ -15,11 +15,11 @@
 				<source><![CDATA[Options]]></source>
 				<target><![CDATA[Einstellungen]]></target>
 			</trans-unit>
-			<trans-unit id="media2click_content">
+			<trans-unit id="media2click_content" approved="yes">
 				<source><![CDATA[Content with consent]]></source>
 				<target><![CDATA[Inhalt mit Zustimmung]]></target>
 			</trans-unit>
-			<trans-unit id="media2click_content.description">
+			<trans-unit id="media2click_content.description" approved="yes">
 				<source><![CDATA[Ask user for consent before including content using external resources.]]></source>
 				<target><![CDATA[Erfragt die Zustimmung des Nutzers, bevor Inhalte eingebunden werden, die auf externe Resourcen zugreifen.]]></target>
 			</trans-unit>
@@ -35,7 +35,7 @@
 				<source><![CDATA[Toggle permanent activation of external content]]></source>
 				<target><![CDATA[Dauerhafte Aktivierung externer Inhalte umschalten]]></target>
 			</trans-unit>
-			<trans-unit id="tab.content">
+			<trans-unit id="tab.content" approved="yes">
 				<source><![CDATA[Content]]></source>
 				<target><![CDATA[Inhalt]]></target>
 			</trans-unit>
@@ -47,11 +47,11 @@
 				<source><![CDATA[Background Image]]></source>
 				<target><![CDATA[Hintergrundbild]]></target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_media2click_content">
+			<trans-unit id="tt_content.tx_media2click_content" approved="yes">
 				<source><![CDATA[Content]]></source>
 				<target><![CDATA[Inhalt]]></target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_media2click_host">
+			<trans-unit id="tt_content.tx_media2click_host" approved="yes">
 				<source><![CDATA[Host]]></source>
 				<target><![CDATA[Host]]></target>
 			</trans-unit>
