@@ -1,7 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
 defined('TYPO3') || die;
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+ExtensionManagementUtility::addTCAcolumns(
     'tt_content',
     [
         'tx_media2click_iframe_src' => [
@@ -110,7 +114,7 @@ defined('TYPO3') || die;
 );
 
 // iFrame CE
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
@@ -167,7 +171,7 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
 ];
 
 // Content CE
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
@@ -228,12 +232,12 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
 // List plugin
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['media2click_list'] = 'pi_flexform';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['media2click_list'] = 'pages,recursive';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+ExtensionManagementUtility::addPiFlexFormValue(
     'media2click_list',
     'FILE:EXT:media2click/Configuration/FlexForms/PluginList.xml'
 );
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+ExtensionUtility::registerPlugin(
     'media2click',
     'List',
     'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:plugin.list'

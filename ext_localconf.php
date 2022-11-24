@@ -1,14 +1,23 @@
 <?php
-defined('TYPO3') || die();
+
+use Amazing\Media2click\Controller\HostController;
+use Amazing\Media2click\Resource\Rendering\VimeoRenderer;
+use Amazing\Media2click\Resource\Rendering\YouTubeRenderer;
+use TYPO3\CMS\Core\Resource\Rendering\RendererRegistry;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
+defined('TYPO3') || die;
 
 (function() {
-    /** @var \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry $rendererRegistry */
-    $rendererRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\Rendering\RendererRegistry::class);
-    $rendererRegistry->registerRendererClass(\Amazing\Media2click\Resource\Rendering\YouTubeRenderer::class);
-    $rendererRegistry->registerRendererClass(\Amazing\Media2click\Resource\Rendering\VimeoRenderer::class);
+    /** @var RendererRegistry $rendererRegistry */
+    $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
+    $rendererRegistry->registerRendererClass(YouTubeRenderer::class);
+    $rendererRegistry->registerRendererClass(VimeoRenderer::class);
 
     /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+    $iconRegistry = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
     $iconRegistry->registerIcon(
         'tx-media2click-ce-iframe',
         \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
@@ -25,14 +34,14 @@ defined('TYPO3') || die();
         ]
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    ExtensionManagementUtility::addPageTSConfig(
         '@import "EXT:media2click/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement.tsconfig"'
     );
 
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    ExtensionUtility::configurePlugin(
         'Media2click',
         'List',
-        [\Amazing\Media2click\Controller\HostController::class => 'index'],
+        [HostController::class => 'index'],
         []
     );
 
