@@ -21,7 +21,6 @@ return [
         'transOrigPointerField' => 'l10n_parent',
         'tstamp' => 'tstamp',
     ],
-    'interface' => [],
     'types' => [
         0 => [
             'showitem' => '
