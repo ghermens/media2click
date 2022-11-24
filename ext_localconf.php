@@ -28,4 +28,6 @@ defined('TYPO3') || die;
     );
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['Amazing\\Media2click\\Evaluation\\UrlSchemeEvaluation'] = '';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['record_is_used']['tx_media2click']
+        = 'Amazing\\Media2click\\Hooks\\UsedRecords->addMedia2ClickContent';
 }) ();
