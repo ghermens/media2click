@@ -7,3 +7,9 @@ services:
   Amazing\Media2click\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
+
+  Amazing\Media2click\EventListener\IsContentUsedListener:
+    tags:
+      - name: event.listener
+        identifier: 'm2cIsContentUsedListener'
+
