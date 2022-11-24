@@ -6,3 +6,4 @@ services:
 
   Amazing\Media2click\:
     resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
