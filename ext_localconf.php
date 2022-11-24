@@ -16,24 +16,6 @@ defined('TYPO3') || die;
     $rendererRegistry->registerRendererClass(YouTubeRenderer::class);
     $rendererRegistry->registerRendererClass(VimeoRenderer::class);
 
-    /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
-    $iconRegistry = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-    $iconRegistry->registerIcon(
-        'tx-media2click-ce-iframe',
-        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        [
-            'source' => 'EXT:media2click/Resources/Public/Icons/CeIframe.svg'
-        ]
-    );
-
-    $iconRegistry->registerIcon(
-        'tx-media2click-ce-content',
-        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        [
-            'source' => 'EXT:media2click/Resources/Public/Icons/CeContent.svg'
-        ]
-    );
-
     ExtensionManagementUtility::addPageTSConfig(
         '@import "EXT:media2click/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement.tsconfig"'
     );
