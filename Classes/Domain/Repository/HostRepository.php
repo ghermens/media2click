@@ -2,7 +2,9 @@
 namespace Amazing\Media2click\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 class HostRepository extends Repository
@@ -18,8 +20,8 @@ class HostRepository extends Repository
 
     /**
      * @param string $includedHosts list of host uids
-     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     * @return array|QueryResultInterface
+     * @throws InvalidQueryException
      */
     public function findHostsForToggle($includedHosts = '')
     {

@@ -4,7 +4,6 @@ namespace Amazing\Media2click\Controller;
 
 use Amazing\Media2click\Domain\Repository\HostRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class HostController extends ActionController
 {

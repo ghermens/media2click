@@ -18,7 +18,7 @@ class Host extends AbstractEntity
     protected $host = '';
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      */
     protected $logo = null;
 
@@ -42,7 +42,7 @@ class Host extends AbstractEntity
      */
     public function __construct()
     {
-        $this->logo = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->logo = new ObjectStorage();
     }
 
     /**
