@@ -1,32 +1,35 @@
 {
-  "name": "amazing/media2click",
-  "type": "typo3-cms-extension",
-  "description": "TYPO3 CMS extension media2click: Render external content like videos an iframes with privacy in mind: User has to click on placeholder to load the actual content.",
-  "keywords": [
-    "TYPO3",
-    "extension",
-    "media"
-  ],
-  "authors": [
-    {
-      "name": "Gregor Hermens",
-	  "email": "gregor.hermens@a-mazing.de",
-      "role": "Developer",
-      "homepage": "https://www.a-mazing.de"
-    }
-  ],
-  "license": "GPL-2.0-or-later",
-  "require": {
-    "typo3/cms-core": "^11.5 || ^12.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Amazing\\Media2click\\": "Classes"
-    }
-  },
-  "extra": {
-    "typo3/cms": {
-      "extension-key": "media2click"
-    }
-  }
+	"name": "amazing/media2click",
+	"type": "typo3-cms-extension",
+	"description": "TYPO3 CMS extension media2click: Render external content like videos an iframes with privacy in mind: User has to click on placeholder to load the actual content.",
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"media"
+	],
+	"authors": [
+		{
+			"name": "Gregor Hermens",
+			"email": "gregor.hermens@a-mazing.de",
+			"role": "Developer",
+			"homepage": "https://www.a-mazing.de"
+		}
+	],
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"typo3/cms-core": "^11.5 || ^12.0"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-latest"
+	},
+	"autoload": {
+		"psr-4": {
+			"Amazing\\Media2click\\": "Classes"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "media2click"
+		}
+	}
 }
