@@ -120,7 +120,8 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_iframe',
         'media2click_iframe',
-        'tx-media2click-ce-iframe'
+        'tx-media2click-ce-iframe',
+        'special',
     ],
     'div',
     'after'
@@ -177,7 +178,8 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_content',
         'media2click_content',
-        'tx-media2click-ce-content'
+        'tx-media2click-ce-content',
+        'special',
     ],
     'media2click_iframe',
     'after'
