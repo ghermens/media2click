@@ -41,7 +41,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
     {
         $options = $this->collectOptions($options, $file);
 
-        if(!$options['additionalConfig']['enable2click']) {
+        if(empty($options['additionalConfig']['enable2click'])) {
             return parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript);
         }
 
@@ -85,7 +85,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
         /** @var ContentObjectRenderer $contentObjectRenderer */
         $contentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class, $GLOBALS['TSFE']);
 
-        $placeholderContentSetup = $options['additionalConfig']['placeholderContent'];
+        $placeholderContentSetup = $options['additionalConfig']['placeholderContent'] ?? [];
 
         $style = '';
         if ((int)$width > 0) {

@@ -42,7 +42,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
     {
         $options = $this->collectOptions($options, $file);
 
-        if (!$options['additionalConfig']['enable2click']) {
+        if (empty($options['additionalConfig']['enable2click'])) {
             return parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript);
         }
 
@@ -87,7 +87,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
         /** @var ContentObjectRenderer $contentObjectRenderer */
         $contentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class, $GLOBALS['TSFE']);
 
-        $placeholderContentSetup = $options['additionalConfig']['placeholderContent'];
+        $placeholderContentSetup = $options['additionalConfig']['placeholderContent'] ?? [];
 
         $style = '';
         if ((int)$width > 0) {
