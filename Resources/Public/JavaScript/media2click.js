@@ -292,7 +292,7 @@ class Media2Click {
   }
 }
 
-document.onreadystatechange = function () {
+document.addEventListener('readystatechange', (event) => {
   if (document.readyState === 'complete') {
     if (typeof media2click === 'undefined') {
       var media2click = new Media2Click(TYPO3.settings.TS.m2cCookieLifetime);
