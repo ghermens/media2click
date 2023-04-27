@@ -54,46 +54,8 @@ ExtensionManagementUtility::addTCAcolumns(
             'exclude' => false,
             'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_content',
             'config' => [
-                'type' => 'inline',
-                'allowed' => 'tt_content',
-                'foreign_table' => 'tt_content',
-                'foreign_field' => 'tx_media2click_parentid',
-                'foreign_sortby' => 'sorting',
-                'foreign_match_fields' => [
-                    'colPos' => '1962587',
-                ],
-                'appearance' => [
-                    'collapseAll' => true,
-                    'expandSingle' => true,
-                    'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'both',
-                    'useSortable' => true,
-                    'showPossibleLocalizationRecords' => true,
-                    'showAllLocalizationLink' => true,
-                    'showSynchronizationLink' => true,
-                    'enabledControls' => [
-                        'info' => false,
-                        'new' => true,
-                        'dragdrop' => true,
-                        'sort' => true,
-                        'hide' => true,
-                        'delete' => true,
-                        'localize' => true,
-                    ],
-                ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
-                'overrideChildTca' => [
-                    'columns' => [
-                        'colPos' => [
-                            'config' => [
-                                'type' => 'none',
-                                'renderType' => '',
-                            ],
-                        ],
-                    ],
-                ],
+                'type' => 'none',
+                'default' => 0,
             ],
         ],
         'tx_media2click_host' => [
@@ -212,6 +174,50 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
     ',
     'columnsOverrides' => [
+        'tx_media2click_content' => [
+            'config' => [
+                'type' => 'inline',
+                'allowed' => 'tt_content',
+                'foreign_table' => 'tt_content',
+                'foreign_field' => 'tx_media2click_parentid',
+                'foreign_sortby' => 'sorting',
+                'foreign_match_fields' => [
+                    'colPos' => '1962587',
+                ],
+                'appearance' => [
+                    'collapseAll' => true,
+                    'expandSingle' => true,
+                    'newRecordLinkAddTitle' => true,
+                    'levelLinksPosition' => 'both',
+                    'useSortable' => true,
+                    'showPossibleLocalizationRecords' => true,
+                    'showAllLocalizationLink' => true,
+                    'showSynchronizationLink' => true,
+                    'enabledControls' => [
+                        'info' => false,
+                        'new' => true,
+                        'dragdrop' => true,
+                        'sort' => true,
+                        'hide' => true,
+                        'delete' => true,
+                        'localize' => true,
+                    ],
+                ],
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+                'overrideChildTca' => [
+                    'columns' => [
+                        'colPos' => [
+                            'config' => [
+                                'type' => 'none',
+                                'renderType' => '',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'image' => [
             'config' => [
                 'behaviour' => [
