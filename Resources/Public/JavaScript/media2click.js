@@ -115,7 +115,7 @@ class Media2Click {
 
     contentNode.parentElement.insertBefore(newNode, contentNode);
     newNode.contentWindow.document.open();
-    newNode.contentWindow.document.write('<body>' + contentData.content + '</body>');
+    newNode.contentWindow.document.write('<!DOCTYPE html><html><body>' + contentData.content + '</body></html>');
     newNode.contentWindow.document.close();
     contentNode.parentElement.removeChild(contentNode);
     placeholderNode.parentElement.removeChild(placeholderNode);
