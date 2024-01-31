@@ -156,7 +156,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                         'settings.' => [
                             'videoProvider' => 'YouTube',
                             'showTitle' => $conf['showTitle'],
-                            'title' => $options['title'],
+                            'title' => $options['title'] ?? '',
                             'width' => (int)$width,
                             'height' => (int)$height,
                             'previewImage' => $previewImageWebPath,

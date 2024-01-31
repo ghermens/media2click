@@ -154,7 +154,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
                         'settings.' => [
                             'videoProvider' => 'Vimeo',
                             'showTitle' => $conf['showTitle'],
-                            'title' => $options['title'],
+                            'title' => $options['title'] ?? '',
                             'width' => (int)$width,
                             'height' => (int)$height,
                             'previewImage' => $previewImageWebPath,
