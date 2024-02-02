@@ -23,7 +23,8 @@ class HostController extends ActionController
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('hosts', $this->hostRepository->findHostsForToggle($this->settings['includeHosts']));
+        $hosts = $this->settings['includeHosts'] ?? '';
+        $this->view->assign('hosts', $this->hostRepository->findHostsForToggle($hosts));
         return $this->htmlResponse();
     }
 }
