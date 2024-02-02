@@ -86,6 +86,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
 
         /** @var ContentObjectRenderer $contentObjectRenderer */
         $contentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class, $GLOBALS['TSFE']);
+        $contentObjectRenderer->setRequest($contentObjectRenderer->getRequest());
 
         $placeholderContentSetup = $options['additionalConfig']['placeholderContent'] ?? [];
 

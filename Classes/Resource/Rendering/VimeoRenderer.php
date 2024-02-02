@@ -84,6 +84,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
 
         /** @var ContentObjectRenderer $contentObjectRenderer */
         $contentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class, $GLOBALS['TSFE']);
+        $contentObjectRenderer->setRequest($contentObjectRenderer->getRequest());
 
         $placeholderContentSetup = $options['additionalConfig']['placeholderContent'] ?? [];
 
