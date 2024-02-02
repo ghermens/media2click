@@ -80,10 +80,10 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_iframe',
-        'media2click_iframe',
-        'tx-media2click-ce-iframe',
-        'special',
+        'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_iframe',
+        'value' => 'media2click_iframe',
+        'icon' => 'tx-media2click-ce-iframe',
+        'group' => 'special',
     ],
     'div',
     'after'
@@ -138,10 +138,10 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_content',
-        'media2click_content',
-        'tx-media2click-ce-content',
-        'special',
+        'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:media2click_content',
+        'value' => 'media2click_content',
+        'icon' => 'tx-media2click-ce-content',
+        'group' => 'special',
     ],
     'media2click_iframe',
     'after'
@@ -248,5 +248,7 @@ ExtensionManagementUtility::addPiFlexFormValue(
 ExtensionUtility::registerPlugin(
     'media2click',
     'List',
-    'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:plugin.list'
+    'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:plugin.list',
+    'tx-media2click-icon',
+    'special'
 );
