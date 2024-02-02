@@ -16,9 +16,9 @@ use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
-use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
 
 class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
 {
@@ -76,10 +76,11 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
 
     /**
      * @param FileInterface $file
-     * @param int|string $width
-     * @param int|string $height
-     * @param array $options
+     * @param int|string    $width
+     * @param int|string    $height
+     * @param array         $options
      * @return string
+     * @throws ContentRenderingException
      */
     protected function renderPlaceholder(FileInterface $file, $width, $height, array $options = [])
     {

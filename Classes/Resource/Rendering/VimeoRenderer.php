@@ -18,6 +18,7 @@ use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
 
 class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
 {
@@ -74,10 +75,11 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
 
     /**
      * @param FileInterface $file
-     * @param int|string $width
-     * @param int|string $height
-     * @param array $options
+     * @param int|string    $width
+     * @param int|string    $height
+     * @param array         $options
      * @return string
+     * @throws ContentRenderingException
      */
     protected function renderPlaceholder(FileInterface $file, $width, $height, array $options = [])
     {
