@@ -238,13 +238,6 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
 
 
 // List plugin
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['media2click_list'] = 'pi_flexform';
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['media2click_list'] = 'pages,recursive';
-ExtensionManagementUtility::addPiFlexFormValue(
-    'media2click_list',
-    'FILE:EXT:media2click/Configuration/FlexForms/PluginList.xml'
-);
-
 ExtensionUtility::registerPlugin(
     'media2click',
     'List',
@@ -252,3 +245,30 @@ ExtensionUtility::registerPlugin(
     'tx-media2click-icon',
     'special'
 );
+
+$GLOBALS['TCA']['tt_content']['types']['media2click_list'] = [
+    'showitem' => '
+     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+        --palette--;;general,
+        --palette--;;headers,
+        pi_flexform,
+    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+        --palette--;;frames, --palette--;;appearanceLinks,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+        --palette--;;language,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+        --palette--;;hidden,
+        --palette--;;access,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories, categories,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+        rowDescription,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,'
+];
+
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:media2click/Configuration/FlexForms/PluginList.xml',
+    'media2click_list'
+);
+
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['media2click_list'] = 'tx-media2click-icon';

@@ -24,7 +24,8 @@ defined('TYPO3') || die;
         'Media2click',
         'List',
         [HostController::class => 'index'],
-        []
+        [],
+        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['Amazing\\Media2click\\Evaluation\\UrlSchemeEvaluation'] = '';
