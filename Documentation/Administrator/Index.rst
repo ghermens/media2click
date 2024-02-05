@@ -44,7 +44,7 @@ If individual placeholder content or permanent activation is required
    Example host configuration for YouTube videos
 
 - Set privacyPid to the uid of your privacy statement page via the Constant Edtior: :ref:`constants-privacypid`
-- Insert content elements of type "Insert Plugin" -> "Toggle permanent activation of external content" on your privacy
+- Insert content elements of type "Toggle permanent activation of external content" on your privacy
   statement page. You can filter the list of shown hosts in the plugin options:
 
 .. figure:: ../Images/PluginHostList.png
