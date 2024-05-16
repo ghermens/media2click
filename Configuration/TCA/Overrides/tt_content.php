@@ -17,7 +17,8 @@ ExtensionManagementUtility::addTCAcolumns(
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-                'eval' => 'trim,Amazing\\Media2click\\Evaluation\\UrlSchemeEvaluation,required',
+                'eval' => 'trim,Amazing\\Media2click\\Evaluation\\UrlSchemeEvaluation',
+                'required' => true,
                 'softref' => 'typolink',
                 'fieldControl' => [
                     'linkPopup' => [

@@ -87,14 +87,16 @@ return [
             'label'  => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tx_media2click_domain_model_host.title',
             'config' => [
                 'type' => 'input',
-                'eval' => 'trim,required',
+                'eval' => 'trim',
+                'required' => true,
             ],
         ],
         'host'                   => [
             'label'  => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tx_media2click_domain_model_host.host',
             'config' => [
                 'type' => 'input',
-                'eval' => 'trim,nospace,required',
+                'eval' => 'trim,nospace',
+                'required' => true,
             ],
         ],
         'placeholder'            => [
@@ -110,7 +112,7 @@ return [
             'config' => [
                 'type'         => 'input',
                 'renderType'   => 'inputLink',
-                'eval'         => 'required',
+                'requierd' => true,
                 'fieldControl' => [
                     'linkPopup' => [
                         'blindLinkFields'  => 'class,params,target,title',
