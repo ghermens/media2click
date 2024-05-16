@@ -15,10 +15,6 @@ $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
 $rendererRegistry->registerRendererClass(YouTubeRenderer::class);
 $rendererRegistry->registerRendererClass(VimeoRenderer::class);
 
-ExtensionManagementUtility::addPageTSConfig(
-    '@import "EXT:media2click/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement.tsconfig"'
-);
-
 ExtensionUtility::configurePlugin(
     'Media2click',
     'List',
