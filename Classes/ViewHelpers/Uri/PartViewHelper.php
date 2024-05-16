@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -54,7 +55,7 @@ class PartViewHelper extends AbstractViewHelper
      *
      * @throws Exception
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('uri', 'string', 'target URI', true);
         $this->registerArgument('part', 'string', 'Which component of the url to return', false, 'host');
@@ -68,7 +69,7 @@ class PartViewHelper extends AbstractViewHelper
      *
      * @return string Rendered URI
      */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
         $uri = $arguments['uri'];
         $part = $arguments['part'];
@@ -81,9 +82,6 @@ class PartViewHelper extends AbstractViewHelper
         }
 
         $components = parse_url($uri);
-        if (isset($components[$part])) {
-            return $components[$part];
-        }
-        return '';
+        return $components[$part] ?? '';
     }
 }

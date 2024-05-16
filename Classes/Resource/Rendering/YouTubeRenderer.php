@@ -35,10 +35,9 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
      * @param int|string $width
      * @param int|string $height
      * @param array $options
-     * @param bool $usedPathsRelativeToCurrentScript
      * @return string
      */
-    public function render(FileInterface $file, $width, $height, array $options = [], $usedPathsRelativeToCurrentScript = false)
+    public function render(FileInterface $file, $width, $height, array $options = [])
     {
         $options = $this->collectOptions($options, $file);
 
@@ -65,7 +64,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                 '\\u0026',
                 '}\' class="media2click-iframedata"></div>'
             ],
-            parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript)
+            parent::render($file, $width, $height, $options)
         );
 
         $placeholder = $this->renderPlaceholder($file, $width, $height, $options);
@@ -82,7 +81,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
      * @return string
      * @throws ContentRenderingException
      */
-    protected function renderPlaceholder(FileInterface $file, $width, $height, array $options = [])
+    protected function renderPlaceholder(FileInterface $file, $width, $height, array $options = []): string
     {
 
         /** @var ContentObjectRenderer $contentObjectRenderer */
@@ -100,7 +99,6 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
             $style .= 'height: ' . (int)$height . 'px;';
         }
 
-        $hasPreview = false;
         $previewImageWebPath = null;
 
         if (!empty($placeholderContentSetup['showPreviewImage'])) {

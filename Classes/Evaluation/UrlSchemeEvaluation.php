@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Amazing\Media2click\Evaluation;
 
@@ -14,15 +15,13 @@ class UrlSchemeEvaluation
      *
      * @return string JavaScript code for client side validation/evaluation
      */
-    public function returnFieldJS()
+    public function returnFieldJS(): string
     {
-        $jsCode = [];
-        $jsCode[] = 'if(value === \'\') return \'\';';
-        $jsCode[] = 'var parser = document.createElement(\'a\');';
-        $jsCode[] = 'parser.href = value;';
-        $jsCode[] = 'if (parser.protocol === \'https:\' || parser.protocol === \'http:\') return value;';
-        $jsCode[] = 'return \'\'';
-        return implode(' ', $jsCode);
+        return 'if(value === \'\') return \'\';'
+            . ' var parser = document.createElement(\'a\');'
+            . ' parser.href = value;'
+            . ' if (parser.protocol === \'https:\' || parser.protocol === \'http:\') return value;'
+            . ' return \'\'';
     }
 
     /**
@@ -33,7 +32,7 @@ class UrlSchemeEvaluation
      * @param bool $set Boolean defining if the value is written to the database or not.
      * @return string Evaluated field value
      */
-    public function evaluateFieldValue($value, $is_in, &$set)
+    public function evaluateFieldValue(string $value, string $is_in, bool &$set): string
     {
         if (empty($value)) {
             return '';

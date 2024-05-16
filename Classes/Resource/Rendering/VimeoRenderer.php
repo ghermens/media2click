@@ -22,10 +22,7 @@ use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
 
 class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
 {
-    /**
-     * @return int
-     */
-    public function getPriority()
+    public function getPriority(): int
     {
         return 25;
     }
@@ -35,15 +32,14 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
      * @param int|string $width
      * @param int|string $height
      * @param array $options
-     * @param bool $usedPathsRelativeToCurrentScript
      * @return string
      */
-    public function render(FileInterface $file, $width, $height, array $options = [], $usedPathsRelativeToCurrentScript = false)
+    public function render(FileInterface $file, $width, $height, array $options = [])
     {
         $options = $this->collectOptions($options, $file);
 
         if(empty($options['additionalConfig']['enable2click'])) {
-            return parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript);
+            return parent::render($file, $width, $height, $options);
         }
 
         $iframe = preg_replace(
@@ -65,7 +61,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
                 '\\u0026',
                 '}\' class="media2click-iframedata"></div>'
             ],
-            parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript)
+            parent::render($file, $width, $height, $options)
         );
 
         $placeholder = $this->renderPlaceholder($file, $width, $height, $options);
@@ -81,7 +77,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
      * @return string
      * @throws ContentRenderingException
      */
-    protected function renderPlaceholder(FileInterface $file, $width, $height, array $options = [])
+    protected function renderPlaceholder(FileInterface $file, $width, $height, array $options = []): string
     {
 
         /** @var ContentObjectRenderer $contentObjectRenderer */
@@ -99,7 +95,6 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
             $style .= 'height: ' . (int)$height . 'px;';
         }
 
-        $hasPreview = false;
         $previewImageWebPath = null;
 
         if (!empty($placeholderContentSetup['showPreviewImage'])) {

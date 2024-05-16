@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Amazing\Media2click\Controller;
 
@@ -8,15 +9,9 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class HostController extends ActionController
 {
-    /**
-     * @var HostRepository
-     */
-    private $hostRepository;
+    private HostRepository $hostRepository;
 
-    /**
-     * @param HostRepository $hostRepository
-     */
-    public function injectHostRepository(HostRepository $hostRepository)
+    public function injectHostRepository(HostRepository $hostRepository): void
     {
         $this->hostRepository = $hostRepository;
     }

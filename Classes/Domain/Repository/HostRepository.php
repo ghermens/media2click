@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Amazing\Media2click\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -10,8 +12,6 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 class HostRepository extends Repository
 {
     /**
-     * @var array
-     *
      * sort FE host list by BE sorting
      */
     protected $defaultOrderings = [
@@ -20,10 +20,9 @@ class HostRepository extends Repository
 
     /**
      * @param string $includedHosts list of host uids
-     * @return array|QueryResultInterface
      * @throws InvalidQueryException
      */
-    public function findHostsForToggle($includedHosts = '')
+    public function findHostsForToggle(string $includedHosts = ''): QueryResultInterface
     {
         $query = $this->createQuery();
         $includedHostsArray = GeneralUtility::intExplode(',', $includedHosts, true);
