@@ -12,21 +12,15 @@ ExtensionManagementUtility::addTCAcolumns(
             'exclude' => false,
             'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_src',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputLink',
+                'type' => 'link',
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-                'eval' => 'trim,Amazing\\Media2click\\Evaluation\\UrlSchemeEvaluation',
                 'required' => true,
-                'softref' => 'typolink',
-                'fieldControl' => [
-                    'linkPopup' => [
-                        'options' => [
-                            'blindLinkFields' => 'class,params,target,title',
-                            'blindLinkOptions' => 'file,folder,mail,page,spec',
-                        ],
-                    ],
+                'allowedTypes' => ['url'],
+                'appearance' => [
+                    'allowedOptions' => [],
+                    'browserTitle' => 'iFrame URI',
                 ],
             ],
         ],
