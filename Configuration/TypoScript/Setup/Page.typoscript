@@ -8,7 +8,13 @@ page {
     media2click = EXT:media2click/Resources/Public/JavaScript/media2click.js
   }
 
-  inlineSettings {
-    m2cCookieLifetime = {$plugin.media2click.cookieLifetime}
+  headerData {
+    1717835326 = FLUIDTEMPLATE
+    1717835326 {
+      file = EXT:media2click/Resources/Private/Templates/JsSettings.html
+      settings {
+        m2cCookieLifetime = {$plugin.media2click.cookieLifetime}
+      }
+    }
   }
 }
