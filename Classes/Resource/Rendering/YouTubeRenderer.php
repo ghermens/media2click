@@ -42,7 +42,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
         $options = $this->collectOptions($options, $file);
 
         if (empty($options['additionalConfig']['enable2click'])) {
-            return parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript);
+            return parent::render($file, $width, $height, $options);
         }
 
         $iframe = preg_replace(
