@@ -31,10 +31,8 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
     }
 
     /**
-     * @param FileInterface $file
      * @param int|string $width
      * @param int|string $height
-     * @param array $options
      * @return string
      */
     public function render(FileInterface $file, $width, $height, array $options = [])
@@ -74,11 +72,8 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
 
 
     /**
-     * @param FileInterface $file
      * @param int|string    $width
      * @param int|string    $height
-     * @param array         $options
-     * @return string
      * @throws ContentRenderingException
      */
     protected function renderPlaceholder(FileInterface $file, $width, $height, array $options = []): string

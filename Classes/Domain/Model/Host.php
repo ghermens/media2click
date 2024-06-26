@@ -49,17 +49,24 @@ class Host extends AbstractEntity
         $this->host = $host;
     }
 
+    /**
+     * @return ObjectStorage<FileReference>
+     */
     public function getLogo(): ObjectStorage
     {
         return $this->logo;
     }
 
+    /**
+     * @param ObjectStorage<FileReference> $logo
+     */
     public function setLogo(ObjectStorage $logo): void
     {
         $this->logo = $logo;
     }
 
-    public function addLogo(FileReference $file) {
+    public function addLogo(FileReference $file): void
+    {
         $this->logo->attach($file);
     }
 
