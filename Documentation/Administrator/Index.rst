@@ -10,7 +10,9 @@ Administration
 Basic Setup
 ===========
 
-- Include the extension’s static template into your TypoScript template.
+- :ref:`Include the extension’s static template <t3tsref:static-includes>` into your TypoScript template.
+  New in TYPO3 13: You can include the media2click configuration as :ref:`Site Set <t3coreapi:site-sets>`
+  'amazing/media2click' in your site configuration or site package extension.
 - If your main :ref:`PAGE <t3tsref:page>` object is not named ‘page’, adapt the TypoScript Setup accordingly.
 - Activate the extension's functionality via the Constant Editor: :ref:`constants-enable`
 - If the "Content with consent" content element is to be used, all required hosts have to be configured explicitly: :ref:`host-configuration`
