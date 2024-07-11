@@ -1,0 +1,49 @@
+settings:
+  plugin.media2click.enable:
+    label: 'Enable 2-click for external media'
+    type: bool
+    default: false
+  plugin.media2click.enablePermanently:
+    label: 'Enable option to permanently activate external media'
+    type: bool
+    default: false
+  plugin.media2click.showTitle:
+    label: "Show the video's title as the placeholder's title"
+    type: bool
+    default: true
+  plugin.media2click.showPreviewImag:
+    label: "Show the video's preview image"
+    type: bool
+    default: true
+  plugin.media2click.showPreviewImag.maxWidth:
+    label: 'Max width of the preview image'
+    type: int
+    default: 0
+  plugin.media2click.showPreviewImag.maxHeight:
+    label: 'Max height of the preview image'
+    type: int
+    default: 0
+  plugin.media2click.cookieLifetime:
+    label: 'Lifetime of the cookie in days'
+    type: int
+    default: 7
+  plugin.media2click.privacyPid:
+    label: 'UID of Privacy Statement page'
+    type: int
+    default: 0
+  plugin.media2click.storagePid:
+    label: 'UID of storage page for activatable hosts'
+    type: int
+    default: 0
+  plugin.media2click.templateRootPath:
+    label: 'Path of Fluid Templates for media2click placeholder'
+    type: string
+    default: ''
+  plugin.media2click.partialRootPath:
+    label: 'Path of Fluid Partials for media2click placeholder'
+    type: string
+    default: ''
+  plugin.media2click.layoutRootPath:
+    label: 'Path of Fluid Layouts for media2click placeholder'
+    type: string
+    default: ''
