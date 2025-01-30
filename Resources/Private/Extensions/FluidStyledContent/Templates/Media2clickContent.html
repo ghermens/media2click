@@ -4,8 +4,10 @@
 <f:layout name="Default"/>
 
 <f:section name="Main">
+    <f:variable name="content"><f:format.trim>{content}</f:format.trim></f:variable>
+    <f:if condition="{content}">
     <f:if condition="{settings.m2cEnable2click}">
-        <f:then>
+    <f:then>
             <f:alias map="{iframeHost: m2cHostsData.0.data.host}">
             <m:hostdata hostsData="{m2cHostsData}" host="{iframeHost}"/>
             <f:variable name="bgStyle"><f:if condition="{m2cBackgroundImage.0}">background-image:url(<f:uri.image image="{m2cBackgroundImage.0}"/>)</f:if></f:variable>
@@ -28,6 +30,7 @@
         <f:else>
             {content -> f:format.raw()}
         </f:else>
+    </f:if>
     </f:if>
 </f:section>
 
