@@ -118,7 +118,11 @@ something like this:
    document.onreadystatechange = function () {
      if (document.readyState === 'complete') {
        if (typeof media2click === 'undefined') {
-         var media2click = new Media2Click(TYPO3.settings.TS.m2cCookieLifetime);
+         if (typeof m2cCookieLifetime === 'undefined' || isNaN(m2cCookieLifetime)) {
+           const media2click = new Media2Click();
+         } else {
+           const media2click = new Media2Click(m2cCookieLifetime);
+         }
        }
 
       /* your code here ... */
