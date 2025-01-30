@@ -1,7 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
-<script nonce="{f:security.nonce()}">
+<f:asset.script identifier="m2c-settings" priority="true" useNonce="true">
     const m2cCookieLifetime = "{settings.m2cCookieLifetime}";
-    var TYPO3 = Object.assign(TYPO3 || {}, Object.fromEntries(Object.entries({"settings": {"TS": {"m2cCookieLifetime": m2cCookieLifetime}}}).filter((entry) => !['__proto__', 'prototype', 'constructor'].includes(entry[0]))));
-</script>
+</f:asset.script>
 </html>

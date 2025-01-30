@@ -3,6 +3,7 @@ class Media2Click {
   #lifetime = -1;
 
   constructor(lifetime = -1) {
+    console.log(lifetime);
     this.setCookieLifetime(lifetime);
     this.#cookieHosts = this.#getCookieHosts();
     let thisObject = this;
@@ -295,10 +296,10 @@ class Media2Click {
 document.addEventListener('readystatechange', (event) => {
   if (event.target.readyState === 'complete') {
     if (typeof media2click === 'undefined') {
-      if (typeof TYPO3 === 'undefined' || isNaN(TYPO3.settings.TS.m2cCookieLifetime)) {
+      if (typeof m2cCookieLifetime === 'undefined' || isNaN(m2cCookieLifetime)) {
         const media2click = new Media2Click();
       } else {
-        const media2click = new Media2Click(TYPO3.settings.TS.m2cCookieLifetime);
+        const media2click = new Media2Click(m2cCookieLifetime);
       }
     }
   }
