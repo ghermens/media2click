@@ -44,3 +44,5 @@ You can choose an aspect ratio or height for the iframe and add a background ima
 
 The related host has to be selected from the list of configured hosts, as it can not be detected from the
 content.
+
+If the content is empty, the placeholder is not rendered at all. See :ref:`emptycontent` for the necessary prerequisites.

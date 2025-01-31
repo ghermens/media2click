@@ -66,3 +66,12 @@ Just add a file named after the host in Fluid Styled Contents' partial root path
 this file would be named (...)/Partials/Media2click/Placeholder/www.example.com.html
 
 There is an example template for www.example.com included in this extension.
+
+.. _emptycontent:
+
+Empty Content
+-------------
+
+If the content of the "Content with consent" content element is empty (whitespace only), the placeholder is not rendered at all.
+
+E.g. with the :ref:`TYPO3 Content Elements based on Fluid <typo3/cms-fluid-styled-content:start>` extension, you have to adapt the layout to remove all frame and anchor markup from your embedded content elements. See :ref:`Overriding the Fluid templates <typo3/cms-fluid-styled-content:overriding-fluid-templates>` for details.
