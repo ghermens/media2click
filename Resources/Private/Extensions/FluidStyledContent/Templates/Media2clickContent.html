@@ -6,24 +6,26 @@
 <f:section name="Main">
     <f:if condition="{settings.m2cEnable2click}">
         <f:then>
-            <f:alias map="{iframeHost: m2cHostsData.0.data.host}">
-            <m:hostdata hostsData="{m2cHostsData}" host="{iframeHost}"/>
-            <f:variable name="bgStyle"><f:if condition="{m2cBackgroundImage.0}">background-image:url(<f:uri.image image="{m2cBackgroundImage.0}"/>)</f:if></f:variable>
-            <div class="media2click-wrap media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}">
-                <div class="media2click-placeholder media2click-placeholder-content{f:if(condition: m2cBackgroundImage.0, then: ' media2click-haspreview')}"
-                     style="{bgStyle}" data-host="{iframeHost}">
-                    <f:render partial="Media2click/Placeholder/{iframeHost}" optional="true" arguments="{_all}">
-                        <div class="media2click-placeholder-inner">
-                            <f:render partial="Media2click/Placeholder/Default" arguments="{_all}"/>
-                        </div>
-                    </f:render>
-                    <f:render partial="Media2click/Controls/Default" arguments="{_all}"/>
+            <f:if condition="{content -> f:format.trim()} != ''">
+                <f:alias map="{iframeHost: m2cHostsData.0.data.host}">
+                <m:hostdata hostsData="{m2cHostsData}" host="{iframeHost}"/>
+                <f:variable name="bgStyle"><f:if condition="{m2cBackgroundImage.0}">background-image:url(<f:uri.image image="{m2cBackgroundImage.0}"/>)</f:if></f:variable>
+                <div class="media2click-wrap media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}">
+                    <div class="media2click-placeholder media2click-placeholder-content{f:if(condition: m2cBackgroundImage.0, then: ' media2click-haspreview')}"
+                         style="{bgStyle}" data-host="{iframeHost}">
+                        <f:render partial="Media2click/Placeholder/{iframeHost}" optional="true" arguments="{_all}">
+                            <div class="media2click-placeholder-inner">
+                                <f:render partial="Media2click/Placeholder/Default" arguments="{_all}"/>
+                            </div>
+                        </f:render>
+                        <f:render partial="Media2click/Controls/Default" arguments="{_all}"/>
+                    </div>
+                    <script type="application/json" class="media2click-contentdata">
+                        {f:format.json(value: {content: content, attributes: {title: '{f:if(condition: \'{hostData.title}\', then: \'{f:translate(key: \\\'externalContent\\\', extensionName: \\\'Media2click\\\')}: {hostData.title}\', else: \'{f:translate(key: \\\'externalContentFrom\\\', extensionName: \\\'Media2click\\\')} {iframeHost}\' )}'}}, forceObject: true) -> f:format.raw()}
+                    </script>
                 </div>
-                <script type="application/json" class="media2click-contentdata">
-                    {f:format.json(value: {content: content, attributes: {title: '{f:if(condition: \'{hostData.title}\', then: \'{f:translate(key: \\\'externalContent\\\', extensionName: \\\'Media2click\\\')}: {hostData.title}\', else: \'{f:translate(key: \\\'externalContentFrom\\\', extensionName: \\\'Media2click\\\')} {iframeHost}\' )}'}}, forceObject: true) -> f:format.raw()}
-                </script>
-            </div>
-            </f:alias>
+                </f:alias>
+            </f:if>
         </f:then>
         <f:else>
             {content -> f:format.raw()}
