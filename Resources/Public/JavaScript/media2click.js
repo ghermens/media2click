@@ -3,7 +3,6 @@ class Media2Click {
   #lifetime = -1;
 
   constructor(lifetime = -1) {
-    console.log(lifetime);
     this.setCookieLifetime(lifetime);
     this.#cookieHosts = this.#getCookieHosts();
     let thisObject = this;
