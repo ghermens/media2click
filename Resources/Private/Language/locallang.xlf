@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages">
-		<header>
-			<authorName>Gregor Hermens</authorName>
-			<authorEmail>gregor.hermens@a-mazing.de</authorEmail>
-		</header>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:media2click/Resources/Private/Language/locallang.xlf" date="2025-11-14T12:00:34Z" product-name="media2click">
+		<header/>
 		<body>
 			<trans-unit id="activateOnce">
 				<source><![CDATA[Activate once]]></source>
