@@ -47,13 +47,13 @@
 				<source><![CDATA[Size / Ratio]]></source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_media2click_iframe_ratio.50vh">
-				<source><![CDATA[50% of viewport height]]></source>
+				<source><![CDATA[50 % of viewport height]]></source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_media2click_iframe_ratio.75vh">
-				<source><![CDATA[75% of viewport height]]></source>
+				<source><![CDATA[75 % of viewport height]]></source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_media2click_iframe_ratio.90vh">
-				<source><![CDATA[90% of viewport height]]></source>
+				<source><![CDATA[90 % of viewport height]]></source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_media2click_iframe_src">
 				<source><![CDATA[iFrame URI]]></source>
