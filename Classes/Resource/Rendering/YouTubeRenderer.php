@@ -80,7 +80,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
     {
 
         /** @var ContentObjectRenderer $contentObjectRenderer */
-        $contentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class, $GLOBALS['TSFE']);
+        $contentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class);
         $contentObjectRenderer->setRequest($contentObjectRenderer->getRequest());
 
         $placeholderContentSetup = $options['additionalConfig']['placeholderContent'] ?? [];
@@ -97,11 +97,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
         $previewImageWebPath = null;
 
         if (!empty($placeholderContentSetup['showPreviewImage'])) {
-            if ($file instanceof FileReference) {
-                $orgFile = $file->getOriginalFile();
-            } else {
-                $orgFile = $file;
-            }
+            $orgFile = $file instanceof FileReference ? $file->getOriginalFile() : $file;
 
             $previewImage = $this->onlineMediaHelper->getPreviewImage($orgFile);
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <T3DataStructure>
     <meta>
         <langDisable>1</langDisable>
@@ -6,11 +6,14 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <sheetTitle>LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.plugin.title</sheetTitle>
+                <sheetTitle>LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.plugin.title
+                </sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.includeHosts>
-                        <label>LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.plugin.includeHosts</label>
+                        <label>
+                            LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.plugin.includeHosts
+                        </label>
                         <config>
                             <type>select</type>
                             <renderType>selectMultipleSideBySide</renderType>

@@ -9,12 +9,8 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class HostController extends ActionController
 {
-    private HostRepository $hostRepository;
-
-    public function injectHostRepository(HostRepository $hostRepository): void
-    {
-        $this->hostRepository = $hostRepository;
-    }
+    public function __construct(private readonly HostRepository $hostRepository)
+    {}
 
     public function indexAction(): ResponseInterface
     {

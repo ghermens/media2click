@@ -1,4 +1,7 @@
 <?php
+
+use TYPO3\CMS\Core\Resource\FileType;
+
 return [
     'ctrl'     => [
         'label'                    => 'title',
@@ -49,9 +52,7 @@ return [
             'l10n_display' => 'defaultAsReadonly',
             'l10n_mode'    => 'exclude',
             'config'       => [
-                'type'       => 'input',
-                'renderType' => 'inputDateTime',
-                'eval'       => 'datetime,int',
+                'type'       => 'datetime',
                 'default'    => 0,
             ],
         ],
@@ -61,9 +62,7 @@ return [
             'l10n_display' => 'defaultAsReadonly',
             'l10n_mode'    => 'exclude',
             'config'       => [
-                'type'       => 'input',
-                'renderType' => 'inputDateTime',
-                'eval'       => 'datetime,int',
+                'type'       => 'datetime',
                 'default'    => 0,
             ],
         ],
@@ -75,8 +74,7 @@ return [
                 'renderType' => 'checkboxToggle',
                 'items'      => [
                     0 => [
-                        0                    => '',
-                        1                    => '',
+                        'label'                    => '',
                         'invertStateDisplay' => true,
                     ],
                 ],
@@ -110,14 +108,11 @@ return [
         'privacy_statement_link' => [
             'label'  => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tx_media2click_domain_model_host.privacy_statement_link',
             'config' => [
-                'type'         => 'input',
-                'renderType'   => 'inputLink',
-                'requierd' => true,
-                'fieldControl' => [
-                    'linkPopup' => [
-                        'blindLinkFields'  => 'class,params,target,title',
-                        'blindLinkOptions' => 'file,folder,mail,page,spec,telephone',
-                    ],
+                'type'         => 'link',
+                'required' => true,
+                'allowedTypes' => ['url'],
+                'appearance' => [
+                    'allowedOptions' => [],
                 ],
             ],
         ],
@@ -126,12 +121,6 @@ return [
             'config' => [
                 'type'       => 'check',
                 'renderType' => 'checkboxToggle',
-                'items'      => [
-                    [
-                        0 => '',
-                        1 => '',
-                    ],
-                ],
                 'default'    => '1',
                 'behaviour'  => [
                     'allowLanguageSynchronization' => true,
@@ -151,7 +140,7 @@ return [
                 'maxitems'         => 1,
                 'overrideChildTca' => [
                     'types' => [
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '--palette--;;imageMinimalOverlayPalette,--palette--;;filePalette',
                         ],
                     ],
