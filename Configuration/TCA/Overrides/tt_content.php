@@ -1,5 +1,6 @@
 <?php
 
+use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
@@ -31,13 +32,22 @@ ExtensionManagementUtility::addTCAcolumns(
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['21:9', '219'],
-                    ['16:9', '169'],
-                    ['3:2','32'],
-                    ['4:3', '43'],
-                    ['LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.50vh', '50vh'],
-                    ['LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.75vh', '75vh'],
-                    ['LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.90vh', '90vh'],
+                    ['label' => '21:9', 'value' => '219'],
+                    ['label' => '16:9', 'value' => '169'],
+                    ['label' => '3:2', 'value' => '32'],
+                    ['label' => '4:3', 'value' => '43'],
+                    [
+                        'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.50vh',
+                        'value' => '50vh',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.75vh',
+                        'value' => '75vh',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.90vh',
+                        'value' => '90vh',
+                    ],
                 ],
                 'default' => '169',
                 'behaviour' => [
@@ -118,7 +128,7 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
                 'maxitems' => 1,
                 'overrideChildTca' => [
                     'types' => [
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '--palette--;;imageMinimalOverlayPalette,--palette--;;filePalette',
                         ],
                     ],
@@ -221,7 +231,7 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
                 'maxitems' => 1,
                 'overrideChildTca' => [
                     'types' => [
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '--palette--;;imageMinimalOverlayPalette,--palette--;;filePalette',
                         ],
                     ],

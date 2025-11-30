@@ -19,7 +19,6 @@ namespace Amazing\Media2click\ViewHelpers\Uri;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * A ViewHelper for parsing URIs for their parts, host by default
@@ -48,8 +47,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  */
 class PartViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
     /**
      * Initialize arguments
      *
@@ -69,19 +66,16 @@ class PartViewHelper extends AbstractViewHelper
      *
      * @return string Rendered URI
      */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
+    public function render(): string
     {
-        $uri = $arguments['uri'];
-        $part = $arguments['part'];
-
-        if (!in_array($part, ['scheme', 'host', 'port', 'user', 'pass', 'path', 'query', 'fragment'])) {
+        if (!in_array($this->arguments['part'], ['scheme', 'host', 'port', 'user', 'pass', 'path', 'query', 'fragment'])) {
             throw new Exception(
                 'Argument "part" has to be one of "scheme", "host", "port", "user", "pass", "path", "query", "fragment"',
                 1253036401
             );
         }
 
-        $components = parse_url($uri);
-        return $components[$part] ?? '';
+        $components = parse_url((string) $this->arguments['uri']);
+        return $components[$this->arguments['part']] ?? '';
     }
 }

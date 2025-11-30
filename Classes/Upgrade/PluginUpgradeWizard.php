@@ -3,16 +3,20 @@ declare(strict_types=1);
 
 namespace Amazing\Media2click\Upgrade;
 
+use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 #[UpgradeWizard('media2click_migratePlugins')]
-final class PluginUpgradeWizard implements UpgradeWizardInterface
+final readonly class PluginUpgradeWizard implements UpgradeWizardInterface
 {
+    public function __construct(private readonly ConnectionPool $connectionPool, private readonly Typo3Version $typo3Version)
+    {}
 
 	/**
 	 * @inheritDoc
@@ -45,7 +49,10 @@ final class PluginUpgradeWizard implements UpgradeWizardInterface
 	 */
 	public function updateNecessary(): bool
 	{
-		return (count($this->getContentMigrationRecords()) > 0 || count($this->getBeGroupsMigrationRecords()) > 0);
+        if ($this->typo3Version->getMajorVersion() > 13) {
+            return false;
+        }
+        return (count($this->getContentMigrationRecords()) > 0 || count($this->getBeGroupsMigrationRecords()) > 0);
 	}
 
 	/**
@@ -57,11 +64,11 @@ final class PluginUpgradeWizard implements UpgradeWizardInterface
 	}
 
     /**
-     * @throws \Doctrine\DBAL\Exception
+     * @throws Exception
      */
     protected function getContentMigrationRecords(): array
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
 
         return $queryBuilder
@@ -82,11 +89,11 @@ final class PluginUpgradeWizard implements UpgradeWizardInterface
     }
 
     /**
-     * @throws \Doctrine\DBAL\Exception
+     * @throws Exception
      */
     protected function getBeGroupsMigrationRecords(): array
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('be_groups');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('be_groups');
         $queryBuilder->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
 
         return $queryBuilder
@@ -111,7 +118,7 @@ final class PluginUpgradeWizard implements UpgradeWizardInterface
 
         foreach ($records as $record)
         {
-            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+            $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
             $queryBuilder->update('tt_content')
                 ->set('CType', 'media2click_list')
                 ->set('list_type', '')
@@ -134,7 +141,7 @@ final class PluginUpgradeWizard implements UpgradeWizardInterface
 
         foreach ($records as $record) {
             $explicitAllowdeny = str_replace('tt_content:list_type:media2click_list', 'tt_content:CType:media2click_list', $record['explicit_allowdeny']);
-            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('be_groups');
+            $queryBuilder = $this->connectionPool->getQueryBuilderForTable('be_groups');
             $queryBuilder->update('be_groups')
                 ->set('explicit_allowdeny', $explicitAllowdeny)
                 ->where(

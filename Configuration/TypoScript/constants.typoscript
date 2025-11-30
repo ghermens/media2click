@@ -1,42 +1,42 @@
 plugin {
-  media2click {
-    #cat=plugin.media2click/enable/a1; type=boolean; label=Enable 2-click for external media
-    enable = 0
+    media2click {
+        #cat=plugin.media2click/enable/a1; type=boolean; label=Enable 2-click for external media
+        enable = 0
 
-    #cat=plugin.media2click/enable/a3; type=boolean; label=Enable option to permanently activate external media
-    enablePermanently = 0
+        #cat=plugin.media2click/enable/a3; type=boolean; label=Enable option to permanently activate external media
+        enablePermanently = 0
 
-    #cat=plugin.media2click/enable/c; type=boolean; label=Show the video's title as the placeholder's title
-    showTitle = 1
+        #cat=plugin.media2click/enable/c; type=boolean; label=Show the video's title as the placeholder's title
+        showTitle = 1
 
-    #cat=plugin.media2click/enable/d; type=boolean; label=Show the video's preview image
-    showPreviewImage = 1
+        #cat=plugin.media2click/enable/d; type=boolean; label=Show the video's preview image
+        showPreviewImage = 1
 
-    showPreviewImage {
-      #cat=plugin.media2click/enable/e; type=int+; label=Max width of the preview image
-      maxWidth = 0
+        showPreviewImage {
+            #cat=plugin.media2click/enable/e; type=int+; label=Max width of the preview image
+            maxWidth = 0
 
-      #cat=plugin.media2click/enable/f; type=int+; label=Max height of the preview image
-      maxHeight = 0
+            #cat=plugin.media2click/enable/f; type=int+; label=Max height of the preview image
+            maxHeight = 0
+        }
+
+        #cat=plugin.media2click/enable/g; type=int+; label=Lifetime of the cookie
+        cookieLifetime = 7
+
+        #cat=plugin.media2click/links/a; type=int+; label=UID of Privacy Statement page
+        privacyPid = 0
+
+        #cat=plugin.media2click/links/b; type=int+; label=UID of storage page for activatable hosts
+        storagePid = 0
+
+        #cat=plugin.media2click/file/a; type=string; label=Path of Fluid Templates for media2click placeholder
+        templateRootPath =
+
+        #cat=plugin.media2click/file/b; type=string; label=Path of Fluid Partials for media2click placeholder
+        partialRootPath =
+
+        #cat=plugin.media2click/file/c; type=string; label=Path of Fluid Layouts for media2click placeholder
+        layoutRootPath =
+
     }
-
-    #cat=plugin.media2click/enable/g; type=int+; label=Lifetime of the cookie
-    cookieLifetime = 7
-
-    #cat=plugin.media2click/links/a; type=int+; label=UID of Privacy Statement page
-    privacyPid = 0
-
-    #cat=plugin.media2click/links/b; type=int+; label=UID of storage page for activatable hosts
-    storagePid = 0
-
-    #cat=plugin.media2click/file/a; type=string; label=Path of Fluid Templates for media2click placeholder
-    templateRootPath =
-
-    #cat=plugin.media2click/file/b; type=string; label=Path of Fluid Partials for media2click placeholder
-    partialRootPath =
-
-    #cat=plugin.media2click/file/c; type=string; label=Path of Fluid Layouts for media2click placeholder
-    layoutRootPath =
-
-  }
 }
