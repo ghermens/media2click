@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" datatype="plaintext" original="EXT:media2click/Resources/Private/Language/locallang.xlf" date="2025-11-14T12:00:34Z" product-name="media2click">
-		<header/>
-		<body>
-			<trans-unit id="activateOnce">
-				<source><![CDATA[Activate once]]></source>
-			</trans-unit>
-			<trans-unit id="activatePermanently">
-				<source><![CDATA[Activate permanently]]></source>
-			</trans-unit>
-			<trans-unit id="defaultPlaceHolder">
-				<source><![CDATA[Click to load external content!]]></source>
-			</trans-unit>
-			<trans-unit id="defaultPlaceHolderIframe">
-				<source><![CDATA[By activating external content from %s, you consent to transmitting data to this third party.]]></source>
-			</trans-unit>
-			<trans-unit id="defaultPlaceHolderVideo">
-				<source><![CDATA[By activating external video from %s, you consent to transmitting data to this third party.]]></source>
-			</trans-unit>
-			<trans-unit id="externalContent">
-				<source><![CDATA[External Content]]></source>
-			</trans-unit>
-			<trans-unit id="externalContentFrom">
-				<source><![CDATA[External content from]]></source>
-			</trans-unit>
-			<trans-unit id="moreInfo">
-				<source><![CDATA[More Info]]></source>
-			</trans-unit>
-			<trans-unit id="privacyLink">
-				<source><![CDATA[Privacy Statement at %s]]></source>
-			</trans-unit>
-			<trans-unit id="toggleLabel">
-				<source><![CDATA[With this switch you can toggle the permanent activation of external %1$s content. If activated, data will be transmitted to %1$s as soon as the content is loaded.]]></source>
-			</trans-unit>
-		</body>
-	</file>
   <file source-language="en" datatype="plaintext" original="EXT:media2click/Resources/Private/Language/locallang.xlf"
-        date="2025-11-14T12:00:34Z" product-name="media2click">
+        date="2026-01-28T12:35:27Z" product-name="media2click">
     <header/>
     <body>
       <trans-unit id="activateOnce">
@@ -49,8 +14,10 @@
         <source><![CDATA[Click to load external content!]]></source>
       </trans-unit>
       <trans-unit id="defaultPlaceHolderIframe">
+        <source><![CDATA[By activating external content from %s, you consent to transmit data to this third party.]]></source>
       </trans-unit>
       <trans-unit id="defaultPlaceHolderVideo">
+        <source><![CDATA[By activating external video from %s, you consent to transmit data to this third party.]]></source>
       </trans-unit>
       <trans-unit id="externalContent">
         <source><![CDATA[External Content]]></source>
