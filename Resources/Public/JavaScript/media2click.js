@@ -13,7 +13,7 @@ class Media2Click {
     });
 
     let toggleList = document.querySelectorAll('.media2click-toggle');
-    toggleList.forEach( function (toggle) {
+    toggleList.forEach(function(toggle) {
       thisObject.#initToggle(toggle);
     });
   }
@@ -79,11 +79,11 @@ class Media2Click {
   #initToggle(toggle) {
     let thisObject = this;
     let host = toggle.getAttribute('data-host');
-    if(thisObject.isActiveHost(host)) {
+    if (thisObject.isActiveHost(host)) {
       toggle.classList.add('activated');
       toggle.setAttribute('checked', 'checked');
     }
-    toggle.addEventListener('click', function (event) {
+    toggle.addEventListener('click', function(event) {
       toggle.classList.toggle('activated');
       if (toggle.className === 'media2click-toggle activated') {
         thisObject.addHost(host);

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Amazing\Media2click\Controller;
@@ -9,8 +10,7 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class HostController extends ActionController
 {
-    public function __construct(private readonly HostRepository $hostRepository)
-    {}
+    public function __construct(private readonly HostRepository $hostRepository) {}
 
     public function indexAction(): ResponseInterface
     {

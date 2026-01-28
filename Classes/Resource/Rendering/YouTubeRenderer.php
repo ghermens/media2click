@@ -1,4 +1,5 @@
 <?php
+
 namespace Amazing\Media2click\Resource\Rendering;
 
 /***
@@ -51,7 +52,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                 '| ([a-z-]+)="([^"]*)"|',
                 '|&quot;|',
                 '|&|',
-                '|,></iframe>|'
+                '|,></iframe>|',
             ],
             [
                 ' class="media2click-iframe ',
@@ -60,9 +61,9 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                 '"$1": "$2",',
                 '\\u0022',
                 '\\u0026',
-                '}\' class="media2click-iframedata"></div>'
+                '}\' class="media2click-iframedata"></div>',
             ],
-            parent::render($file, $width, $height, $options)
+            parent::render($file, $width, $height, $options),
         );
 
         $placeholder = $this->renderPlaceholder($file, $width, $height, $options);
@@ -70,15 +71,13 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
         return '<div class="media2click-wrap">' . $placeholder . $iframe . '</div>';
     }
 
-
     /**
-     * @param int|string    $width
-     * @param int|string    $height
+     * @param int|string $width
+     * @param int|string $height
      * @throws ContentRenderingException
      */
     protected function renderPlaceholder(FileInterface $file, $width, $height, array $options = []): string
     {
-
         /** @var ContentObjectRenderer $contentObjectRenderer */
         $contentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class);
         $contentObjectRenderer->setRequest($contentObjectRenderer->getRequest());
@@ -134,7 +133,6 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
         }
 
         if (!empty($placeholderContentSetup['cObject']['_typoScriptNodeValue'])) {
-
             /** @var TypoScriptService $typoScriptService */
             $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
 
@@ -146,27 +144,24 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                     [
                         'settings.' => [
                             'videoProvider' => 'YouTube',
-                            'showTitle' => $conf['showTitle'],
-                            'title' => $options['title'] ?? '',
-                            'width' => (int)$width,
-                            'height' => (int)$height,
-                            'previewImage' => $previewImageWebPath,
-                        ]
-                    ]
+                            'showTitle'     => $conf['showTitle'],
+                            'title'         => $options['title'] ?? '',
+                            'width'         => (int)$width,
+                            'height'        => (int)$height,
+                            'previewImage'  => $previewImageWebPath,
+                        ],
+                    ],
                 );
             }
 
             $placeholderContent = $contentObjectRenderer->cObjGetSingle($conf['cObject'], $conf['cObject.']);
-
         } else {
-
             trigger_error(
                 'Classic rendering method is deprecated since version 1.3.2 and has been removed in version 2.0.0',
-                E_USER_WARNING
+                E_USER_WARNING,
             );
 
             $placeholderContent = '';
-
         }
         return $placeholderContent;
     }

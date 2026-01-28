@@ -1,80 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="EXT:media2click/Resources/Private/Language/locallang_db.xlf" date="2025-11-14T12:00:34Z" product-name="media2click">
-		<header/>
-		<body>
-			<trans-unit id="flexform.plugin.includeHosts">
-				<source><![CDATA[Hosts to show]]></source>
-			</trans-unit>
-			<trans-unit id="flexform.plugin.title">
-				<source><![CDATA[Options]]></source>
-			</trans-unit>
-			<trans-unit id="media2click_content">
-				<source><![CDATA[Content with consent]]></source>
-			</trans-unit>
-			<trans-unit id="media2click_content.description">
-				<source><![CDATA[Ask user for consent before including content using external resources.]]></source>
-			</trans-unit>
-			<trans-unit id="media2click_iframe">
-				<source><![CDATA[iFrame with consent]]></source>
-			</trans-unit>
-			<trans-unit id="media2click_iframe.description">
-				<source><![CDATA[Ask user for consent before inluding external resources via iframe.]]></source>
-			</trans-unit>
-			<trans-unit id="plugin.list">
-				<source><![CDATA[Toggle permanent activation of external content]]></source>
-			</trans-unit>
-			<trans-unit id="tab.content">
-				<source><![CDATA[Content]]></source>
-			</trans-unit>
-			<trans-unit id="tab.placeholder">
-				<source><![CDATA[Placeholder]]></source>
-			</trans-unit>
-			<trans-unit id="tt_content.image">
-				<source><![CDATA[Background Image]]></source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_media2click_content">
-				<source><![CDATA[Content]]></source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_media2click_host">
-				<source><![CDATA[Host]]></source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_media2click_iframe_ratio">
-				<source><![CDATA[Size / Ratio]]></source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_media2click_iframe_ratio.50vh">
-				<source><![CDATA[50 % of viewport height]]></source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_media2click_iframe_ratio.75vh">
-				<source><![CDATA[75 % of viewport height]]></source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_media2click_iframe_ratio.90vh">
-				<source><![CDATA[90 % of viewport height]]></source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_media2click_iframe_src">
-				<source><![CDATA[iFrame URI]]></source>
-			</trans-unit>
-			<trans-unit id="tx_media2click_domain_model_host">
-				<source><![CDATA[Host to enable permanently]]></source>
-			</trans-unit>
-			<trans-unit id="tx_media2click_domain_model_host.allow_permanent">
-				<source><![CDATA[Allow permanent activation]]></source>
-			</trans-unit>
-			<trans-unit id="tx_media2click_domain_model_host.host">
-				<source><![CDATA[Hostname]]></source>
-			</trans-unit>
-			<trans-unit id="tx_media2click_domain_model_host.logo">
-				<source><![CDATA[Logo]]></source>
-			</trans-unit>
-			<trans-unit id="tx_media2click_domain_model_host.placeholder">
-				<source><![CDATA[Placeholder Text]]></source>
-			</trans-unit>
-			<trans-unit id="tx_media2click_domain_model_host.privacy_statement_link">
-				<source><![CDATA[Link to external privacy statement]]></source>
-			</trans-unit>
-			<trans-unit id="tx_media2click_domain_model_host.title">
-				<source><![CDATA[Title]]></source>
-			</trans-unit>
-		</body>
-    </file>
+  <file source-language="en" datatype="plaintext" original="EXT:media2click/Resources/Private/Language/locallang_db.xlf"
+        date="2025-11-14T12:00:34Z" product-name="media2click">
+    <header/>
+    <body>
+      <trans-unit id="flexform.plugin.includeHosts">
+        <source><![CDATA[Hosts to show]]></source>
+      </trans-unit>
+      <trans-unit id="flexform.plugin.title">
+        <source><![CDATA[Options]]></source>
+      </trans-unit>
+      <trans-unit id="media2click_content">
+        <source><![CDATA[Content with consent]]></source>
+      </trans-unit>
+      <trans-unit id="media2click_content.description">
+        <source><![CDATA[Ask user for consent before including content using external resources.]]></source>
+      </trans-unit>
+      <trans-unit id="media2click_iframe">
+        <source><![CDATA[iFrame with consent]]></source>
+      </trans-unit>
+      <trans-unit id="media2click_iframe.description">
+        <source><![CDATA[Ask user for consent before inluding external resources via iframe.]]></source>
+      </trans-unit>
+      <trans-unit id="plugin.list">
+        <source><![CDATA[Toggle permanent activation of external content]]></source>
+      </trans-unit>
+      <trans-unit id="tab.content">
+        <source><![CDATA[Content]]></source>
+      </trans-unit>
+      <trans-unit id="tab.placeholder">
+        <source><![CDATA[Placeholder]]></source>
+      </trans-unit>
+      <trans-unit id="tt_content.image">
+        <source><![CDATA[Background Image]]></source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_content">
+        <source><![CDATA[Content]]></source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_host">
+        <source><![CDATA[Host]]></source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_iframe_ratio">
+        <source><![CDATA[Size / Ratio]]></source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_iframe_ratio.50vh">
+        <source><![CDATA[50 % of viewport height]]></source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_iframe_ratio.75vh">
+        <source><![CDATA[75 % of viewport height]]></source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_iframe_ratio.90vh">
+        <source><![CDATA[90 % of viewport height]]></source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_iframe_src">
+        <source><![CDATA[iFrame URI]]></source>
+      </trans-unit>
+      <trans-unit id="tx_media2click_domain_model_host">
+        <source><![CDATA[Host to enable permanently]]></source>
+      </trans-unit>
+      <trans-unit id="tx_media2click_domain_model_host.allow_permanent">
+        <source><![CDATA[Allow permanent activation]]></source>
+      </trans-unit>
+      <trans-unit id="tx_media2click_domain_model_host.host">
+        <source><![CDATA[Hostname]]></source>
+      </trans-unit>
+      <trans-unit id="tx_media2click_domain_model_host.logo">
+        <source><![CDATA[Logo]]></source>
+      </trans-unit>
+      <trans-unit id="tx_media2click_domain_model_host.placeholder">
+        <source><![CDATA[Placeholder Text]]></source>
+      </trans-unit>
+      <trans-unit id="tx_media2click_domain_model_host.privacy_statement_link">
+        <source><![CDATA[Link to external privacy statement]]></source>
+      </trans-unit>
+      <trans-unit id="tx_media2click_domain_model_host.title">
+        <source><![CDATA[Title]]></source>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>

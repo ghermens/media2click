@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Amazing\Media2click\Domain\Repository;
@@ -29,13 +30,13 @@ class HostRepository extends Repository
         if (count($includedHostsArray)) {
             $query->matching(
                 $query->logicalAnd(
-                    $query->equals('allowPermanent',1),
-                    $query->in('uid', $includedHostsArray)
-                )
+                    $query->equals('allowPermanent', 1),
+                    $query->in('uid', $includedHostsArray),
+                ),
             );
         } else {
             $query->matching(
-                $query->equals('allowPermanent', 1)
+                $query->equals('allowPermanent', 1),
             );
         }
         return $query->execute();

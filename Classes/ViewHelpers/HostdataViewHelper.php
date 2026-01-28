@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Amazing\Media2click\ViewHelpers;
@@ -9,7 +10,11 @@ class HostdataViewHelper extends AbstractViewHelper
 {
     public function initializeArguments(): void
     {
-        $this->registerArgument('host', 'string', 'Host to extract from hostsData. If not in arguments then taken from tag content');
+        $this->registerArgument(
+            'host',
+            'string',
+            'Host to extract from hostsData. If not in arguments then taken from tag content',
+        );
         $this->registerArgument('hostsData', 'array', 'Data of permanently activatable hosts', true);
         $this->registerArgument('name', 'string', 'Name of variable to create', false, 'hostData');
     }

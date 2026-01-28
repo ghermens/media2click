@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -59,23 +60,25 @@ class PartViewHelper extends AbstractViewHelper
     }
 
     /**
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
+     * @param array                     $arguments
+     * @param \Closure                  $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
-     * @throws Exception
-     *
      * @return string Rendered URI
+     * @throws Exception
      */
     public function render(): string
     {
-        if (!in_array($this->arguments['part'], ['scheme', 'host', 'port', 'user', 'pass', 'path', 'query', 'fragment'])) {
+        if (!in_array(
+            $this->arguments['part'],
+            ['scheme', 'host', 'port', 'user', 'pass', 'path', 'query', 'fragment'],
+        )) {
             throw new Exception(
                 'Argument "part" has to be one of "scheme", "host", "port", "user", "pass", "path", "query", "fragment"',
-                1253036401
+                1253036401,
             );
         }
 
-        $components = parse_url((string) $this->arguments['uri']);
+        $components = parse_url((string)$this->arguments['uri']);
         return $components[$this->arguments['part']] ?? '';
     }
 }

@@ -20,5 +20,5 @@ ExtensionUtility::configurePlugin(
     'List',
     [HostController::class => 'index'],
     [],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
 );

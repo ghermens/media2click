@@ -1,85 +1,85 @@
 lib {
-    contentElement {
-        settings {
-            media {
-                additionalConfig {
-                    placeholderContent {
+  contentElement {
+    settings {
+      media {
+        additionalConfig {
+          placeholderContent {
 
-                        showTitle = {$plugin.media2click.showTitle}
-                        showPreviewImage = {$plugin.media2click.showPreviewImage}
-                        previewMaxWidth = {$plugin.media2click.showPreviewImage.maxWidth}
-                        previewMaxHeight = {$plugin.media2click.showPreviewImage.maxHeight}
+            showTitle = {$plugin.media2click.showTitle}
+            showPreviewImage = {$plugin.media2click.showPreviewImage}
+            previewMaxWidth = {$plugin.media2click.showPreviewImage.maxWidth}
+            previewMaxHeight = {$plugin.media2click.showPreviewImage.maxHeight}
 
-                        cObject = FLUIDTEMPLATE
-                        cObject {
-                            layoutRootPaths {
-                                1 = EXT:media2click/Resources/Private/Layouts/
-                                100 = {$plugin.media2click.layoutRootPath}
-                            }
+            cObject = FLUIDTEMPLATE
+            cObject {
+              layoutRootPaths {
+                1 = EXT:media2click/Resources/Private/Layouts/
+                100 = {$plugin.media2click.layoutRootPath}
+              }
 
-                            partialRootPaths {
-                                1 = EXT:media2click/Resources/Private/Partials/
-                                100 = {$plugin.media2click.partialRootPath}
-                            }
+              partialRootPaths {
+                1 = EXT:media2click/Resources/Private/Partials/
+                100 = {$plugin.media2click.partialRootPath}
+              }
 
-                            templateRootPaths {
-                                1 = EXT:media2click/Resources/Private/Templates/
-                                100 = {$plugin.media2click.templateRootPath}
-                            }
+              templateRootPaths {
+                1 = EXT:media2click/Resources/Private/Templates/
+                100 = {$plugin.media2click.templateRootPath}
+              }
 
-                            templateName = Placeholder
+              templateName = Placeholder
 
-                            dataProcessing {
-                                10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-                                10 {
-                                    table = tx_media2click_domain_model_host
-                                    pidInList = {$plugin.media2click.storagePid}
-                                    as = m2cHostsData
+              dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+                10 {
+                  table = tx_media2click_domain_model_host
+                  pidInList = {$plugin.media2click.storagePid}
+                  as = m2cHostsData
 
-                                    dataProcessing {
-                                        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                                        10 {
-                                            references {
-                                                fieldName = logo
-                                            }
+                  dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    10 {
+                      references {
+                        fieldName = logo
+                      }
 
-                                            as = m2cLogoImage
-                                        }
-                                    }
-                                }
-                            }
-
-                            settings {
-                                m2cEnablePermanently = {$plugin.media2click.enablePermanently}
-                                m2cCookieLifetime = {$plugin.media2click.cookieLifetime}
-                                m2cPrivacyPid = {$plugin.media2click.privacyPid}
-                            }
-                        }
+                      as = m2cLogoImage
                     }
-
-                    enable2click = {$plugin.media2click.enable}
+                  }
                 }
+              }
+
+              settings {
+                m2cEnablePermanently = {$plugin.media2click.enablePermanently}
+                m2cCookieLifetime = {$plugin.media2click.cookieLifetime}
+                m2cPrivacyPid = {$plugin.media2click.privacyPid}
+              }
             }
+          }
+
+          enable2click = {$plugin.media2click.enable}
         }
+      }
     }
+  }
 }
 
 plugin {
-    tx_news {
-        view {
-            partialRootPaths {
-                25 = EXT:media2click/Resources/Private/Extensions/News/Partials/
-            }
-        }
-
-        settings {
-            detail {
-                media {
-                    video {
-                        additionalConfig < lib.contentElement.settings.media.additionalConfig
-                    }
-                }
-            }
-        }
+  tx_news {
+    view {
+      partialRootPaths {
+        25 = EXT:media2click/Resources/Private/Extensions/News/Partials/
+      }
     }
+
+    settings {
+      detail {
+        media {
+          video {
+            additionalConfig < lib.contentElement.settings.media.additionalConfig
+          }
+        }
+      }
+    }
+  }
 }

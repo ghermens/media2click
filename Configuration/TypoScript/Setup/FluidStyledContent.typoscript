@@ -1,121 +1,121 @@
 lib.contentElement {
-    templateRootPaths {
-        2 = EXT:media2click/Resources/Private/Extensions/FluidStyledContent/Templates/
-    }
+  templateRootPaths {
+    2 = EXT:media2click/Resources/Private/Extensions/FluidStyledContent/Templates/
+  }
 
-    partialRootPaths {
-        2 = EXT:media2click/Resources/Private/Extensions/FluidStyledContent/Partials/
-    }
+  partialRootPaths {
+    2 = EXT:media2click/Resources/Private/Extensions/FluidStyledContent/Partials/
+  }
 
-    layoutRootPaths {
-        2 = EXT:media2click/Resources/Private/Extensions/FluidStyledContent/Layouts/
-    }
+  layoutRootPaths {
+    2 = EXT:media2click/Resources/Private/Extensions/FluidStyledContent/Layouts/
+  }
 }
 
 tt_content {
-    media2click_content =< lib.contentElement
-    media2click_content {
-        templateName = Media2clickContent
+  media2click_content =< lib.contentElement
+  media2click_content {
+    templateName = Media2clickContent
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references {
+          table = tt_content
+          fieldName = image
+        }
+
+        as = m2cBackgroundImage
+      }
+
+      20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      20 {
+        table = tx_media2click_domain_model_host
+        pidInList = {$plugin.media2click.storagePid}
+        uidInList.field = tx_media2click_host
+        max = 1
+        as = m2cHostsData
 
         dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            10 {
-                references {
-                    table = tt_content
-                    fieldName = image
-                }
-
-                as = m2cBackgroundImage
+          10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+          10 {
+            references {
+              table = tx_media2click_domain_model_host
+              fieldName = logo
             }
 
-            20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-            20 {
-                table = tx_media2click_domain_model_host
-                pidInList = {$plugin.media2click.storagePid}
-                uidInList.field = tx_media2click_host
-                max = 1
-                as = m2cHostsData
-
-                dataProcessing {
-                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                    10 {
-                        references {
-                            table = tx_media2click_domain_model_host
-                            fieldName = logo
-                        }
-
-                        as = m2cLogoImage
-                    }
-                }
-            }
+            as = m2cLogoImage
+          }
         }
-
-        variables {
-            content = CONTENT
-            content {
-                table = tt_content
-                select {
-                    pidInList.field = pid
-                    where = {#colPos} = 1962587 AND {#tx_media2click_parentid} = ###parent###
-                    markers {
-                        parent.field = uid
-                    }
-
-                    orderBy = sorting
-                }
-            }
-        }
-
-        settings {
-            m2cEnable2click = {$plugin.media2click.enable}
-            m2cEnablePermanently = {$plugin.media2click.enablePermanently}
-            m2cPrivacyPid = {$plugin.media2click.privacyPid}
-        }
+      }
     }
 
-    media2click_iframe =< lib.contentElement
-    media2click_iframe {
-        templateName = Media2clickIframe
+    variables {
+      content = CONTENT
+      content {
+        table = tt_content
+        select {
+          pidInList.field = pid
+          where = {#colPos} = 1962587 AND {#tx_media2click_parentid} = ###parent###
+          markers {
+            parent.field = uid
+          }
+
+          orderBy = sorting
+        }
+      }
+    }
+
+    settings {
+      m2cEnable2click = {$plugin.media2click.enable}
+      m2cEnablePermanently = {$plugin.media2click.enablePermanently}
+      m2cPrivacyPid = {$plugin.media2click.privacyPid}
+    }
+  }
+
+  media2click_iframe =< lib.contentElement
+  media2click_iframe {
+    templateName = Media2clickIframe
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references {
+          table = tt_content
+          fieldName = image
+        }
+
+        as = m2cBackgroundImage
+      }
+
+      20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      20 {
+        table = tx_media2click_domain_model_host
+        pidInList = {$plugin.media2click.storagePid}
+        as = m2cHostsData
 
         dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            10 {
-                references {
-                    table = tt_content
-                    fieldName = image
-                }
-
-                as = m2cBackgroundImage
+          10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+          10 {
+            references {
+              table = tx_media2click_domain_model_host
+              fieldName = logo
             }
 
-            20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-            20 {
-                table = tx_media2click_domain_model_host
-                pidInList = {$plugin.media2click.storagePid}
-                as = m2cHostsData
-
-                dataProcessing {
-                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                    10 {
-                        references {
-                            table = tx_media2click_domain_model_host
-                            fieldName = logo
-                        }
-
-                        as = m2cLogoImage
-                    }
-                }
-            }
+            as = m2cLogoImage
+          }
         }
-
-        variables {
-
-        }
-
-        settings {
-            m2cEnable2click = {$plugin.media2click.enable}
-            m2cEnablePermanently = {$plugin.media2click.enablePermanently}
-            m2cPrivacyPid = {$plugin.media2click.privacyPid}
-        }
+      }
     }
+
+    variables {
+
+    }
+
+    settings {
+      m2cEnable2click = {$plugin.media2click.enable}
+      m2cEnablePermanently = {$plugin.media2click.enablePermanently}
+      m2cPrivacyPid = {$plugin.media2click.privacyPid}
+    }
+  }
 }
