@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="EXT:media2click/Resources/Private/Language/locallang_db.xlf" date="2025-11-14T12:00:34Z" product-name="media2click">
-		<header/>
-		<body>
+  <file source-language="en" datatype="plaintext" original="EXT:media2click/Resources/Private/Language/locallang_db.xlf"
+        date="2026-02-02T17:29:11Z" product-name="media2click">
+    <header/>
+    <body>
 			<trans-unit id="flexform.plugin.includeHosts">
 				<source><![CDATA[Hosts to show]]></source>
 			</trans-unit>
@@ -19,7 +20,7 @@
 				<source><![CDATA[iFrame with consent]]></source>
 			</trans-unit>
 			<trans-unit id="media2click_iframe.description">
-				<source><![CDATA[Ask user for consent before inluding external resources via iframe.]]></source>
+				<source><![CDATA[Ask user for consent before including external resources via iframe.]]></source>
 			</trans-unit>
 			<trans-unit id="plugin.list">
 				<source><![CDATA[Toggle permanent activation of external content]]></source>
