@@ -51,6 +51,30 @@
 			<trans-unit id="tt_content.tx_media2click_iframe_ratio.90vh">
 				<source><![CDATA[90 % of viewport height]]></source>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_media2click_iframe_ratio.fixed">
+				<source>Fixed size</source>
+			</trans-unit>
+			<trans-unit id="flexform.fixed.title">
+				<source>Fixed Size</source>
+			</trans-unit>
+			<trans-unit id="flexform.fixed.width">
+				<source>Width / px</source>
+			</trans-unit>
+			<trans-unit id="flexform.fixed.height">
+				<source>Height / px</source>
+			</trans-unit>
+			<trans-unit id="flexform.fixed.position">
+				<source>Position</source>
+			</trans-unit>
+			<trans-unit id="flexform.fixed.position.left">
+				<source>left</source>
+			</trans-unit>
+			<trans-unit id="flexform.fixed.position.center">
+				<source>center</source>
+			</trans-unit>
+			<trans-unit id="flexform.fixed.position.right">
+				<source>right</source>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_media2click_iframe_src">
 				<source><![CDATA[iFrame URI]]></source>
 			</trans-unit>

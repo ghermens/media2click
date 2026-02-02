@@ -9,7 +9,8 @@
         <f:then>
             <m:hostdata hostsData="{m2cHostsData}" host="{iframeHost}"/>
             <f:variable name="bgStyle"><f:if condition="{m2cBackgroundImage.0}">background-image:url(<f:uri.image image="{m2cBackgroundImage.0}"/>)</f:if></f:variable>
-            <div class="media2click-wrap media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}">
+            <div class="media2click-wrap media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}{f:if(condition: '{data.tx_media2click_iframe_ratio} == \'fixed\'', then: ' media2click-position-{flexFormData.position}')}"
+                 style="{f:if(condition: '{data.tx_media2click_iframe_ratio} == \'fixed\'', then: 'width:{flexFormData.width}px;height:{flexFormData.height}px;')}">
                 <div class="media2click-placeholder media2click-placeholder-iframe{f:if(condition: m2cBackgroundImage.0, then: ' media2click-haspreview')}"
                     style="{bgStyle}" data-host="{iframeHost}">
                     <f:render partial="Media2click/Placeholder/{iframeHost}" optional="true" arguments="{_all}">
@@ -23,7 +24,8 @@
             </div>
         </f:then>
         <f:else>
-            <div class="media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}">
+            <div class="media2click-ratio media2click-ratio-{data.tx_media2click_iframe_ratio}{f:if(condition: '{data.tx_media2click_iframe_ratio} == \'fixed\'', then: ' media2click-position-{flexFormData.position}')}"
+                 style="{f:if(condition: '{data.tx_media2click_iframe_ratio} == \'fixed\'', then: 'width:{flexFormData.width}px;height:{flexFormData.height}px;')}">
                 <iframe src="{data.tx_media2click_iframe_src}" title="{f:translate(key: 'externalContentFrom', extensionName: 'Media2click')} {iframeHost}"></iframe>
             </div>
         </f:else>
