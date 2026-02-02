@@ -138,11 +138,7 @@ ExtensionManagementUtility::addTcaSelectItem(
 );
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['media2click_iframe'] = 'tx-media2click-ce-iframe';
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
-    'media2click_iframe',
-);
+
 $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
     'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -193,6 +189,13 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
     ],
 ];
 
+ExtensionManagementUtility::addPiFlexFormValue(
+    '',
+    'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
+    'media2click_iframe',
+);
+
+
 // Content CE
 ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
@@ -208,11 +211,7 @@ ExtensionManagementUtility::addTcaSelectItem(
 );
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['media2click_content'] = 'tx-media2click-ce-content';
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
-    'media2click_content',
-);
+
 $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
     'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -263,6 +262,13 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
         ],
     ],
 ];
+
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
+    'media2click_content',
+);
+
 
 
 // List plugin
