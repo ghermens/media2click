@@ -3,7 +3,7 @@ class Media2Click {
   #lifetime = -1;
 
   constructor(lifetime = -1) {
-    this.setCookieLifetime(lifetime);
+    this.setLifetime(lifetime);
 
     let cookieHosts = this.#getCookieHosts();
     let storageHosts = this.#getStorageHosts();
@@ -165,6 +165,10 @@ class Media2Click {
    * Set the media2click accepted hosts in the local storage
    */
   #setStorage() {
+    if (this.#lifetime < 1) {
+      this.#deleteStorage();
+      return;
+    }
     let uniqueHosts = [...new Set(this.#activeHosts)];
     localStorage.setItem('m2c_accepted_hosts', JSON.stringify({hosts: uniqueHosts, validUntil: (new Date()).getTime() + (this.#lifetime * 24 * 60 * 60 * 1000)}));
   }
@@ -213,15 +217,19 @@ class Media2Click {
   }
 
   /**
-   * Set the cookie lifetime
+   * Set the consent lifetime
    * @param lifetime
    */
-  setCookieLifetime(lifetime) {
+  setLifetime(lifetime) {
     lifetime = Number.parseInt(lifetime, 10);
     if (Number.isNaN(lifetime) || lifetime < 0) {
       lifetime = 7;
     }
     this.#lifetime = lifetime;
+  }
+
+  setCookieLifetime(lifetime) {
+    this.setLifetime(lifetime);
   }
 
   /**
@@ -255,7 +263,7 @@ class Media2Click {
     }
     if (!this.isActiveHost(host)) {
       this.#activeHosts.push(host);
-      this.updateCookie();
+      this.updateStorageData();
     }
     return true;
   }
@@ -271,7 +279,7 @@ class Media2Click {
     }
     if (this.isActiveHost(host)) {
       this.#activeHosts.splice(this.#activeHosts.indexOf(host), 1);
-      this.updateCookie();
+      this.updateStorageData();
     }
     return true;
   }
@@ -279,12 +287,16 @@ class Media2Click {
   /**
    * Update the cookie
    */
-  updateCookie() {
+  updateStorageData() {
     if (this.#activeHosts.length > 0) {
       this.#setStorage();
     } else {
       this.#deleteStorage();
     }
+  }
+
+  updateCookie() {
+    this.updateStorageData();
   }
 
   /**
@@ -329,10 +341,10 @@ class Media2Click {
 document.addEventListener('readystatechange', (event) => {
   if (event.target.readyState === 'complete') {
     if (typeof media2click === 'undefined') {
-      if (typeof m2cCookieLifetime === 'undefined' || isNaN(m2cCookieLifetime)) {
+      if (typeof m2cLifetime === 'undefined' || isNaN(m2cLifetime)) {
         const media2click = new Media2Click();
       } else {
-        const media2click = new Media2Click(m2cCookieLifetime);
+        const media2click = new Media2Click(m2cLifetime);
       }
     }
   }
