@@ -17,7 +17,7 @@ return [
         ],
         'iconfile'                 => 'EXT:media2click/Resources/Public/Icons/Extension.svg',
         'languageField'            => 'sys_language_uid',
-        'searchFields'             => 'title,host,placeholder',
+        'searchFields'             => 'title,host,placeholder,endtime,starttime,privacy_statement_link',
         'sortby'                   => 'sorting',
         'translationSource'        => 'l10n_source',
         'transOrigDiffSourceField' => 'l18n_diffsource',
@@ -80,7 +80,6 @@ return [
                 ],
             ],
         ],
-
         'title'                  => [
             'label'  => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tx_media2click_domain_model_host.title',
             'config' => [
