@@ -170,9 +170,6 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
     'columnsOverrides' => [
         'image' => [
             'config' => [
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'maxitems' => 1,
                 'overrideChildTca' => [
                     'types' => [
@@ -241,9 +238,6 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
     'columnsOverrides' => [
         'image' => [
             'config' => [
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'maxitems' => 1,
                 'overrideChildTca' => [
                     'types' => [
