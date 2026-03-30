@@ -104,7 +104,8 @@ cookieLifetime
    :ref:`int+ <t3tsref:data-type-intplus>`
 
 :aspect:`Description:`
-   Cookie lifetime in days. Set to 0 to limit the cookie to the session.
+   Lifetime of stored data in days. A value < 1 disables storage and thereby any permanent activation.
+   Storage no longer uses cookies, but the name is kept for compatibility reasons.
 
 :aspect:`Default:`
    7
