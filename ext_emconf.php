@@ -19,5 +19,5 @@ $EM_CONF[$_EXTKEY] = [
             ],
     ],
     'state'          => 'stable',
-    'version'        => '14.1.1',
+    'version'        => '14.1.2',
 ];
