@@ -13,7 +13,7 @@ Configuration
 TypoScript Constants
 ====================
 
-Properties of plugin.media2click. Use the Constant Editor to change these settings:
+Properties of plugin.media2click. Use Site Settings or Constant Editor to change these settings:
 
 
 .. _constants-enable:
@@ -101,7 +101,7 @@ cookieLifetime
    cookieLifetime
 
 :aspect:`Data type:`
-   :ref:`int+ <t3tsref:data-type-intplus>`
+   :ref:`integer <t3tsref:data-type-integer>`
 
 :aspect:`Description:`
    Lifetime of stored data in days. A value < 1 disables storage and thereby any permanent activation.
@@ -218,7 +218,7 @@ enable2click
    :ref:`boolean <t3tsref:data-type-boolean>`
 
 :aspect:`Description:`
-   Enable the extension's functionality. Set via Constant Editor.
+   Enable the extension's functionality. Set via Site Settings or Constant Editor.
 
 :aspect:`Default:`
    0
@@ -240,16 +240,16 @@ placeholderContent
 
 :aspect:`Properties:`
    :ts:`.showTitle:` :ref:`boolean <t3tsref:data-type-boolean>`
-      If enabled, the Fluid media tag's title attribute is shown as the palceholder's title. Set via Constant Editor.
+      If enabled, the Fluid media tag's title attribute is shown as the palceholder's title. Set via Site Settings or Constant Editor.
 
    :ts:`.showPreviewImage:` :ref:`boolean <t3tsref:data-type-boolean>`
-      Show preview image if available. Set via Constant editor.
+      Show preview image if available. Set via Site Settings or Constant Editor.
 
    :ts:`.previewMaxWidth:` :ref:`integer <t3tsref:data-type-integer>`
-      Maximum width of preview image. Set via Constant Editor.
+      Maximum width of preview image. Set via Site Settings or Constant Editor.
 
    :ts:`.previewMaxHeight:` :ref:`integer <t3tsref:data-type-integer>`
-      Maximum height of preview image. Set via Constant Editor.
+      Maximum height of preview image. Set via Site Settings or Constant Editor.
 
    :ts:`.cObject:` :ref:`cObject <t3tsref:data-type-cobject>`
       This cObject is used for rendering the placeholder. If this cObject is a :ref:`FLUIDTEMPLATE <t3tsref:cobj-fluidtemplate>`,
@@ -283,4 +283,4 @@ placeholderContent
                Show the button for permanent activation if configured for this host.
 
             :ts:`.privacyPid:` :ref:`integer <t3tsref:data-type-integer>`
-               Target page for the "More Info" link. Set via Constant Editor.
+               Target page for the "More Info" link. Set via Site Settings or Constant Editor.

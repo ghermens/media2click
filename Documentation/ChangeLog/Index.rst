@@ -10,6 +10,12 @@ Change Log
 Breaking Changes
 ================
 
+Version 14.2.0
+--------------
+
+The host configuration now allows to set an individual text for the permanent activation toggle. As this can include a link to the privacy statement, the privacy statement link field is no longer required.
+You have to adjust overridden templates to display individual texts.
+
 Version 13.0.0 / Version 14.0.0
 -------------------------------
 

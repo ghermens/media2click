@@ -14,7 +14,7 @@ Basic Setup
   New in TYPO3 13: You can include the media2click configuration as :ref:`Site Set <t3coreapi:site-sets>`
   'amazing/media2click' in your site configuration or site package extension.
 - If your main :ref:`PAGE <t3tsref:page>` object is not named ‘page’, adapt the TypoScript Setup accordingly.
-- Activate the extension's functionality via the Constant Editor: :ref:`constants-enable`
+- Activate the extension's functionality via Site Settings or Constant Editor: :ref:`constants-enable`
 - If the "Content with consent" content element is to be used, all required hosts have to be configured explicitly: :ref:`host-configuration`
 
 Advanced Setup
@@ -25,9 +25,9 @@ Advanced Setup
 If individual placeholder content or permanent activation is required
 ---------------------------------------------------------------------
 
-- Globally allow permanent activation via the Constant Editor: :ref:`constants-enablepermanently`
+- Globally allow permanent activation via Site Settings or Constant Editor: :ref:`constants-enablepermanently`
 - Set up a page of type sysfolder to hold the host data.
-- Set storagePid to this sysfolder's uid via the Constant Edtior: :ref:`constants-storagepid`
+- Set storagePid to this sysfolder's uid via Site Settings or Constant Edtior: :ref:`constants-storagepid`
 - Using the list module, add a host configuration to your storage page for every target host that needs individual
   placeholder content or permanent activation. For videos, you have to use "YouTube" and "Vimeo" as hostnames:
 
@@ -45,7 +45,7 @@ If individual placeholder content or permanent activation is required
 
    Example host configuration for YouTube videos
 
-- Set privacyPid to the uid of your privacy statement page via the Constant Edtior: :ref:`constants-privacypid`
+- Set privacyPid to the uid of your privacy statement page via Site Settings or Constant Edtior: :ref:`constants-privacypid`
 - Insert content elements of type "Toggle permanent activation of external content" on your privacy
   statement page. You can filter the list of shown hosts in the plugin options:
 

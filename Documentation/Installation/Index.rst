@@ -66,6 +66,6 @@ and activate it:
 
 .. seealso::
 
-   On pages ":doc:`Managing Extensions <t3start:Extensions/Management>`" and
-   ":doc:`Managing Extensions - Legacy Guide <t3start:Extensions/LegacyManagement>`"
+   On pages "`TYPO3 extension management with Composer <https://docs.typo3.org/permalink/t3coreapi:extensions-composer>`_" and
+   "`Installing Extensions - Classic mode <https://docs.typo3.org/permalink/t3coreapi:extensions-legacy-management>`_"
    both TYPO3 installation modes are explained in detail.
