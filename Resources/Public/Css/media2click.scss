@@ -263,6 +263,18 @@
                 &:first-child {
                     grid-column: 1/3;
                 }
+
+                > *:first-child {
+                    margin-top: 0;
+                }
+
+                > *:last-child {
+                    margin-bottom: 0;
+                }
+
+                > *:has(+ .media2click-privacylink) {
+                    margin-bottom: 0;
+                }
             }
         }
 

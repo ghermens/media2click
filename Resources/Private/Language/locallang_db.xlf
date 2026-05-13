@@ -31,6 +31,9 @@
 			<trans-unit id="tab.placeholder">
 				<source><![CDATA[Placeholder]]></source>
 			</trans-unit>
+      <trans-unit id="tab.privacy">
+        <source>Privacy Settings</source>
+      </trans-unit>
 			<trans-unit id="tt_content.image">
 				<source><![CDATA[Background Image]]></source>
 			</trans-unit>
@@ -97,6 +100,9 @@
 			<trans-unit id="tx_media2click_domain_model_host.privacy_statement_link">
 				<source><![CDATA[Link to external privacy statement]]></source>
 			</trans-unit>
+      <trans-unit id="tx_media2click_domain_model_host.privacy_text">
+        <source>Individual text for privacy settings</source>
+      </trans-unit>
 			<trans-unit id="tx_media2click_domain_model_host.title">
 				<source><![CDATA[Title]]></source>
 			</trans-unit>

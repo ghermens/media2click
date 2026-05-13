@@ -23,6 +23,8 @@ class Host extends AbstractEntity
 
     protected string $privacyStatementLink = '';
 
+    protected string $privacyText = '';
+
     protected string $title = '';
 
     public function __construct()
@@ -89,6 +91,16 @@ class Host extends AbstractEntity
     public function setPrivacyStatementLink(string $privacyStatementLink): void
     {
         $this->privacyStatementLink = $privacyStatementLink;
+    }
+
+    public function getPrivacyText(): string
+    {
+        return $this->privacyText;
+    }
+
+    public function setPrivacyText(string $privacyText): void
+    {
+        $this->privacyText = $privacyText;
     }
 
     public function getTitle(): string

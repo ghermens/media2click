@@ -27,9 +27,13 @@ return [
     'types'    => [
         0 => [
             'showitem' => '
-                title,host,privacy_statement_link,allow_permanent,
+                title,host,allow_permanent,
                 --div--;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tab.placeholder,
-                    placeholder,logo,
+                    placeholder,
+                    logo,
+                --div--;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tab.privacy,
+                    privacy_text,
+                    privacy_statement_link,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
                     --palette--;;hidden,
                     --palette--;;access
@@ -108,11 +112,18 @@ return [
             'label'  => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tx_media2click_domain_model_host.privacy_statement_link',
             'config' => [
                 'type'         => 'link',
-                'required' => true,
                 'allowedTypes' => ['url'],
                 'appearance' => [
                     'allowedOptions' => [],
                 ],
+            ],
+        ],
+        'privacy_text' => [
+            'label'  => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tx_media2click_domain_model_host.privacy_text',
+            'config' => [
+                'type' => 'text',
+                'enableRichtext' => true,
+                'eval' => 'trim',
             ],
         ],
         'allow_permanent'        => [

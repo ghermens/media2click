@@ -2,170 +2,224 @@
   width: 100%;
   height: 0;
   overflow: hidden;
-  position: relative; }
-  .media2click-ratio .media2click-placeholder-iframe,
-  .media2click-ratio .media2click-placeholder-content,
-  .media2click-ratio iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0; }
-  .media2click-ratio.media2click-ratio-219 {
-    padding-bottom: 42.86%; }
-  .media2click-ratio.media2click-ratio-169 {
-    padding-bottom: 56.25%; }
-  .media2click-ratio.media2click-ratio-32 {
-    padding-bottom: 66.67%; }
-  .media2click-ratio.media2click-ratio-43 {
-    padding-bottom: 75%; }
-  .media2click-ratio.media2click-ratio-50vh {
-    padding-bottom: 50vh; }
-  .media2click-ratio.media2click-ratio-75vh {
-    padding-bottom: 75vh; }
-  .media2click-ratio.media2click-ratio-90vh {
-    padding-bottom: 90vh; }
-  .media2click-ratio.media2click-ratio-fixed {
-    width: unset;
-    height: unset;
-    max-width: 100%;
-    max-height: 90vh; }
-    .media2click-ratio.media2click-ratio-fixed.media2click-position-left {
-      margin: 0 auto 0 0; }
-    .media2click-ratio.media2click-ratio-fixed.media2click-position-center {
-      margin: 0 auto; }
-    .media2click-ratio.media2click-ratio-fixed.media2click-position-right {
-      margin: 0 0 0 auto; }
+  position: relative;
+}
+.media2click-ratio .media2click-placeholder-iframe,
+.media2click-ratio .media2click-placeholder-content,
+.media2click-ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.media2click-ratio.media2click-ratio-219 {
+  padding-bottom: 42.86%;
+}
+.media2click-ratio.media2click-ratio-169 {
+  padding-bottom: 56.25%;
+}
+.media2click-ratio.media2click-ratio-32 {
+  padding-bottom: 66.67%;
+}
+.media2click-ratio.media2click-ratio-43 {
+  padding-bottom: 75%;
+}
+.media2click-ratio.media2click-ratio-50vh {
+  padding-bottom: 50vh;
+}
+.media2click-ratio.media2click-ratio-75vh {
+  padding-bottom: 75vh;
+}
+.media2click-ratio.media2click-ratio-90vh {
+  padding-bottom: 90vh;
+}
+.media2click-ratio.media2click-ratio-fixed {
+  width: unset;
+  height: unset;
+  max-width: 100%;
+  max-height: 90vh;
+}
+.media2click-ratio.media2click-ratio-fixed.media2click-position-left {
+  margin: 0 auto 0 0;
+}
+.media2click-ratio.media2click-ratio-fixed.media2click-position-center {
+  margin: 0 auto;
+}
+.media2click-ratio.media2click-ratio-fixed.media2click-position-right {
+  margin: 0 0 0 auto;
+}
 
 .media2click-placeholder {
   position: relative;
   background-color: #ddd;
   border: 0;
   box-sizing: border-box;
-  padding: .5em;
+  padding: 0.5em;
   font-size: 1em;
   text-align: center;
-  transition: background-color .2s; }
-  .media2click-placeholder:hover, .media2click-placeholder:focus-within {
-    background-color: #eee; }
-    .media2click-placeholder:hover .media2click-button, .media2click-placeholder:focus-within .media2click-button {
-      background-color: #666; }
-  .media2click-placeholder.media2click-haspreview {
-    color: #000;
-    text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff; }
+  transition: background-color 0.2s;
+}
+.media2click-placeholder:hover, .media2click-placeholder:focus-within {
+  background-color: #eee;
+}
+.media2click-placeholder:hover .media2click-button, .media2click-placeholder:focus-within .media2click-button {
+  background-color: #666;
+}
+.media2click-placeholder.media2click-haspreview {
+  color: #000;
+  text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff;
+}
 
 .media2click-placeholder-video {
   background-image: url(../Images/placeholder.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain; }
+  background-size: contain;
+}
 
 .media2click-placeholder-inner {
   position: relative;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: .5em;
+  padding: 0.5em;
   overflow-y: auto;
-  background-color: rgba(255, 255, 255, 0.5); }
-  .media2click-placeholder.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder.media2click-haspreview:focus-within .media2click-placeholder-inner {
-    background-color: rgba(255, 255, 255, 0.85); }
-  .media2click-placeholder-video.media2click-haspreview .media2click-placeholder-inner {
-    background-image: url(../Images/videobutton.png);
-    background-size: 30% auto;
-    background-position: center center;
-    background-repeat: no-repeat; }
-  .media2click-placeholder-video.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder-video.media2click-haspreview:focus-within .media2click-placeholder-inner {
-    background-image: none; }
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.media2click-placeholder.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder.media2click-haspreview:focus-within .media2click-placeholder-inner {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+.media2click-placeholder-video.media2click-haspreview .media2click-placeholder-inner {
+  background-image: url(../Images/videobutton.png);
+  background-size: 30% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.media2click-placeholder-video.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder-video.media2click-haspreview:focus-within .media2click-placeholder-inner {
+  background-image: none;
+}
 
 .media2click-placeholder-iframe.media2click-haspreview,
 .media2click-placeholder-content.media2click-haspreview {
   background-position: center center;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+}
 
 .media2click-placeholder-logo {
   display: block;
   max-width: 30%;
   height: auto;
   float: right;
-  margin: 0 0 .25em .5em; }
+  margin: 0 0 0.25em 0.5em;
+}
 
 .media2click-title {
   font-weight: bold;
-  margin-bottom: .5em; }
+  margin-bottom: 0.5em;
+}
 
 .media2click-content > *:last-child {
-  margin-bottom: 2.57em; }
+  margin-bottom: 2.57em;
+}
 
 .media2click-iframedata {
-  display: none; }
+  display: none;
+}
 
 .media2click-controls {
   display: block;
   position: absolute;
-  bottom: .75em;
-  right: .75em; }
-  .media2click-controls .media2click-button {
-    display: inline-block;
-    background-color: #999;
-    color: #fff;
-    font-size: 1em;
-    text-decoration: none;
-    text-shadow: none;
-    padding: .25em .5em;
-    border: none;
-    border-radius: .25em;
-    margin: .25em; }
-    .media2click-controls .media2click-button:hover, .media2click-controls .media2click-button:focus {
-      background-color: #333; }
+  bottom: 0.75em;
+  right: 0.75em;
+}
+.media2click-controls .media2click-button {
+  display: inline-block;
+  background-color: #999;
+  color: #fff;
+  font-size: 1em;
+  text-decoration: none;
+  text-shadow: none;
+  padding: 0.25em 0.5em;
+  border: none;
+  border-radius: 0.25em;
+  margin: 0.25em;
+}
+.media2click-controls .media2click-button:hover, .media2click-controls .media2click-button:focus {
+  background-color: #333;
+}
 
 .news .article .news-img-wrap .media2click-placeholder:hover a.media2click-button, .news .article .news-img-wrap .media2click-placeholder:focus-within a.media2click-button {
-  background-color: #666; }
+  background-color: #666;
+}
 .news .article .news-img-wrap .media2click-placeholder a.media2click-button {
   display: inline-block;
   float: none;
   border: none;
-  padding: .25em .5em;
-  background-color: #999; }
-  .news .article .news-img-wrap .media2click-placeholder a.media2click-button:hover, .news .article .news-img-wrap .media2click-placeholder a.media2click-button:focus {
-    background-color: #333; }
+  padding: 0.25em 0.5em;
+  background-color: #999;
+}
+.news .article .news-img-wrap .media2click-placeholder a.media2click-button:hover, .news .article .news-img-wrap .media2click-placeholder a.media2click-button:focus {
+  background-color: #333;
+}
 .news .article .news-img-wrap .media2click-content a {
   display: inline;
   float: none;
   background: none;
   border: none;
-  padding: 0; }
+  padding: 0;
+}
 
 .media2click-hosts {
   list-style: none;
   margin-left: 0;
-  padding-left: 0; }
-  .media2click-hosts li {
-    margin-left: 0;
-    padding-left: 0;
-    margin-bottom: 1em;
-    display: grid;
-    grid-template-columns: 2em 1fr;
-    grid-column-gap: .5em; }
-    .media2click-hosts li:last-child {
-      margin-bottom: 0; }
-    .media2click-hosts li .media2click-toggle-label {
-      display: grid;
-      grid-template-columns: 10em 1fr;
-      column-gap: 1em; }
-      .media2click-hosts li .media2click-toggle-label .media2click-toggle-logo {
-        display: block; }
-        .media2click-hosts li .media2click-toggle-label .media2click-toggle-logo img {
-          display: block;
-          width: 100%;
-          height: auto; }
-      .media2click-hosts li .media2click-toggle-label .media2click-toggle-text {
-        display: block; }
-        .media2click-hosts li .media2click-toggle-label .media2click-toggle-text:first-child {
-          grid-column: 1/3; }
-    .media2click-hosts li .media2click-privacylink {
-      display: block; }
+  padding-left: 0;
+}
+.media2click-hosts li {
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 1em;
+}
+.media2click-hosts li:last-child {
+  margin-bottom: 0;
+}
+.media2click-hosts li {
+  display: grid;
+  grid-template-columns: 2em 1fr;
+  grid-column-gap: 0.5em;
+}
+.media2click-hosts li .media2click-toggle-label {
+  display: grid;
+  grid-template-columns: 10em 1fr;
+  column-gap: 1em;
+}
+.media2click-hosts li .media2click-toggle-label .media2click-toggle-logo {
+  display: block;
+}
+.media2click-hosts li .media2click-toggle-label .media2click-toggle-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.media2click-hosts li .media2click-toggle-label .media2click-toggle-text {
+  display: block;
+}
+.media2click-hosts li .media2click-toggle-label .media2click-toggle-text:first-child {
+  grid-column: 1/3;
+}
+.media2click-hosts li .media2click-toggle-label .media2click-toggle-text > *:first-child {
+  margin-top: 0;
+}
+.media2click-hosts li .media2click-toggle-label .media2click-toggle-text > *:last-child {
+  margin-bottom: 0;
+}
+.media2click-hosts li .media2click-toggle-label .media2click-toggle-text > *:has(+ .media2click-privacylink) {
+  margin-bottom: 0;
+}
+.media2click-hosts li .media2click-privacylink {
+  display: block;
+}
 
 /*# sourceMappingURL=media2click.css.map */

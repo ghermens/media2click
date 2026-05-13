@@ -10,8 +10,17 @@
                     </span>
                 </f:if>
                 <span class="media2click-toggle-text">
-                    <f:translate key="toggleLabel" extensionName="Media2click" arguments="{0: host.title}"/>
-                    <span class="media2click-privacylink"><f:link.typolink parameter="{host.privacyStatementLink}" target="_blank"><f:translate key="privacyLink" extensionName="Media2click" arguments="{0: host.title}"/></f:link.typolink></span>
+                    <f:if condition="{host.privacyText}">
+                        <f:then>
+                            {host.privacyText -> f:format.html()}
+                        </f:then>
+                        <f:else>
+                            <f:translate key="toggleLabel" extensionName="Media2click" arguments="{0: host.title}"/>
+                        </f:else>
+                    </f:if>
+                    <f:if condition="{host.privacyStatementLink}">
+                        <span class="media2click-privacylink"><f:link.typolink parameter="{host.privacyStatementLink}" target="_blank"><f:translate key="privacyLink" extensionName="Media2click" arguments="{0: host.title}"/></f:link.typolink></span>
+                    </f:if>
                 </span>
             </label>
         </li>
