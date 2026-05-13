@@ -31,6 +31,7 @@ ExtensionManagementUtility::addTCAcolumns(
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
+                'dbFieldLength' => 16,
                 'items' => [
                     ['label' => '21:9', 'value' => '219'],
                     ['label' => '16:9', 'value' => '169'],
