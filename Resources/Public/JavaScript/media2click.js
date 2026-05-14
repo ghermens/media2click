@@ -92,7 +92,7 @@ class Media2Click {
       toggle.classList.add('activated');
       toggle.setAttribute('checked', 'checked');
     }
-    toggle.addEventListener('click', function(event) {
+    toggle.addEventListener('click', function() {
       toggle.classList.toggle('activated');
       if (toggle.className === 'media2click-toggle activated') {
         thisObject.addHost(host);
