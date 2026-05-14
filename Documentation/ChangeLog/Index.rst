@@ -10,6 +10,12 @@ Change Log
 Breaking Changes
 ================
 
+Version 14.3.0
+--------------
+
+Changes in templates and styles to avoid controls overlapping content in to small placeholders.
+You may have to adjust overridden templates and own styles.
+
 Version 14.2.0
 --------------
 
