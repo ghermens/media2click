@@ -87,6 +87,10 @@
   padding: 0.5em;
   overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5em;
 }
 .media2click-placeholder.media2click-haspreview:hover .media2click-placeholder-inner, .media2click-placeholder.media2click-haspreview:focus-within .media2click-placeholder-inner {
   background-color: rgba(255, 255, 255, 0.85);
@@ -121,19 +125,12 @@
   margin-bottom: 0.5em;
 }
 
-.media2click-content > *:last-child {
-  margin-bottom: 2.57em;
-}
-
 .media2click-iframedata {
   display: none;
 }
 
 .media2click-controls {
-  display: block;
-  position: absolute;
-  bottom: 0.75em;
-  right: 0.75em;
+  text-align: right;
 }
 .media2click-controls .media2click-button {
   display: inline-block;

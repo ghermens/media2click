@@ -104,8 +104,12 @@
     box-sizing: border-box;
     padding: .5em;
     overflow-y: auto;
-
     background-color: rgba(255, 255, 255, .5);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .5em;
 
     .media2click-placeholder.media2click-haspreview:hover &,
     .media2click-placeholder.media2click-haspreview:focus-within & {
@@ -148,9 +152,6 @@
 }
 
 .media2click-content {
-    > *:last-child {
-        margin-bottom: 2.57em;
-    }
 }
 
 .media2click-iframedata {
@@ -158,10 +159,7 @@
 }
 
 .media2click-controls {
-    display: block;
-    position: absolute;
-    bottom: .75em;
-    right: .75em;
+    text-align: right;
 
     .media2click-button {
         display: inline-block;
