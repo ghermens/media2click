@@ -45,6 +45,14 @@ If individual placeholder content or permanent activation is required
 
    Example host configuration for YouTube videos
 
+- You can add individual content for the host list plugin in the privacy settings tab:
+
+.. figure:: ../Images/HostConfiguration3.png
+   :alt: Host Configuration Form: Privacy Settings
+   :class: with-shadow
+
+   Example host configuration for YouTube videos
+
 - Set privacyPid to the uid of your privacy statement page via Site Settings or Constant Edtior: :ref:`constants-privacypid`
 - Insert content elements of type "Toggle permanent activation of external content" on your privacy
   statement page. You can filter the list of shown hosts in the plugin options:

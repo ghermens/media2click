@@ -31,7 +31,7 @@ add a version constraint, for example:
 
 .. code-block:: bash
 
-   composer require amazing/media2click:"^2.0"
+   composer require amazing/media2click:"^13.0"
 
 Installing the extension prior to TYPO3 11.4
 --------------------------------------------

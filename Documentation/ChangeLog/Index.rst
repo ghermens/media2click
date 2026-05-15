@@ -10,6 +10,12 @@ Change Log
 Breaking Changes
 ================
 
+Version 14.4.0
+--------------
+
+Content can now be included in a sandboxed iframe for more security an separation, or directly in a more insecure but context-aware way.
+Existing content defaults to sandboxed iframe, which may break it's functionality. You may have to adapt your content settings accordingly.
+
 Version 14.3.0
 --------------
 
