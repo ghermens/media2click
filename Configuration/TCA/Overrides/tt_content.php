@@ -204,9 +204,6 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
             ],
         ],
         'pi_flexform' => [
-            'config' => [
-                'ds' => 'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
-            ],
             'displayCond' => [
                 'AND' => [
                     'FIELD:tx_media2click_iframe_ratio:=:fixed',
@@ -215,6 +212,12 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
         ],
     ],
 ];
+
+ExtensionManagementUtility::addPiFlexFormValue(
+    '',
+    'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
+    'media2click_iframe',
+);
 
 
 // Content CE
@@ -273,9 +276,6 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
             ],
         ],
         'pi_flexform' => [
-            'config' => [
-                'ds' => 'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
-            ],
             'displayCond' => [
                 'AND' => [
                     'FIELD:tx_media2click_iframe_ratio:=:fixed',
@@ -284,6 +284,13 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
         ],
     ],
 ];
+
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
+    'media2click_content',
+);
+
 
 
 // List plugin
@@ -311,14 +318,13 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_list'] = [
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories, categories,
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
         rowDescription,
-    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
-    'columnsOverrides' => [
-        'pi_flexform' => [
-            'config' => [
-                'ds' => 'FILE:EXT:media2click/Configuration/FlexForms/PluginList.xml',
-            ],
-        ],
-    ],
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,'
 ];
+
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:media2click/Configuration/FlexForms/PluginList.xml',
+    'media2click_list'
+);
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['media2click_list'] = 'tx-media2click-icon';
