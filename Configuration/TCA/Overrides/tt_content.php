@@ -121,7 +121,33 @@ ExtensionManagementUtility::addTCAcolumns(
                 'default' => 0,
             ],
         ],
-    ]
+        'tx_media2click_security' => [
+            'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_security',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'dbFieldLength' => 7,
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_security.sandbox',
+                        'value' => 'sandbox',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_security.ratio',
+                        'value' => 'ratio',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_security.free',
+                        'value' => 'free',
+                    ],
+                ],
+                'default' => 'sandbox',
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+            ],
+        ],
+    ],
 );
 
 // iFrame CE
@@ -219,6 +245,7 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
             tx_media2click_content,
             tx_media2click_iframe_ratio,
             pi_flexform;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.title,
+            tx_media2click_security,
             image;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.image,
             tx_media2click_host,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,

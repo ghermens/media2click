@@ -82,6 +82,18 @@
 			<trans-unit id="tt_content.tx_media2click_iframe_src">
 				<source><![CDATA[iFrame URI]]></source>
 			</trans-unit>
+      <trans-unit id="tt_content.tx_media2click_security">
+        <source>Security</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_security.sandbox">
+        <source>Sandbox content in iFrame</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_security.ratio">
+        <source>Insert content directly, adopt placeholder's size</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_media2click_security.free">
+        <source>Insert content directly w/o size constraints</source>
+      </trans-unit>
 			<trans-unit id="tx_media2click_domain_model_host">
 				<source><![CDATA[Host to enable permanently]]></source>
 			</trans-unit>

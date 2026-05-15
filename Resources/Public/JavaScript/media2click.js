@@ -118,14 +118,35 @@ class Media2Click {
   }
 
   #activateContent(contentNode, placeholderNode) {
-    let newNode = document.createElement('iframe');
-    let contentData = JSON.parse(contentNode.text);
-    Object.entries(contentData.attributes).forEach(([key, value]) => newNode.setAttribute(key, value));
-
-    contentNode.parentElement.insertBefore(newNode, contentNode);
-    newNode.contentWindow.document.open();
-    newNode.contentWindow.document.write('<!DOCTYPE html><html><body>' + contentData.content + '</body></html>');
-    newNode.contentWindow.document.close();
+    const contentData = JSON.parse(contentNode.text);
+    if (typeof trustedTypes === "undefined") {
+      trustedTypes = {createPolicy: (n, rules) => rules};
+    }
+    const myPolicy = trustedTypes.createPolicy('myPolicy', {createHTML: (input) => input});
+    if (contentData.security === 'sandbox') {
+      const newNode = document.createElement('iframe');
+      Object.entries(contentData.attributes).forEach(([key, value]) => newNode.setAttribute(key, value));
+      newNode.setAttribute('srcdoc', myPolicy.createHTML(contentData.content));
+      newNode.setAttribute('sandbox', 'allow-downloads allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-scripts');
+      contentNode.parentElement.insertBefore(newNode, contentNode);
+    } else {
+      const newNode = document.createElement('div');
+      Object.entries(contentData.attributes).forEach(([key, value]) => newNode.setAttribute(key, value));
+      newNode.insertAdjacentHTML('afterbegin', myPolicy.createHTML(contentData.content));
+      contentNode.parentElement.insertBefore(newNode, contentNode);
+      if (contentData.security === 'free') {
+        placeholderNode.parentElement.classList.remove('media2click-ratio', 'media2click-ratio-219', 'media2click-ratio-169', 'media2click-ratio-32', 'media2click-ratio-43', 'media2click-ratio-50vh', 'media2click-ratio-75vh', 'media2click-ratio-90vh', 'media2click-ratio-fixed', 'media2click-position-left', 'media2click-position-center', 'media2click-position-right');
+        placeholderNode.parentElement.removeAttribute('style');
+      }
+      /* Reinsert scripts to trigger execution */
+      const scripts = Array.from(newNode.querySelectorAll('script'));
+      scripts.forEach(oldScriptElement => {
+        const newScriptElement = document.createElement('script');
+        Array.from(oldScriptElement.attributes).forEach(attr => newScriptElement.setAttribute(attr.name, attr.value));
+        newScriptElement.text = oldScriptElement.text;
+        oldScriptElement.parentNode.replaceChild(newScriptElement, oldScriptElement);
+      });
+    }
     contentNode.parentElement.removeChild(contentNode);
     placeholderNode.parentElement.removeChild(placeholderNode);
   }

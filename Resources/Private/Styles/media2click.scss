@@ -4,15 +4,17 @@
     overflow: hidden;
     position: relative;
 
-    .media2click-placeholder-iframe,
-    .media2click-placeholder-content,
-    iframe {
+    > .media2click-placeholder-iframe,
+    > .media2click-placeholder-content,
+    > iframe,
+    > div {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         border: 0;
+        overflow: auto;
     }
 
     &.media2click-ratio-219 {

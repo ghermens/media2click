@@ -22,7 +22,7 @@
                         </f:render>
                     </div>
                     <script type="application/json" class="media2click-contentdata">
-                        {f:format.json(value: {content: content, attributes: {title: '{f:if(condition: \'{hostData.title}\', then: \'{f:translate(key: \\\'externalContent\\\', extensionName: \\\'Media2click\\\')}: {hostData.title}\', else: \'{f:translate(key: \\\'externalContentFrom\\\', extensionName: \\\'Media2click\\\')} {iframeHost}\' )}'}}, forceObject: true) -> f:format.raw()}
+                        {f:format.json(value: {security: data.tx_media2click_security, content: '{content -> f:spaceless()}', attributes: {title: '{f:if(condition: \'{hostData.title}\', then: \'{f:translate(key: \\\'externalContent\\\', extensionName: \\\'Media2click\\\')}: {hostData.title}\', else: \'{f:translate(key: \\\'externalContentFrom\\\', extensionName: \\\'Media2click\\\')} {iframeHost}\' )}'}}, forceObject: true) -> f:format.raw()}
                     </script>
                 </div>
                 </f:alias>
