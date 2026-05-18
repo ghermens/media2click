@@ -16,7 +16,6 @@
 		}
 	],
 	"license": "GPL-2.0-or-later",
-	"version": "14.1.2",
 	"require": {
 		"typo3/cms-core": "^13.4 || ^14.3"
 	},
@@ -35,5 +34,6 @@
 				"providesPackages": {}
 			}
 		}
-	}
+	},
+	"version": "14.4.1"
 }
