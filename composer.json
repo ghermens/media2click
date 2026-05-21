@@ -30,10 +30,10 @@
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "media2click",
+			"version": "14.4.2",
 			"Package": {
 				"providesPackages": {}
 			}
 		}
-	},
-	"version": "14.4.1"
+	}
 }

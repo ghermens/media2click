@@ -149,6 +149,7 @@ class YouTubeRenderer extends \TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer
                             'width'         => (int)$width,
                             'height'        => (int)$height,
                             'previewImage'  => $previewImageWebPath,
+                            'm2cId'         => uniqid('m2c-', false),
                         ],
                     ],
                 );

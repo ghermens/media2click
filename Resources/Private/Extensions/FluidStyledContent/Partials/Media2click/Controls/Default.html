@@ -1,11 +1,11 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <div class="media2click-controls">
-    <button class="media2click-button media2click-once">
+    <button class="media2click-button media2click-once" aria-controls="{m2cId}">
         <f:translate key="activateOnce" extensionName="Media2click" default="Activate once"/>
     </button>
     <f:if condition="{settings.m2cEnablePermanently}">
         <f:if condition="{hostData.allow_permanent}">
-            <button class="media2click-button media2click-permanent" data-host="{iframeHost}">
+            <button class="media2click-button media2click-permanent" data-host="{iframeHost}" aria-controls="{m2cId}">
                 <f:translate key="activatePermanently" extensionName="Media2click" default="Activate permanently"/>
             </button>
         </f:if>

@@ -146,6 +146,7 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
                             'width'         => (int)$width,
                             'height'        => (int)$height,
                             'previewImage'  => $previewImageWebPath,
+                            'm2cId'         => uniqid('m2c-', false),
                         ],
                     ],
                 );
