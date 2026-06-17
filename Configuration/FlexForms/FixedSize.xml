@@ -1,0 +1,55 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>
+                    LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.title
+                </sheetTitle>
+                <type>array</type>
+                <el>
+                    <width>
+                        <label>LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.width</label>
+                        <config>
+                            <type>number</type>
+                            <format>integer</format>
+                            <range>
+                                <lower>1</lower>
+                            </range>
+                        </config>
+                    </width>
+                    <height>
+                        <label>LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.height</label>
+                        <config>
+                            <type>number</type>
+                            <format>integer</format>
+                            <range>
+                                <lower>1</lower>
+                            </range>
+                        </config>
+                    </height>
+                    <position>
+                        <label>LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.position</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <label>LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.position.left</label>
+                                    <value>left</value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.position.center</label>
+                                    <value>center</value>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <label>LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.position.right</label>
+                                    <value>right</value>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </position>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

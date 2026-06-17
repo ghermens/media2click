@@ -10,6 +10,14 @@ Change Log
 Breaking Changes
 ================
 
+Version 13.0.0 / Version 14.0.0
+-------------------------------
+
+The version number now aligns with the highest compatible TYPO3 core version.
+
+The list of permanently allowed hosts is now stored in local storage instead of a cookie.
+If a cookie is found, its content is merged into local storage and the cookie is deleted.
+
 Version 3.0.0
 -------------
 

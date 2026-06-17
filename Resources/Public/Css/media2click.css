@@ -26,6 +26,17 @@
     padding-bottom: 75vh; }
   .media2click-ratio.media2click-ratio-90vh {
     padding-bottom: 90vh; }
+  .media2click-ratio.media2click-ratio-fixed {
+    width: unset;
+    height: unset;
+    max-width: 100%;
+    max-height: 90vh; }
+    .media2click-ratio.media2click-ratio-fixed.media2click-position-left {
+      margin: 0 auto 0 0; }
+    .media2click-ratio.media2click-ratio-fixed.media2click-position-center {
+      margin: 0 auto; }
+    .media2click-ratio.media2click-ratio-fixed.media2click-position-right {
+      margin: 0 0 0 auto; }
 
 .media2click-placeholder {
   position: relative;

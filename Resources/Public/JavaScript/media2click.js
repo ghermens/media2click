@@ -1,10 +1,19 @@
 class Media2Click {
-  #cookieHosts = [];
+  #activeHosts = [];
   #lifetime = -1;
 
   constructor(lifetime = -1) {
-    this.setCookieLifetime(lifetime);
-    this.#cookieHosts = this.#getCookieHosts();
+    this.setLifetime(lifetime);
+
+    let cookieHosts = this.#getCookieHosts();
+    let storageHosts = this.#getStorageHosts();
+    this.#activeHosts = [...new Set([...cookieHosts, ...storageHosts])];
+
+    if (cookieHosts.length > 0) {
+      this.#setStorage();
+      this.#deleteCookie()
+    }
+
     let thisObject = this;
 
     let elementList = document.querySelectorAll('.media2click-wrap');
@@ -122,20 +131,6 @@ class Media2Click {
   }
 
   /**
-   * Set the media2click accepted hosts cookie
-   */
-  #setCookie() {
-    let uniqueHosts = [...new Set(this.#cookieHosts)];
-    let expires = '';
-    if (this.#lifetime > 0) {
-      let d = new Date();
-      d.setTime(d.getTime() + (this.#lifetime * 24 * 60 * 60 * 1000));
-      expires = "expires=" + d.toUTCString() + ";";
-    }
-    document.cookie = "m2c_accepted_hosts=" + uniqueHosts.join() + ";" + expires + "path=/;SameSite=Strict";
-  }
-
-  /**
    * Get the media2click accepted hosts from cookie
    * @returns {string[]}
    */
@@ -167,6 +162,49 @@ class Media2Click {
   }
 
   /**
+   * Set the media2click accepted hosts in the local storage
+   */
+  #setStorage() {
+    if (this.#lifetime < 1) {
+      this.#deleteStorage();
+      return;
+    }
+    let uniqueHosts = [...new Set(this.#activeHosts)];
+    localStorage.setItem('m2c_accepted_hosts', JSON.stringify({hosts: uniqueHosts, validUntil: (new Date()).getTime() + (this.#lifetime * 24 * 60 * 60 * 1000)}));
+  }
+
+  /**
+   * Get the media2click accepted hosts from the local storage
+   * @returns {string[]}
+   */
+  #getStorageHosts() {
+    let thisObject = this;
+    let storageItem = localStorage.getItem('m2c_accepted_hosts');
+    if (storageItem === null) {
+      return [];
+    }
+    let parsedItem = JSON.parse(storageItem);
+    if (isNaN(parsedItem.validUntil) || parsedItem.validUntil < (new Date()).getTime()) {
+      this.#deleteStorage();
+      return [];
+    }
+    if (parsedItem.hosts !== null) {
+      let uniqueHosts = [...new Set(parsedItem.hosts)];
+      return uniqueHosts.filter(function(host) {
+        return thisObject.#isValidHost(host);
+      });
+    }
+    return [];
+  }
+
+  /**
+   * Delete the media2click accepted hosts from the local storage
+   */
+  #deleteStorage() {
+    localStorage.removeItem('m2c_accepted_hosts');
+  }
+
+  /**
    * Check host for validity
    * @param host
    * @returns {boolean}
@@ -179,10 +217,10 @@ class Media2Click {
   }
 
   /**
-   * Set the cookie lifetime
+   * Set the consent lifetime
    * @param lifetime
    */
-  setCookieLifetime(lifetime) {
+  setLifetime(lifetime) {
     lifetime = Number.parseInt(lifetime, 10);
     if (Number.isNaN(lifetime) || lifetime < 0) {
       lifetime = 7;
@@ -190,12 +228,16 @@ class Media2Click {
     this.#lifetime = lifetime;
   }
 
+  setCookieLifetime(lifetime) {
+    this.setLifetime(lifetime);
+  }
+
   /**
    *
    * @returns {string[]}
    */
   getActiveHosts() {
-    return this.#cookieHosts;
+    return this.#activeHosts;
   }
 
   /**
@@ -207,7 +249,7 @@ class Media2Click {
     if (!this.#isValidHost(host)) {
       return false;
     }
-    return (this.#cookieHosts.indexOf(host) > -1);
+    return (this.#activeHosts.indexOf(host) > -1);
   }
 
   /**
@@ -220,8 +262,8 @@ class Media2Click {
       return false;
     }
     if (!this.isActiveHost(host)) {
-      this.#cookieHosts.push(host);
-      this.updateCookie();
+      this.#activeHosts.push(host);
+      this.updateStorageData();
     }
     return true;
   }
@@ -236,8 +278,8 @@ class Media2Click {
       return false;
     }
     if (this.isActiveHost(host)) {
-      this.#cookieHosts.splice(this.#cookieHosts.indexOf(host), 1);
-      this.updateCookie();
+      this.#activeHosts.splice(this.#activeHosts.indexOf(host), 1);
+      this.updateStorageData();
     }
     return true;
   }
@@ -245,12 +287,16 @@ class Media2Click {
   /**
    * Update the cookie
    */
-  updateCookie() {
-    if (this.#cookieHosts.length > 0) {
-      this.#setCookie();
+  updateStorageData() {
+    if (this.#activeHosts.length > 0) {
+      this.#setStorage();
     } else {
-      this.#deleteCookie();
+      this.#deleteStorage();
     }
+  }
+
+  updateCookie() {
+    this.updateStorageData();
   }
 
   /**
@@ -295,10 +341,10 @@ class Media2Click {
 document.addEventListener('readystatechange', (event) => {
   if (event.target.readyState === 'complete') {
     if (typeof media2click === 'undefined') {
-      if (typeof m2cCookieLifetime === 'undefined' || isNaN(m2cCookieLifetime)) {
+      if (typeof m2cLifetime === 'undefined' || isNaN(m2cLifetime)) {
         const media2click = new Media2Click();
       } else {
-        const media2click = new Media2Click(m2cCookieLifetime);
+        const media2click = new Media2Click(m2cLifetime);
       }
     }
   }

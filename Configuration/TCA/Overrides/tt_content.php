@@ -38,12 +38,14 @@ ExtensionManagementUtility::addTCAcolumns(
                     ['LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.50vh', '50vh'],
                     ['LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.75vh', '75vh'],
                     ['LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.90vh', '90vh'],
+                    ['LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.tx_media2click_iframe_ratio.fixed', 'fixed']
                 ],
                 'default' => '169',
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
             ],
+            'onChange' => 'reload',
         ],
         'tx_media2click_content' => [
             'exclude' => false,
@@ -85,7 +87,11 @@ ExtensionManagementUtility::addTcaSelectItem(
 );
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['media2click_iframe'] = 'tx-media2click-ce-iframe';
-
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
+    'media2click_iframe',
+);
 $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
     'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -94,6 +100,7 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
         --div--;iFrame,
             tx_media2click_iframe_src,
             tx_media2click_iframe_ratio,
+            pi_flexform;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.title,
             image;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.image,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
             --palette--;;frames,
@@ -125,6 +132,13 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_iframe'] = [
                 ],
             ],
         ],
+        'pi_flexform' => [
+            'displayCond' => [
+                'AND' => [
+                    'FIELD:tx_media2click_iframe_ratio:=:fixed',
+                ],
+            ],
+        ],
     ],
 ];
 
@@ -143,7 +157,11 @@ ExtensionManagementUtility::addTcaSelectItem(
 );
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['media2click_content'] = 'tx-media2click-ce-content';
-
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:media2click/Configuration/FlexForms/FixedSize.xml',
+    'media2click_content',
+);
 $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
     'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -152,6 +170,7 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
         --div--;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tab.content,
             tx_media2click_content,
             tx_media2click_iframe_ratio,
+            pi_flexform;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:flexform.fixed.title,
             image;LLL:EXT:media2click/Resources/Private/Language/locallang_db.xlf:tt_content.image,
             tx_media2click_host,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
@@ -225,6 +244,13 @@ $GLOBALS['TCA']['tt_content']['types']['media2click_content'] = [
                             'showitem' => '--palette--;;imageMinimalOverlayPalette,--palette--;;filePalette',
                         ],
                     ],
+                ],
+            ],
+        ],
+        'pi_flexform' => [
+            'displayCond' => [
+                'AND' => [
+                    'FIELD:tx_media2click_iframe_ratio:=:fixed',
                 ],
             ],
         ],

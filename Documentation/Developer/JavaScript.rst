@@ -7,7 +7,7 @@ JavaScript
 ==========
 
 media2click provides a JavaScript API for easy integration with other privacy
-tools, i.e. the cookie banner of your choice.
+tools, i.e. the privacy banner of your choice.
 
 .. _javascript-api:
 
@@ -16,9 +16,9 @@ JavaScript API
 
 :file:`media2click.js` exposes these methods:
 
-.. _jsapi-setcookielifetime:
+.. _jsapi-setlifetime:
 
-media2click.setCookieLifetime(lifetime)
+media2click.setLifetime(lifetime)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :aspect:`Parameter data type:`
@@ -27,7 +27,20 @@ media2click.setCookieLifetime(lifetime)
 :aspect:`Return data type:`
    void
 
-Sets the cookie lifetime to the number of days given.
+Sets the consent lifetime to the number of days given.
+
+.. _jsapi-setcookielifetime:
+
+media2click.setCookieLifetime(lifetime)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:aspect:`Parameter data type:`
+    integer
+
+:aspect:`Return data type:`
+    void
+
+Alias of :ref:`media2click.setLifetime() <_jsapi-setlifetime>`. Kept for compatibility reasons.
 
 .. _jsapi-getactivehosts:
 
@@ -80,6 +93,16 @@ media2click.removeHost(host)
 Deactivate the host and update the cookie. Returns true if the host identifier
 is valid and the host is inactive.
 
+.. _jsapi-updatestoragedata:
+
+media2click.updateStorageData()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:aspect:`Return data type:`
+   void
+
+Update the stored list of accepted hosts.
+
 .. _jsapi-updatecookie:
 
 media2click.updateCookie()
@@ -88,7 +111,7 @@ media2click.updateCookie()
 :aspect:`Return data type:`
    void
 
-Update the cookie.
+Alias of :ref:`media2click.updateStorageData() <_jsapi-updatestoragedata>`. Kept for compatibility reasons.
 
 .. _jsapi-activateallforhost:
 
@@ -118,10 +141,10 @@ something like this:
    document.onreadystatechange = function () {
      if (document.readyState === 'complete') {
        if (typeof media2click === 'undefined') {
-         if (typeof m2cCookieLifetime === 'undefined' || isNaN(m2cCookieLifetime)) {
+         if (typeof m2cLifetime === 'undefined' || isNaN(m2cLifetime)) {
            const media2click = new Media2Click();
          } else {
-           const media2click = new Media2Click(m2cCookieLifetime);
+           const media2click = new Media2Click(m2cLifetime);
          }
        }
 
