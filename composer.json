@@ -2,6 +2,7 @@
 	"name": "amazing/media2click",
 	"type": "typo3-cms-extension",
 	"description": "TYPO3 CMS extension media2click: Render external content like videos an iframes with privacy in mind: User has to click on placeholder to load the actual content.",
+	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"TYPO3",
 		"extension",
@@ -15,7 +16,17 @@
 			"homepage": "https://www.a-mazing.de"
 		}
 	],
-	"license": "GPL-2.0-or-later",
+	"support": {
+		"issues": "https://github.com/ghermens/media2click/issues",
+		"source": "https://github.com/ghermens/media2click",
+		"docs": "https://docs.typo3.org/p/amazing/medi2click/main/en-us/"
+	},
+	"funding": [
+		{
+			"type": "paypal",
+			"url": "https://paypal.me/gregorhermens"
+		}
+	],
 	"require": {
 		"typo3/cms-core": "^13.4 || ^14.3"
 	},
