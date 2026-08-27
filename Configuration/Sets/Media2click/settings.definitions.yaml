@@ -18,17 +18,17 @@ settings:
     category: Media2Click
     type: bool
     default: true
-  plugin.media2click.showPreviewImag:
+  plugin.media2click.showPreviewImage:
     label: "Show the video's preview image"
     category: Media2Click
     type: bool
     default: true
-  plugin.media2click.showPreviewImag.maxWidth:
+  plugin.media2click.showPreviewImage.maxWidth:
     label: 'Max width of the preview image'
     category: Media2Click
     type: int
     default: 0
-  plugin.media2click.showPreviewImag.maxHeight:
+  plugin.media2click.showPreviewImage.maxHeight:
     label: 'Max height of the preview image'
     category: Media2Click
     type: int
